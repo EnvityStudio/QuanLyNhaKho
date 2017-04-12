@@ -1,4 +1,9 @@
-# [0.1] 12/4/2017
+# [0.1.0] 12/4/2017
+
+## Changed
+- file : script.sql
+
+# [0.1.0] 12/4/2017
 
 ## Added 
 - file CHANGELOG.md
