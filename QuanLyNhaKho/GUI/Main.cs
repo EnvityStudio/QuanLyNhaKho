@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaKho
 {
-    public partial class Main : Form
+    public partial class toolstrip_Them : Form
     {
-        public Main()
+        public toolstrip_Them()
         {
             InitializeComponent();
         

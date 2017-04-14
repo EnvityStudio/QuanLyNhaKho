@@ -50,26 +50,26 @@
     <Compile Include="BUS\Bus.cs" />
     <Compile Include="DAO\Dao.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="GUI\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="GUI\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Config.cs" />
+    <Compile Include="GUI\Config.cs" />
     <Compile Include="VO\NhanVien.cs" />
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="GUI\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -95,9 +95,27 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="GUI\" />
-    <Folder Include="RESOURCE\" />
+    <None Include="RESOURCE\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RESOURCE\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RESOURCE\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RESOURCE\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RESOURCE\cen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RESOURCE\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RESOURCE\iconprint.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
