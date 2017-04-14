@@ -63,6 +63,16 @@ namespace QuanLyNhaKho.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _240_F_62897778_Mpe0AmVF2IdNaAz7eNIW1vvpJQ7gSGne {
+            get {
+                object obj = ResourceManager.GetObject("240_F_62897778_Mpe0AmVF2IdNaAz7eNIW1vvpJQ7gSGne", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);

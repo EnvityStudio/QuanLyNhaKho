@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_DangXuat = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_Them = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -41,9 +40,10 @@
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menutrip_HeThong = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_DangNhap = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_DoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_QuanLy = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_HangHoa = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_NhomHang = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,16 +53,14 @@
             this.btn_NhaCungCap = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_CuaHang = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_NghiepVu = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_NhapHang = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_XuatHang = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_ThongKe = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_TheoThang = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_HangTonKho = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_TroGiup = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_DangNhap = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_DoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_NhapHang = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_XuatHang = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -71,24 +69,13 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_DangXuat);
             this.panel1.Controls.Add(this.toolStrip1);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(938, 53);
+            this.panel1.Size = new System.Drawing.Size(1248, 53);
             this.panel1.TabIndex = 0;
-            // 
-            // btn_DangXuat
-            // 
-            this.btn_DangXuat.Location = new System.Drawing.Point(860, 30);
-            this.btn_DangXuat.Name = "btn_DangXuat";
-            this.btn_DangXuat.Size = new System.Drawing.Size(75, 23);
-            this.btn_DangXuat.TabIndex = 4;
-            this.btn_DangXuat.Text = "Đăng Xuất";
-            this.btn_DangXuat.UseVisualStyleBackColor = true;
             // 
             // toolStrip1
             // 
@@ -106,7 +93,7 @@
             this.toolStripLabel6});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(938, 29);
+            this.toolStrip1.Size = new System.Drawing.Size(1248, 29);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -174,15 +161,6 @@
             this.toolStripLabel6.Size = new System.Drawing.Size(33, 26);
             this.toolStripLabel6.Text = "In";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(803, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Hello Thuan Nguyen";
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -193,7 +171,7 @@
             this.menuStrip_TroGiup});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(938, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1248, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -205,6 +183,18 @@
             this.menutrip_HeThong.Name = "menutrip_HeThong";
             this.menutrip_HeThong.Size = new System.Drawing.Size(74, 20);
             this.menutrip_HeThong.Text = "Trang Chủ";
+            // 
+            // btn_DangNhap
+            // 
+            this.btn_DangNhap.Name = "btn_DangNhap";
+            this.btn_DangNhap.Size = new System.Drawing.Size(146, 22);
+            this.btn_DangNhap.Text = "Đăng Nhập";
+            // 
+            // btn_DoiMatKhau
+            // 
+            this.btn_DoiMatKhau.Name = "btn_DoiMatKhau";
+            this.btn_DoiMatKhau.Size = new System.Drawing.Size(146, 22);
+            this.btn_DoiMatKhau.Text = "Đổi Mật Khẩu";
             // 
             // menuStrip_QuanLy
             // 
@@ -271,6 +261,18 @@
             this.menuStrip_NghiepVu.Size = new System.Drawing.Size(75, 20);
             this.menuStrip_NghiepVu.Text = "Nghiệp Vụ";
             // 
+            // btn_NhapHang
+            // 
+            this.btn_NhapHang.Name = "btn_NhapHang";
+            this.btn_NhapHang.Size = new System.Drawing.Size(135, 22);
+            this.btn_NhapHang.Text = "Nhập Hàng";
+            // 
+            // btn_XuatHang
+            // 
+            this.btn_XuatHang.Name = "btn_XuatHang";
+            this.btn_XuatHang.Size = new System.Drawing.Size(135, 22);
+            this.btn_XuatHang.Text = "Xuất Hàng";
+            // 
             // menuStrip_ThongKe
             // 
             this.menuStrip_ThongKe.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -283,13 +285,13 @@
             // btn_TheoThang
             // 
             this.btn_TheoThang.Name = "btn_TheoThang";
-            this.btn_TheoThang.Size = new System.Drawing.Size(152, 22);
+            this.btn_TheoThang.Size = new System.Drawing.Size(151, 22);
             this.btn_TheoThang.Text = "Theo Tháng";
             // 
             // btn_HangTonKho
             // 
             this.btn_HangTonKho.Name = "btn_HangTonKho";
-            this.btn_HangTonKho.Size = new System.Drawing.Size(152, 22);
+            this.btn_HangTonKho.Size = new System.Drawing.Size(151, 22);
             this.btn_HangTonKho.Text = "Hàng Tồn Kho";
             // 
             // menuStrip_TroGiup
@@ -304,7 +306,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 53);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(938, 432);
+            this.panel2.Size = new System.Drawing.Size(1248, 432);
             this.panel2.TabIndex = 1;
             // 
             // label2
@@ -317,35 +319,11 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "TRANG CHỦ";
             // 
-            // btn_DangNhap
-            // 
-            this.btn_DangNhap.Name = "btn_DangNhap";
-            this.btn_DangNhap.Size = new System.Drawing.Size(152, 22);
-            this.btn_DangNhap.Text = "Đăng Nhập";
-            // 
-            // btn_DoiMatKhau
-            // 
-            this.btn_DoiMatKhau.Name = "btn_DoiMatKhau";
-            this.btn_DoiMatKhau.Size = new System.Drawing.Size(152, 22);
-            this.btn_DoiMatKhau.Text = "Đổi Mật Khẩu";
-            // 
-            // btn_NhapHang
-            // 
-            this.btn_NhapHang.Name = "btn_NhapHang";
-            this.btn_NhapHang.Size = new System.Drawing.Size(152, 22);
-            this.btn_NhapHang.Text = "Nhập Hàng";
-            // 
-            // btn_XuatHang
-            // 
-            this.btn_XuatHang.Name = "btn_XuatHang";
-            this.btn_XuatHang.Size = new System.Drawing.Size(152, 22);
-            this.btn_XuatHang.Text = "Xuất Hàng";
-            // 
             // toolstrip_Them
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 485);
+            this.ClientSize = new System.Drawing.Size(1248, 485);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
@@ -369,7 +347,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menutrip_HeThong;
         private System.Windows.Forms.ToolStripMenuItem menuStrip_QuanLy;
@@ -397,7 +374,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
-        private System.Windows.Forms.Button btn_DangXuat;
         private System.Windows.Forms.ToolStripMenuItem btn_DangNhap;
         private System.Windows.Forms.ToolStripMenuItem btn_DoiMatKhau;
         private System.Windows.Forms.ToolStripMenuItem btn_NhapHang;
