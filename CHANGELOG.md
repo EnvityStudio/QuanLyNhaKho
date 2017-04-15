@@ -1,3 +1,15 @@
+# [0.1.1] 15/4/2017
+
+## Changed
+- Change CheckAccount function in Bus
+
+## Added 
+- Try .. catch to handle login
+
+## Updated
+- Updated database 
+
+
 # [0.1.0] 12/4/2017
 
 ## Changed
