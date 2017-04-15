@@ -25,9 +25,13 @@ namespace QuanLyNhaKho.BUS
             var matKhau = nhanVien.MatKhau;
             foreach(DataRow row in dtNhanVien.Rows)
             {
-                if (userName == row["UserName"].ToString() && matKhau == row["Password"].ToString())
-                {
-                    return true;
+                try {
+                    if (userName == row["UserName"].ToString() && matKhau == row["MatKhau"].ToString())
+                    {
+                        return true;
+                    }
+                } catch(Exception e) {
+                    Console.WriteLine(e.Message);
                 }
             }
             return false;
