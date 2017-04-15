@@ -30,16 +30,9 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btn_Them = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menutrip_HeThong = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_DangNhap = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +54,13 @@
             this.menuStrip_TroGiup = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_Them = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -74,7 +74,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1248, 53);
+            this.panel1.Size = new System.Drawing.Size(1013, 74);
             this.panel1.TabIndex = 0;
             // 
             // toolStrip1
@@ -93,73 +93,24 @@
             this.toolStripLabel6});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1248, 29);
+            this.toolStrip1.Size = new System.Drawing.Size(1013, 50);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btn_Them
-            // 
-            this.btn_Them.Image = global::QuanLyNhaKho.Properties.Resources.add;
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(54, 26);
-            this.btn_Them.Text = "Thêm";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Image = global::QuanLyNhaKho.Properties.Resources.edit;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(42, 26);
-            this.toolStripLabel1.Text = "Sửa";
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Image = global::QuanLyNhaKho.Properties.Resources.delete;
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(43, 26);
-            this.toolStripLabel2.Text = "Xóa";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 29);
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Image = global::QuanLyNhaKho.Properties.Resources.save1;
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(43, 26);
-            this.toolStripLabel3.Text = "Lưu";
-            // 
-            // toolStripLabel4
-            // 
-            this.toolStripLabel4.Image = global::QuanLyNhaKho.Properties.Resources.cen1;
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(45, 26);
-            this.toolStripLabel4.Text = "Hủy";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 50);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 29);
-            // 
-            // toolStripLabel5
-            // 
-            this.toolStripLabel5.Image = global::QuanLyNhaKho.Properties.Resources.refresh;
-            this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(71, 26);
-            this.toolStripLabel5.Text = "Cập nhật";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 50);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 29);
-            // 
-            // toolStripLabel6
-            // 
-            this.toolStripLabel6.Image = global::QuanLyNhaKho.Properties.Resources.iconprint;
-            this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(33, 26);
-            this.toolStripLabel6.Text = "In";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 50);
             // 
             // menuStrip1
             // 
@@ -171,7 +122,7 @@
             this.menuStrip_TroGiup});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1248, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1013, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -304,9 +255,9 @@
             // 
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 53);
+            this.panel2.Location = new System.Drawing.Point(0, 74);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1248, 432);
+            this.panel2.Size = new System.Drawing.Size(1013, 411);
             this.panel2.TabIndex = 1;
             // 
             // label2
@@ -319,11 +270,60 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "TRANG CHỦ";
             // 
+            // btn_Them
+            // 
+            this.btn_Them.Image = global::QuanLyNhaKho.Properties.Resources.add;
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(54, 47);
+            this.btn_Them.Text = "Thêm";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Image = global::QuanLyNhaKho.Properties.Resources.edit;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(42, 47);
+            this.toolStripLabel1.Text = "Sửa";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Image = global::QuanLyNhaKho.Properties.Resources.delete;
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(43, 47);
+            this.toolStripLabel2.Text = "Xóa";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Image = global::QuanLyNhaKho.Properties.Resources.save1;
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(43, 47);
+            this.toolStripLabel3.Text = "Lưu";
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Image = global::QuanLyNhaKho.Properties.Resources.cen1;
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(45, 47);
+            this.toolStripLabel4.Text = "Hủy";
+            // 
+            // toolStripLabel5
+            // 
+            this.toolStripLabel5.Image = global::QuanLyNhaKho.Properties.Resources.refresh;
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(71, 47);
+            this.toolStripLabel5.Text = "Cập nhật";
+            // 
+            // toolStripLabel6
+            // 
+            this.toolStripLabel6.Image = global::QuanLyNhaKho.Properties.Resources.iconprint;
+            this.toolStripLabel6.Name = "toolStripLabel6";
+            this.toolStripLabel6.Size = new System.Drawing.Size(33, 47);
+            this.toolStripLabel6.Text = "In";
+            // 
             // toolstrip_Them
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1248, 485);
+            this.ClientSize = new System.Drawing.Size(1013, 485);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
