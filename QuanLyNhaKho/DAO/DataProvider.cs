@@ -17,6 +17,7 @@ namespace QuanLyNhaKho.DAO
         {
             con.Open();
             SqlCommand sc = new SqlCommand(query, con);
+            int result = 0;
             if (param == null)
             {
                 sc.CommandType = CommandType.Text;      
@@ -24,10 +25,18 @@ namespace QuanLyNhaKho.DAO
             else
                 sc.CommandType = CommandType.StoredProcedure;
                 param.ToList().ForEach(x => sc.Parameters.Add(x));
-            int result = sc.ExecuteNonQuery();
-            con.Close();
+            try
+            {
+                result = sc.ExecuteNonQuery();
+                con.Close();
+            } catch (SqlException e)
+            {
+                con.Close();
+                return -1;
+            }
             return result;
         }
+
         public static DataTable Query(string query, params SqlParameter[] param)
         {
             DataTable dt = new DataTable();

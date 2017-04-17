@@ -1,3 +1,18 @@
+# [0.1.1] 17/4/2017
+
+## Changed
+- file : script.sql
+
+## Fixed
+- error login
+
+## Added
+- Form : frmChiTietPhieuXuat , UcPhieuXuat
+- VO : ChiTietPhieuXuat , PhieuXuat
+- add event when click add tab in FormMain
+- add feature add chiTietPhieuXuat
+
+
 # [0.1.0] 12/4/2017
 
 ## Changed
