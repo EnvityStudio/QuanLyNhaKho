@@ -50,6 +50,12 @@
     <Compile Include="BUS\Bus.cs" />
     <Compile Include="DAO\Dao.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="GUI\FrmChiTietPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmChiTietPhieuNhap.Designer.cs">
+      <DependentUpon>FrmChiTietPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FrmChiTietPhieuXuat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,9 +83,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\Config.cs" />
+    <Compile Include="VO\ChiTietPhieuNhap.cs" />
     <Compile Include="VO\ChiTietPhieuXuat.cs" />
     <Compile Include="VO\NhanVien.cs" />
+    <Compile Include="VO\PhieuNhap.cs" />
     <Compile Include="VO\PhieuXuat.cs" />
+    <EmbeddedResource Include="GUI\FrmChiTietPhieuNhap.resx">
+      <DependentUpon>FrmChiTietPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmChiTietPhieuXuat.resx">
       <DependentUpon>FrmChiTietPhieuXuat.cs</DependentUpon>
     </EmbeddedResource>

@@ -29,7 +29,11 @@ namespace QuanLyNhaKho
         public static string PROC_GET_CHITIET_PHIEUXUAT = "[GetListCTPXByMaPX]";
         public static string PROC_INSERT_CHITIET_PHIEUXUAT = "[InsertCTPX]";
         public static string PROC_SEARCH_HANGHOA = "[SearchHangHoa]";
-        public static string PROC_INSERT_PHIEUXUAT = "[InsertPhieuXuat]";            
+        public static string PROC_INSERT_PHIEUXUAT = "[InsertPhieuXuat]";
+        public static string PROC_GET_LIST_PHIEUNHAP = "GetListPhieuNhap";
+        public static string PROC_GET_MA_PHIEUNHAP_NEXT = "GetMaPNNext";
+        public static string PROC_GET_CHITIET_PHIEUNHAP = "GetListCTPNByMaPN";
+        public static string PROC_INSERT_PHIEUNHAP = "InsertPhieuNhap";
 
         
     }
