@@ -44,18 +44,21 @@ namespace QuanLyNhaKho.BUS
         public static string getTenCuaHang(string maCH)
         {
             DataTable dt = SearchCuaHang(maCH);
+            if (dt.Rows.Count == 0) return "";
             string name = dt.Rows[0]["TenCH"].ToString();
             return name;
         }
         public static string getDiaChiCuaHang(string maCH)
         {
             DataTable dt = SearchCuaHang(maCH);
+            if (dt.Rows.Count == 0) return "";
             string name = dt.Rows[0]["DiaChi"].ToString();
             return name;
         }
         public static string getTenNhanVien(string maNV)
         {
             DataTable dt = Dao.SearchNhanVien(maNV);
+            if (dt.Rows.Count == 0) return "";
             string name = dt.Rows[0]["HoTen"].ToString();
             return name;
         }

@@ -71,7 +71,8 @@ namespace QuanLyNhaKho.GUI
         public void addPhieuXuat()
         {
             FrmChiTietPhieuXuat frmChiTiet = new FrmChiTietPhieuXuat(Bus.getMaPXNext(),0);
-            frmChiTiet.Show();
+            frmChiTiet.ShowDialog();
+            LoadData();
         }
 
 

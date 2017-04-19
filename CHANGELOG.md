@@ -1,3 +1,12 @@
+# [0.1.2] 19/4/2017
+
+## Changed
+- file :script.sql
+
+##fixed
+- add phieuxuat
+- add chiTietPhieuXuat
+
 # [0.1.1] 17/4/2017
 
 ## Changed
