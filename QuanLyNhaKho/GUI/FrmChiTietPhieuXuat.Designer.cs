@@ -153,6 +153,7 @@
             this.txtMaCH.Name = "txtMaCH";
             this.txtMaCH.Size = new System.Drawing.Size(100, 20);
             this.txtMaCH.TabIndex = 33;
+            this.txtMaCH.TextChanged += new System.EventHandler(this.txtMaCH_TextChanged);
             // 
             // label9
             // 
@@ -195,6 +196,7 @@
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(100, 20);
             this.txtMaNV.TabIndex = 41;
+            this.txtMaNV.TextChanged += new System.EventHandler(this.txtMaNV_TextChanged);
             // 
             // label6
             // 
@@ -295,6 +297,7 @@
             this.btnCancel.Text = "Hủy";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label10
             // 

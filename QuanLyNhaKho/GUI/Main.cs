@@ -48,6 +48,10 @@ namespace QuanLyNhaKho
 
         private void SetTabCurrent()
         {
+            if(tabControlHome.TabPages.Count == 0)
+            {
+                return ;
+            }
             if (tabControlHome.SelectedTab.Name == "UCPhieuXuat")
             {
                 Config.TAB_CURRENT = Config.TAB_PHIEU_XUAT;

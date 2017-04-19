@@ -60,6 +60,12 @@ namespace QuanLyNhaKho.GUI
         {
             if (!checkChiTietPXInvalid(txtMaHH.Text))
                 return;
+            if(txtSoLuong.Text == null || txtSoLuong.Text == "0")
+            {
+                
+                MessageBox.Show("Nhập số lượng","Thông báo!",MessageBoxButtons.OK);
+                return ;
+            }
             tongTien += int.Parse(txtThanhTien.Text);
             txtTongTien.Text = tongTien.ToString();
             DataRow newChiTiet = dataTableChiTiet.NewRow();
@@ -188,9 +194,10 @@ namespace QuanLyNhaKho.GUI
             ChiTietPhieuXuat chiTiet;
             PhieuXuat phieuXuat = new PhieuXuat()
             {
-                MaPX = txtMaPX.Text,
-                MaNV = txtMaNV.Text,
-                MaCH = txtMaCH.Text,
+                MaPX = txtMaPX.Text.ToUpper(),
+                MaNV = txtMaNV.Text.ToUpper(),
+                MaCH = txtMaCH.Text.ToUpper(),
+                NgayXuat = dtpNgayXuat.Value,
                 ChietKhau = 0,
                 ThanhTien = 0,
                 TongTien = 0,
@@ -219,6 +226,24 @@ namespace QuanLyNhaKho.GUI
                }
             }
             MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK);
+        }
+
+        private void txtMaCH_TextChanged(object sender, EventArgs e)
+        {
+                txtTenCH.Text = Bus.getTenCuaHang(txtMaCH.Text.ToUpper());
+                txtDiaChiCH.Text = Bus.getDiaChiCuaHang(txtMaCH.Text.ToUpper());
+        }
+
+        private void txtMaNV_TextChanged(object sender, EventArgs e)
+        {
+                txtTenNV.Text = Bus.getTenNhanVien(txtMaNV.Text.ToUpper());
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            dataTableChiTiet.Reset();
+            dtgChiTietPhieuXuat.DataSource = null;
+            this.Close();
         }
     }
 }
