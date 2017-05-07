@@ -22,7 +22,23 @@ namespace QuanLyNhaKho.GUI
         }
         public void LoadData()
         {
-            }
+            dgv_HangHoa.DataSource = Dao.GetListHH();
+            dgv_HangHoa.Columns["MaHH"].HeaderText = "Mã Hàng Hóa";
+            dgv_HangHoa.Columns["TenNhom"].HeaderText = "Tên Nhóm";
+            dgv_HangHoa.Columns["MaNhom"].Visible = false;
+            dgv_HangHoa.Columns["TenHang"].HeaderText = "Tên Hàng Hóa";
+            dgv_HangHoa.Columns["SoLuong"].HeaderText = "Số Lượng";
+            dgv_HangHoa.Columns["DonViTinh"].HeaderText = "Đơn Vị Tính";
+            dgv_HangHoa.Columns["NSX"].HeaderText = "NSX";
+            dgv_HangHoa.Columns["HSD"].HeaderText = "HSD";
+            dgv_HangHoa.Columns["ThongTin"].HeaderText = "Thông Tin";
+            dgv_HangHoa.Columns["NgayNhap"].HeaderText = "Ngày Nhập";
+            panel_InforHangHoa.Enabled = false;
+            cbb_TenNhom.DataSource = Bus.GetListTenNhom();
+            cbb_TenNhom.DisplayMember = "TenNhom";
+            cbb_TenNhom.ValueMember = "MaNhom";
+            ClearData();
+        }
         public void GetMaHHNext()
         {
         }
