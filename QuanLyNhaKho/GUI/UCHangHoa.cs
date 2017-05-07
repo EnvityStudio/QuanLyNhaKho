@@ -41,6 +41,9 @@ namespace QuanLyNhaKho.GUI
         }
         public void GetMaHHNext()
         {
+            ClearData();
+            txtMaHH.Text = Bus.GetMaHHNext();
+            panel_InforHangHoa.Enabled = true;
         }
         public void EnablePanel()
         {
