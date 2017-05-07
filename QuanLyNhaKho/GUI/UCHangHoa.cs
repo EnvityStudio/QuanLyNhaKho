@@ -47,7 +47,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void EnablePanel()
         {
-
+            panel_InforHangHoa.Enabled = true;
         }
         public void ClearData()
         {
