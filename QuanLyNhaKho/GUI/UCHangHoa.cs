@@ -51,6 +51,14 @@ namespace QuanLyNhaKho.GUI
         }
         public void ClearData()
         {
+            txtDonViTinh.Text = "";
+            txtTenHH.Text = "";
+            txtGiaNhap.Text = "";
+            txtGiaXuat.Text = "";
+            rtxtGhiChu.Text = "";
+            txtSoLuong.Text = "";
+            dtpNgayNhap.Value = DateTime.Now;
+
         }
         private void dgv_HangHoa_Click(object sender, EventArgs e)
         {
