@@ -446,7 +446,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmChiTietPhieuXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmChiTietPhieuXuat";
+            this.Text = "Chi Tiết Phiếu Xuất";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgChiTietPhieuXuat)).EndInit();
             this.ResumeLayout(false);

@@ -62,6 +62,42 @@
     <Compile Include="GUI\FrmChiTietPhieuXuat.Designer.cs">
       <DependentUpon>FrmChiTietPhieuXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UCCuaHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCCuaHang.Designer.cs">
+      <DependentUpon>UCCuaHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UCHangHoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCHangHoa.Designer.cs">
+      <DependentUpon>UCHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UCNhaCungCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCNhaCungCap.Designer.cs">
+      <DependentUpon>UCNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UCNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCNhanVien.Designer.cs">
+      <DependentUpon>UCNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UCNhomHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCNhomHang.Designer.cs">
+      <DependentUpon>UCNhomHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UCPhieuNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCPhieuNhap.Designer.cs">
+      <DependentUpon>UCPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UCPhieuXuat.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -85,7 +121,11 @@
     <Compile Include="GUI\Config.cs" />
     <Compile Include="VO\ChiTietPhieuNhap.cs" />
     <Compile Include="VO\ChiTietPhieuXuat.cs" />
+    <Compile Include="VO\CuaHang.cs" />
+    <Compile Include="VO\HangHoa.cs" />
+    <Compile Include="VO\NhaCungCap.cs" />
     <Compile Include="VO\NhanVien.cs" />
+    <Compile Include="VO\NhomHang.cs" />
     <Compile Include="VO\PhieuNhap.cs" />
     <Compile Include="VO\PhieuXuat.cs" />
     <EmbeddedResource Include="GUI\FrmChiTietPhieuNhap.resx">
@@ -93,6 +133,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmChiTietPhieuXuat.resx">
       <DependentUpon>FrmChiTietPhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCCuaHang.resx">
+      <DependentUpon>UCCuaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCHangHoa.resx">
+      <DependentUpon>UCHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCNhaCungCap.resx">
+      <DependentUpon>UCNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCNhanVien.resx">
+      <DependentUpon>UCNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCNhomHang.resx">
+      <DependentUpon>UCNhomHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCPhieuNhap.resx">
+      <DependentUpon>UCPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UCPhieuXuat.resx">
       <DependentUpon>UCPhieuXuat.cs</DependentUpon>

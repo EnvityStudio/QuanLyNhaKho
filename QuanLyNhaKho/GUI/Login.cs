@@ -23,11 +23,11 @@ namespace QuanLyNhaKho
         {
           
             var userName = txtUserName.Text;
-            var matKhau = txtPassword.Text;
+            var password = txtPassword.Text;
             NhanVien nhanVien = new NhanVien()
             {
                 UserName = userName,
-                MatKhau = matKhau
+                Password = password
             };
             var isExist = Bus.CheckAccount(nhanVien);
             if (isExist)

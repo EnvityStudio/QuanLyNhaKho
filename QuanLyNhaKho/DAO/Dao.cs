@@ -22,7 +22,7 @@ namespace QuanLyNhaKho.DAO
             {
                  new SqlParameter("@MaNV",maNV)
             };
-            return DataProvider.Query(Config.PROC_GET_NHANVIEN_BY_ID,para);
+            return DataProvider.Query(Config.PROC_GET_NHANVIEN_BY_ID, para);
         }
         public static DataTable getListPhieuXuat()
         {
@@ -35,7 +35,7 @@ namespace QuanLyNhaKho.DAO
             {
                 new SqlParameter("@maCH",maCH)
             };
-            return DataProvider.Query(Config.PROC_SEARCH_CUAHANG,para);
+            return DataProvider.Query(Config.PROC_SEARCH_CUAHANG, para);
         }
 
         public static DataTable SearchNhanVien(string maNV)
@@ -50,13 +50,15 @@ namespace QuanLyNhaKho.DAO
         {
             return DataProvider.Query(Config.PROC_GET_MA_PHIEUXUAT_NEXT);
         }
+
+
         public static DataTable getChiTietPhieuXuat(string maPX)
         {
             SqlParameter[] para = new SqlParameter[]
           {
                 new SqlParameter("@MaPX",maPX)
           };
-            return DataProvider.Query(Config.PROC_GET_CHITIET_PHIEUXUAT,para);
+            return DataProvider.Query(Config.PROC_GET_CHITIET_PHIEUXUAT, para);
         }
         public static DataTable SearchHangHoa(string maHH)
         {
@@ -75,7 +77,7 @@ namespace QuanLyNhaKho.DAO
                 new SqlParameter("@SoLuong",chiTiet.SoLuong),
                 new SqlParameter("@GhiChu",chiTiet.GhiChu)
              };
-            return DataProvider.NonQuery(Config.PROC_INSERT_CHITIET_PHIEUXUAT,para);
+            return DataProvider.NonQuery(Config.PROC_INSERT_CHITIET_PHIEUXUAT, para);
         }
 
         public static int AddPhieuXuat(PhieuXuat phieuXuat)
@@ -93,5 +95,238 @@ namespace QuanLyNhaKho.DAO
              };
             return DataProvider.NonQuery(Config.PROC_INSERT_PHIEUXUAT, para);
         }
+        // Table Nhan Vien
+        public static DataTable GetMaNVNext()
+        {
+            return DataProvider.Query(Config.PROC_GET_MA_NHANVIEN_NEXT);
+
+        }
+        public static int AddNhanVien(NhanVien nhanVien)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@MaNV",nhanVien.MaNV),
+                    new SqlParameter("@HoTen",nhanVien.HoTen),
+                    new SqlParameter("@NgaySinh",nhanVien.NgaySinh),
+                    new SqlParameter("@GioiTinh",nhanVien.GioiTinh),
+                    new SqlParameter("@DiaChi",nhanVien.DiaChi),
+                    new SqlParameter("@SDT",nhanVien.SDT),
+                    new SqlParameter("@UserName",nhanVien.UserName),
+                    new SqlParameter("@Password",nhanVien.Password)
+                 };
+            return DataProvider.NonQuery(Config.PROC_INSERT_NHANVIEN, para);
+        }
+        public static int UpdateNhanVien(NhanVien nhanVien)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@MaNV",nhanVien.MaNV),
+                    new SqlParameter("@HoTen",nhanVien.HoTen),
+                    new SqlParameter("@NgaySinh",nhanVien.NgaySinh),
+                    new SqlParameter("@GioiTinh",nhanVien.GioiTinh),
+                    new SqlParameter("@DiaChi",nhanVien.DiaChi),
+                    new SqlParameter("@SDT",nhanVien.SDT),
+                    new SqlParameter("@UserName",nhanVien.UserName),
+                    new SqlParameter("@Password",nhanVien.Password)
+                };
+            return DataProvider.NonQuery(Config.PROC_UPDATE_NHANVIEN, para);
+        }
+        public static int DeleteNhanVien(NhanVien nhanVien)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@MaNV",nhanVien.MaNV)
+                };
+            return DataProvider.NonQuery(Config.PROC_DELETE_NHANVIEN, para);
+        }
+
+
+        /// Table NhomHang
+
+        public static DataTable GetMaNhomHangNext()
+        {
+            return DataProvider.Query(Config.PROC_GET_MA_NHOMHANG_NEXT);
+        }
+        public static DataTable GetListNhomHang()
+        {
+            return DataProvider.Query(Config.PROC_GET_LIST_NHOMHANG);
+        }
+        public static int AddNhomHang(NhomHang nhomHang)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter(@"MaNhom",nhomHang.MaNhom),
+                    new SqlParameter(@"TenNhom",nhomHang.TenNhom),
+                    new SqlParameter(@"SoLuong",nhomHang.SoLuong),
+                    new SqlParameter(@"GhiChu",nhomHang.GhiChu)
+                };
+            return DataProvider.NonQuery(Config.PROC_INSERT_NHOMHANG, para);
+        }
+        public static int UpdateNhomHang(NhomHang nhomHang)
+        {
+            SqlParameter[] para = new SqlParameter[]
+              {
+                    new SqlParameter(@"MaNhom",nhomHang.MaNhom),
+                    new SqlParameter(@"TenNhom",nhomHang.TenNhom),
+                    new SqlParameter(@"SoLuong",nhomHang.SoLuong),
+                    new SqlParameter(@"GhiChu",nhomHang.GhiChu)
+              };
+            return DataProvider.NonQuery(Config.PROC_UPDATE_NHOMHANG, para);
+        }
+        public static int DeleteNhomHang(NhomHang nhomHang)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                   {
+                         new SqlParameter(@"MaNhom",nhomHang.MaNhom)
+                   };
+            return DataProvider.NonQuery(Config.PROC_DELETE_NHOMHANG, para);
+        }
+        public static DataTable GetTenNhom()
+        {
+            return DataProvider.Query(Config.PROC_GET_LIST_TENNHOM);
+        }
+        
+        //// Table NhaCungCap
+        public static DataTable GetMaNCCNext()
+        {
+            return DataProvider.Query(Config.PROC_GET_MA_NCC_NEXT);
+        }
+        public static DataTable GetListNCC()
+        {
+            return DataProvider.Query(Config.PROC_GET_LIST_NCC);
+        }
+        public static int AddNCC(NhaCungCap nhaCungCap)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter(@"MaNCC",nhaCungCap.MaNCC),
+                    new SqlParameter(@"TenNCC",nhaCungCap.TenNCC),
+                    new SqlParameter(@"DiaChi",nhaCungCap.DiaChi),
+                    new SqlParameter(@"SDT",nhaCungCap.SDT),
+                    new SqlParameter(@"GhiChu",nhaCungCap.GhiChu)
+                };
+            return DataProvider.NonQuery(Config.PROC_INSERT_NCC, para);
+        }
+        public static int UpdateNCC(NhaCungCap nhaCungCap)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter(@"MaNCC",nhaCungCap.MaNCC),
+                    new SqlParameter(@"TenNCC",nhaCungCap.TenNCC),
+                    new SqlParameter(@"DiaChi",nhaCungCap.DiaChi),
+                    new SqlParameter(@"SDT",nhaCungCap.SDT),
+                    new SqlParameter(@"GhiChu",nhaCungCap.GhiChu)
+
+                };
+            return DataProvider.NonQuery(Config.PROC_UPDATE_NCC, para);
+        }
+        public static int DeleteNCC(NhaCungCap nhaCungCap)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter(@"MaNCC",nhaCungCap.MaNCC)
+                };
+            return DataProvider.NonQuery(Config.PROC_DELETE_NCC, para);
+        }
+        ///// CuaHang
+        public static DataTable GetListCH()
+        {
+            return DataProvider.Query(Config.PROC_GET_LIST_CH);
+        }
+        public static DataTable GetMaCHNext()
+        {
+            return DataProvider.Query(Config.PROC_GET_MA_CH_NEXT);
+        }
+        public static int AddCH(CuaHang cuaHang)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter(@"MaCH",cuaHang.MaCH),
+                    new SqlParameter(@"TenCH",cuaHang.TenCH),
+                    new SqlParameter(@"DiaChi",cuaHang.DiaChi),
+                    new SqlParameter(@"SDT",cuaHang.SDT),
+                    new SqlParameter(@"GhiChu",cuaHang.GhiChu)
+                };
+            return DataProvider.NonQuery(Config.PROC_INSERT_CH, para);
+        }
+        public static int UpdateCH(CuaHang cuaHang)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                  {
+                    new SqlParameter(@"MaCH",cuaHang.MaCH),
+                    new SqlParameter(@"TenCH",cuaHang.TenCH),
+                    new SqlParameter(@"DiaChi",cuaHang.DiaChi),
+                    new SqlParameter(@"SDT",cuaHang.SDT),
+                    new SqlParameter(@"GhiChu",cuaHang.GhiChu)
+                  };
+            return DataProvider.NonQuery(Config.PROC_UPDATE_CH, para);
+        }
+        public static int DeleteCH(CuaHang cuaHang)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                     {
+                    new SqlParameter(@"MaCH",cuaHang.MaCH)
+                     };
+            return DataProvider.NonQuery(Config.PROC_DELETE_CH, para);
+
+        }
+
+        /// Hang Hoa
+        /// 
+        public static DataTable GetListHH()
+        {
+            return DataProvider.Query(Config.PROC_GET_LIST_HH_BYNHOMHANG);
+        }
+        public static DataTable GetMaHHNext()
+        {
+            return DataProvider.Query(Config.PROC_GET_MA_HH_NEXT);
+        }
+        public static int AddHH(HangHoa hangHoa)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter(@"MaHH",hangHoa.MaHH),
+                    new SqlParameter(@"MaNhom",hangHoa.MaNhom),
+                    new SqlParameter(@"TenHang",hangHoa.TenHang),
+                    new SqlParameter(@"SoLuong",hangHoa.SoLuong),
+                    new SqlParameter(@"DonViTinh",hangHoa.DonViTinh),
+                    new SqlParameter(@"GiaNhap",hangHoa.GiaNhap),
+                    new SqlParameter(@"GiaXuat",hangHoa.GiaXuat),
+                    new SqlParameter(@"NSX",hangHoa.NSX),
+                    new SqlParameter(@"HSD",hangHoa.HSD),
+                    new SqlParameter(@"ThongTin",hangHoa.ThongTin),
+                    new SqlParameter(@"NgayNhap",hangHoa.NgayNhap)
+                };
+            return DataProvider.NonQuery(Config.PROC_INSERT_HH, para);
+        }
+        public static int UpdateHH(HangHoa hangHoa)
+        {
+            SqlParameter[] para = new SqlParameter[]
+              {
+                    new SqlParameter(@"MaHH",hangHoa.MaHH),
+                    new SqlParameter(@"MaNhom",hangHoa.MaNhom),
+                    new SqlParameter(@"TenHang",hangHoa.TenHang),
+                    new SqlParameter(@"SoLuong",hangHoa.SoLuong),
+                    new SqlParameter(@"DonViTinh",hangHoa.DonViTinh),
+                    new SqlParameter(@"GiaNhap",hangHoa.GiaNhap),
+                    new SqlParameter(@"GiaXuat",hangHoa.GiaXuat),
+                    new SqlParameter(@"NSX",hangHoa.NSX),
+                    new SqlParameter(@"HSD",hangHoa.HSD),
+                    new SqlParameter(@"ThongTin",hangHoa.ThongTin),
+                    new SqlParameter(@"NgayNhap",hangHoa.NgayNhap)
+              };
+            return DataProvider.NonQuery(Config.PROC_UPDATE_HH, para);
+        }
+        public static int DeleteHH(HangHoa hangHoa)
+        {
+            SqlParameter[] para = new SqlParameter[]
+              {
+                    new SqlParameter(@"MaHH",hangHoa.MaHH)
+              };
+              return DataProvider.NonQuery(Config.PROC_DELETE_HH, para);
+        }
+
     }
+
+
 }

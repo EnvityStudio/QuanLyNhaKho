@@ -33,21 +33,21 @@
             this.dtgPhieuXuat = new System.Windows.Forms.DataGridView();
             this.rtxtGhiChu = new System.Windows.Forms.RichTextBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDiaChiCH = new System.Windows.Forms.TextBox();
-            this.txtTenCH = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtMaCH = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtMaPX = new System.Windows.Forms.TextBox();
             this.dtpNgayXuat = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.txtTenCH = new System.Windows.Forms.TextBox();
+            this.txtMaCH = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPhieuXuat)).BeginInit();
             this.SuspendLayout();
@@ -98,31 +98,6 @@
             this.txtTenNV.Size = new System.Drawing.Size(146, 20);
             this.txtTenNV.TabIndex = 22;
             // 
-            // txtMaNV
-            // 
-            this.txtMaNV.Location = new System.Drawing.Point(989, 67);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(100, 20);
-            this.txtMaNV.TabIndex = 21;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(855, 98);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 13);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Tên nhân viên :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(855, 68);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 13);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Mã nhân viên giao hàng :";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -139,14 +114,6 @@
             this.txtDiaChiCH.Name = "txtDiaChiCH";
             this.txtDiaChiCH.Size = new System.Drawing.Size(249, 20);
             this.txtDiaChiCH.TabIndex = 16;
-            // 
-            // txtTenCH
-            // 
-            this.txtTenCH.Enabled = false;
-            this.txtTenCH.Location = new System.Drawing.Point(140, 107);
-            this.txtTenCH.Name = "txtTenCH";
-            this.txtTenCH.Size = new System.Drawing.Size(130, 20);
-            this.txtTenCH.TabIndex = 15;
             // 
             // label8
             // 
@@ -166,13 +133,6 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Địa chỉ cửa hàng :";
             // 
-            // txtMaCH
-            // 
-            this.txtMaCH.Location = new System.Drawing.Point(140, 76);
-            this.txtMaCH.Name = "txtMaCH";
-            this.txtMaCH.Size = new System.Drawing.Size(100, 20);
-            this.txtMaCH.TabIndex = 14;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -181,15 +141,6 @@
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 10;
             this.label3.Text = "Tên cửa hàng :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Mã cửa hàng :";
             // 
             // label1
             // 
@@ -226,6 +177,55 @@
             this.dtpNgayXuat.Name = "dtpNgayXuat";
             this.dtpNgayXuat.Size = new System.Drawing.Size(123, 20);
             this.dtpNgayXuat.TabIndex = 26;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(855, 98);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 13);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Tên nhân viên :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(855, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(128, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Mã nhân viên giao hàng :";
+            // 
+            // txtMaNV
+            // 
+            this.txtMaNV.Location = new System.Drawing.Point(989, 67);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(100, 20);
+            this.txtMaNV.TabIndex = 21;
+            // 
+            // txtTenCH
+            // 
+            this.txtTenCH.Enabled = false;
+            this.txtTenCH.Location = new System.Drawing.Point(140, 107);
+            this.txtTenCH.Name = "txtTenCH";
+            this.txtTenCH.Size = new System.Drawing.Size(130, 20);
+            this.txtTenCH.TabIndex = 15;
+            // 
+            // txtMaCH
+            // 
+            this.txtMaCH.Location = new System.Drawing.Point(140, 76);
+            this.txtMaCH.Name = "txtMaCH";
+            this.txtMaCH.Size = new System.Drawing.Size(100, 20);
+            this.txtMaCH.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(44, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Mã cửa hàng :";
             // 
             // UCPhieuXuat
             // 
@@ -267,20 +267,20 @@
         private System.Windows.Forms.DataGridView dtgPhieuXuat;
         private System.Windows.Forms.RichTextBox rtxtGhiChu;
         private System.Windows.Forms.TextBox txtTenNV;
-        private System.Windows.Forms.TextBox txtMaNV;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDiaChiCH;
-        private System.Windows.Forms.TextBox txtTenCH;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtMaCH;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtMaPX;
         private System.Windows.Forms.DateTimePicker dtpNgayXuat;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtMaNV;
+        private System.Windows.Forms.TextBox txtTenCH;
+        private System.Windows.Forms.TextBox txtMaCH;
+        private System.Windows.Forms.Label label2;
     }
 }
