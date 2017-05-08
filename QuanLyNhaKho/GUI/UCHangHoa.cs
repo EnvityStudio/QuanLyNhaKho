@@ -62,6 +62,17 @@ namespace QuanLyNhaKho.GUI
         }
         private void dgv_HangHoa_Click(object sender, EventArgs e)
         {
+            DataGridViewRow dt = dgv_HangHoa.SelectedRows[0];
+            txtMaHH.Text = dt.Cells["MaHH"].Value.ToString();
+            txtTenHH.Text = dt.Cells["TenHang"].Value.ToString();
+            txtSoLuong.Text = dt.Cells["SoLuong"].Value.ToString();
+            txtDonViTinh.Text = dt.Cells["DonViTinh"].Value.ToString();
+            dtpNSX.Text = dt.Cells["NSX"].Value.ToString();
+            dtpHSD.Text = dt.Cells["HSD"].Value.ToString();
+            rtxtGhiChu.Text = dt.Cells["ThongTin"].Value.ToString();
+            dtpNgayNhap.Text = dt.Cells["NgayNhap"].Value.ToString();
+            cbb_TenNhom.Text = dt.Cells["TenNhom"].Value.ToString();
+            cbb_TenNhom.SelectedValue = dt.Cells["MaNhom"].Value.ToString();
         }
         public bool CheckTextBox()
         {
