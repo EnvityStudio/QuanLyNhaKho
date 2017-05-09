@@ -127,6 +127,22 @@ namespace QuanLyNhaKho.GUI
         }
         public void AddHH()
         {
+            if (!CheckTextBox())
+            {
+                return;
+            }
+            int result = Bus.AddHH(GetDataHH());
+            if (result > 0)
+            {
+                MessageBox.Show("Thêm Thành Công", "Thông báo", MessageBoxButtons.OK);
+                ClearData();
+                LoadData();
+                panel_InforHangHoa.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Thêm không thành công", "Thông báo", MessageBoxButtons.OK);
+            }
 
         }
         public void UpdateHH()
