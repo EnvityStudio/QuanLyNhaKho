@@ -185,11 +185,13 @@ namespace QuanLyNhaKho.GUI
         }
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
+            String str = string.Format("MaHH like '%{0}' or TenHang like '%{0}' or DonViTinh like '%{0}' ", txtTimKiem.Text);
+            (dgv_HangHoa.DataSource as DataTable).DefaultView.RowFilter = str;
         }
 
         private void txtGiaXuat_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            InputKeyPress(sender, e);
         }
     }
 }
