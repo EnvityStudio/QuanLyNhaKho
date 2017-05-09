@@ -143,10 +143,25 @@ namespace QuanLyNhaKho.GUI
             {
                 MessageBox.Show("Thêm không thành công", "Thông báo", MessageBoxButtons.OK);
             }
-
         }
         public void UpdateHH()
         {
+            if (!CheckTextBox())
+            {
+                return;
+            }
+            int result = Bus.UpdateHH(GetDataHH());
+            if (result > 0)
+            {
+                MessageBox.Show("Sua Thành Công", "Thông báo", MessageBoxButtons.OK);
+                ClearData();
+                LoadData();
+                panel_InforHangHoa.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Sua không thành công", "Thông báo", MessageBoxButtons.OK);
+            }
         }
         public void DeleteHH()
         {
