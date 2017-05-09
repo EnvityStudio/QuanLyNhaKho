@@ -85,24 +85,32 @@ namespace QuanLyNhaKho.GUI
         }
         public bool CheckEmpty(TextBox txt)
         {
+            if (txt.Text.Trim() == "")
+            {
+                errorProvider.SetError(txt, "Không được để trống");
+                return false;
+            }
+            errorProvider.SetError(txt, "");
+            return true;
+
         }
         public HangHoa GetDataHH()
         {
-            
+
         }
         public void InputKeyPress(object sender, KeyPressEventArgs e)
         {
         }
         public void AddHH()
         {
-            
+
         }
         public void UpdateHH()
         {
         }
         public void DeleteHH()
         {
-      
+
         }
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
