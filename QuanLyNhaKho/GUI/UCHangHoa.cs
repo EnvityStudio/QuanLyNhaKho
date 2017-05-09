@@ -165,6 +165,22 @@ namespace QuanLyNhaKho.GUI
         }
         public void DeleteHH()
         {
+            if (!CheckTextBox())
+            {
+                return;
+            }
+            int result = Bus.DeleteHH(GetDataHH());
+            if (result > 0)
+            {
+                MessageBox.Show("Xoa Thành Công", "Thông báo", MessageBoxButtons.OK);
+                ClearData();
+                LoadData();
+                panel_InforHangHoa.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Xoa không thành công", "Thông báo", MessageBoxButtons.OK);
+            }
 
         }
         private void btn_TimKiem_Click(object sender, EventArgs e)
