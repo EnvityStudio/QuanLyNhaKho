@@ -76,6 +76,12 @@ namespace QuanLyNhaKho.GUI
         }
         public bool CheckTextBox()
         {
+            if (!CheckEmpty(txtTenHH) || !CheckEmpty(txtDonViTinh) || !CheckEmpty(txtSoLuong) || !CheckEmpty(txtGiaNhap) || !CheckEmpty(txtGiaXuat))
+            {
+                MessageBox.Show("Có lỗi không thể thực hiện");
+                return false;
+            }
+            return true;
         }
         public bool CheckEmpty(TextBox txt)
         {
