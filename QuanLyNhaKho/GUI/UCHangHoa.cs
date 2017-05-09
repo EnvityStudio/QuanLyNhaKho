@@ -96,7 +96,20 @@ namespace QuanLyNhaKho.GUI
         }
         public HangHoa GetDataHH()
         {
+            string MaHH, MaNhom, ThongTin, TenHang, DonViTinh;
+            int SoLuong;
 
+            DateTime NSX, HSD, NgayNhap;
+            MaNhom = cbb_TenNhom.SelectedValue.ToString();
+            MaHH = txtMaHH.Text;
+            TenHang = txtTenHH.Text;
+            SoLuong = int.Parse(txtSoLuong.Text);
+            DonViTinh = txtDonViTinh.Text;
+            ThongTin = rtxtGhiChu.Text;
+            NSX = (DateTime)dtpNSX.Value;
+            HSD = (DateTime)dtpHSD.Value;
+            NgayNhap = (DateTime)dtpNgayNhap.Value;
+            return new HangHoa(MaHH, MaNhom, TenHang, SoLuong, DonViTinh, NSX, HSD, ThongTin, NgayNhap);
         }
         public void InputKeyPress(object sender, KeyPressEventArgs e)
         {
