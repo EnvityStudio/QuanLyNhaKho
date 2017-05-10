@@ -45,6 +45,12 @@ namespace QuanLyNhaKho.GUI
 
         private void dgv_NhaCungCap_Click(object sender, EventArgs e)
         {
+            DataGridViewRow dt = dgv_NhaCungCap.SelectedRows[0];
+            txt_MaNCC.Text = dt.Cells["MaNCC"].Value.ToString();
+            txt_TenNCC.Text = dt.Cells["TenNCC"].Value.ToString();
+            txt_DiaChi.Text = dt.Cells["DiaChi"].Value.ToString();
+            txtSDT.Text = dt.Cells["SDT"].Value.ToString();
+            rtxt_GhiChu.Text = dt.Cells["GhiChu"].Value.ToString();
         }
         public bool CheckEmpty(TextBox txt)
         {
