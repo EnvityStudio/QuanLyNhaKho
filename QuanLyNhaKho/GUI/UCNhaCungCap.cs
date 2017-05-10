@@ -37,6 +37,10 @@ namespace QuanLyNhaKho.GUI
         }
         private void ClearData()
         {
+            txt_TenNCC.Text = "";
+            txt_DiaChi.Text = "";
+            txtSDT.Text = "";
+            rtxt_GhiChu.Text = "";
         }
 
         private void dgv_NhaCungCap_Click(object sender, EventArgs e)
