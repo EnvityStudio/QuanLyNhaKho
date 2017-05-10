@@ -27,7 +27,13 @@ namespace QuanLyNhaKho.GUI
         }
         public NhaCungCap GetDataNCC()
         {
-
+            string MaNCC, TenNCC, DiaChi, SDT, GhiChu;
+            MaNCC = txt_MaNCC.Text;
+            TenNCC = txt_TenNCC.Text;
+            DiaChi = txt_DiaChi.Text;
+            SDT = txtSDT.Text;
+            GhiChu = rtxt_GhiChu.Text;
+            return new NhaCungCap(MaNCC, TenNCC, DiaChi, SDT, GhiChu);
         }
         private void ClearData()
         {
