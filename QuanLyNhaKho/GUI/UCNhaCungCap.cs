@@ -54,7 +54,13 @@ namespace QuanLyNhaKho.GUI
         }
         public bool CheckEmpty(TextBox txt)
         {
-        
+            if (txt.Text.Trim() == "")
+            {
+                errorProvider1.SetError(txt, "Không được để trống");
+                return false;
+            }
+            errorProvider1.SetError(txt, "");
+            return true;
         }
         public bool CheckTextBox()
         {
