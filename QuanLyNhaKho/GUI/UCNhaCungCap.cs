@@ -22,6 +22,8 @@ namespace QuanLyNhaKho.GUI
 
         public void LoadData()
         {
+            dgv_NhaCungCap.DataSource = Bus.GetListNCC();
+            panel_InforNCC.Enabled = false;
         }
         public NhaCungCap GetDataNCC()
         {
