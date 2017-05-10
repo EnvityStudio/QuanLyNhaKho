@@ -64,6 +64,12 @@ namespace QuanLyNhaKho.GUI
         }
         public bool CheckTextBox()
         {
+            if (!CheckEmpty(txt_TenNCC) || !CheckEmpty(txt_DiaChi) || !CheckEmpty(txtSDT))
+            {
+                MessageBox.Show("Có lỗi không thể thực hiện");
+                return false;
+            }
+            return true;
         }
         public void GetMaNCCNext()
         {
