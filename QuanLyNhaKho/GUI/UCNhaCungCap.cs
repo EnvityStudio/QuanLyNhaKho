@@ -76,10 +76,10 @@ namespace QuanLyNhaKho.GUI
             txt_MaNCC.Text = Bus.GetMaNCCNext();
             ClearData();
             panel_InforNCC.Enabled = true;
-
         }
         public void EnablePanel()
         {
+            panel_InforNCC.Enabled = true;
         }
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
