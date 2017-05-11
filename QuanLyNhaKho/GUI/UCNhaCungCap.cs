@@ -73,6 +73,10 @@ namespace QuanLyNhaKho.GUI
         }
         public void GetMaNCCNext()
         {
+            txt_MaNCC.Text = Bus.GetMaNCCNext();
+            ClearData();
+            panel_InforNCC.Enabled = true;
+
         }
         public void EnablePanel()
         {
