@@ -88,13 +88,60 @@ namespace QuanLyNhaKho.GUI
         }
         public void AddNCC()
         {
-         }
+            if (!CheckTextBox())
+            {
+                return;
+            }
+            int result = Bus.AddNCC(GetDataNCC());
+            if (result > 0)
+            {
+
+                MessageBox.Show("Thêm Thành Công", "Thông báo", MessageBoxButtons.OK);
+                ClearData();
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Thêm không thành công", "Thông báo", MessageBoxButtons.OK);
+            }
+        }
         public void UpdateNCC()
         {
+            if (!CheckTextBox())
+            {
+                return;
+            }
+            int result = Bus.UpdateNCC(GetDataNCC());
+            if (result > 0)
+            {
 
+                MessageBox.Show("Sua Thành Công", "Thông báo", MessageBoxButtons.OK);
+                ClearData();
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Sua không thành công", "Thông báo", MessageBoxButtons.OK);
+            }
         }
         public void DeleteNCC()
         {
+            if (txt_MaNCC.Text.Equals("") || txt_MaNCC.Text == null)
+            {
+                return;
+            }
+            int result = Bus.DeleteNCC(GetDataNCC());
+            if (result > 0)
+            {
+                MessageBox.Show("Xoa Thành Công", "Thông báo", MessageBoxButtons.OK);
+                ClearData();
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Xoa không thành công", "Thông báo", MessageBoxButtons.OK);
+
+            }
         }
     }
 }
