@@ -21,11 +21,11 @@ namespace QuanLyNhaKho.BUS
         public static bool CheckAccount(NhanVien nhanVien)
         {
             DataTable dtNhanVien = GetListNhanVien();
-            var userName = nhanVien.UserName;
+            var userName = nhanVien.MaNV;
             var matKhau = nhanVien.Password;
             foreach (DataRow row in dtNhanVien.Rows)
             {
-                if (userName == row["UserName"].ToString() && matKhau == row["Password"].ToString())
+                if (userName == row["MaNV"].ToString().Trim() && matKhau == row["Password"].ToString().Trim())
                 {
                     return true;
                 }
@@ -40,6 +40,10 @@ namespace QuanLyNhaKho.BUS
         public static DataTable SearchCuaHang(string maCH)
         {
             return Dao.SearchCuaHang(maCH);
+        }
+        public static DataTable SearchNCC(string MaNCC)
+        {
+            return Dao.SearchNCC(MaNCC);
         }
         public static string getTenCuaHang(string maCH)
         {
@@ -67,6 +71,10 @@ namespace QuanLyNhaKho.BUS
         {
             return Dao.getChiTietPhieuXuat(maPX);
         }
+        public static DataTable GetChiTietPhieuNhap(string MaPN)
+        {
+            return Dao.GetListChiTietPhieuNhap(MaPN);
+        }
         public static DataTable SearchHangHoa(string maHH)
         {
             return Dao.SearchHangHoa(maHH);
@@ -75,11 +83,18 @@ namespace QuanLyNhaKho.BUS
         {
             return Dao.AddChitietPhieuXuat(chiTiet);
         }
+        public static int AddChiTietPhieuNhap(ChiTietPhieuNhap chiTiet)
+        {
+            return Dao.AddChiTietPhieuNhap(chiTiet);
+        }
         public static int AddPhieuXuat(PhieuXuat phieuXuat)
         {
             return Dao.AddPhieuXuat(phieuXuat);
         }
-
+        public static int AddPhieuNhap(PhieuNhap phieuNhap)
+        {
+            return Dao.AddPhieuNhap(phieuNhap);
+        }
 
         public static string getMaPXNext()
         {
@@ -137,6 +152,10 @@ namespace QuanLyNhaKho.BUS
         }
         /// NhaCungCap
         /// 
+        public static DataTable GetListTenNCC()
+        {
+            return Dao.GetListTenNCC();
+        }
         public static string GetMaNCCNext()
         {
             DataTable dt = Dao.GetMaNCCNext();
@@ -159,7 +178,11 @@ namespace QuanLyNhaKho.BUS
         {
             return Dao.DeleteNCC(nhaCungCap);
         }
-        //// Cua Hang
+        //// Cua Hang\
+        public static DataTable GetListTenCH()
+        {
+            return Dao.GetListTenCH();
+        }
         public static string GetMaCHNext()
         {
             DataTable dt = Dao.GetMaCHNext();
@@ -184,6 +207,10 @@ namespace QuanLyNhaKho.BUS
         }
         /// Hang Hoa
         /// 
+        public static DataTable GetListTenHH()
+        {
+            return Dao.GetListTenHH();
+        }
         public static string GetMaHHNext()
         {
             DataTable dt = Dao.GetMaHHNext();
@@ -205,6 +232,30 @@ namespace QuanLyNhaKho.BUS
         public static DataTable GetListHH()
         {
             return Dao.GetListHH();
+        }
+        /// Phieu Nhap 
+        /// 
+        public static string GetMaPNNext()
+        {
+            DataTable dt = Dao.GetMaPNNext();
+            string maPN = dt.Rows[0]["MaPN"].ToString();
+            return maPN;
+        }
+        public static int AddPN(PhieuNhap phieuNhap)
+        {
+            return Dao.AddPN(phieuNhap);
+        }
+        public static int UpdatePN(PhieuNhap phieuNhap)
+        {
+            return Dao.UpdatePN(phieuNhap);
+        }
+        public static int DeletePN(PhieuNhap phieuNhap)
+        {
+            return Dao.DeletePN(phieuNhap);
+        }
+        public static DataTable GetListPN()
+        {
+            return Dao.GetListPN();
         }
         
     }

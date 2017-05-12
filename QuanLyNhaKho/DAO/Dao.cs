@@ -37,6 +37,14 @@ namespace QuanLyNhaKho.DAO
             };
             return DataProvider.Query(Config.PROC_SEARCH_CUAHANG, para);
         }
+        public static DataTable SearchNCC(string MaNCC)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@MaNCC",MaNCC)
+                };
+            return DataProvider.Query(Config.PROC_SEARCH_NCC, para);
+        }
 
         public static DataTable SearchNhanVien(string maNV)
         {
@@ -60,6 +68,14 @@ namespace QuanLyNhaKho.DAO
           };
             return DataProvider.Query(Config.PROC_GET_CHITIET_PHIEUXUAT, para);
         }
+        public static DataTable GetListChiTietPhieuNhap(string MaPN)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@MaPN",MaPN)
+                };
+            return DataProvider.Query(Config.PROC_GET_CHITIET_PHIEUNHAP, para);
+        }
         public static DataTable SearchHangHoa(string maHH)
         {
             SqlParameter[] para = new SqlParameter[]
@@ -79,6 +95,17 @@ namespace QuanLyNhaKho.DAO
              };
             return DataProvider.NonQuery(Config.PROC_INSERT_CHITIET_PHIEUXUAT, para);
         }
+        public static int AddChiTietPhieuNhap(ChiTietPhieuNhap chiTiet)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter(@"MaPN",chiTiet.MaPN),
+                    new SqlParameter(@"MaHH",chiTiet.MaHH),
+                    new SqlParameter(@"SoLuong",chiTiet.SoLuong),
+                    new SqlParameter(@"GhiChu",chiTiet.GhiChu)
+                };
+            return DataProvider.NonQuery(Config.PROC_INSERT_CHITIET_PHIEUNHAP,para);
+        }
 
         public static int AddPhieuXuat(PhieuXuat phieuXuat)
         {
@@ -87,13 +114,28 @@ namespace QuanLyNhaKho.DAO
                 new SqlParameter("@MaPX",phieuXuat.MaPX),
                 new SqlParameter("@MaCH",phieuXuat.MaCH),
                 new SqlParameter("@MaNV",phieuXuat.MaNV),
-                new SqlParameter("@TongTien",phieuXuat.TongTien),
                 new SqlParameter("@NgayXuat",phieuXuat.NgayXuat),
+                new SqlParameter("@TongTien",phieuXuat.TongTien),
                 new SqlParameter("@ChietKhau",phieuXuat.ChietKhau),
                 new SqlParameter("@ThanhTien",phieuXuat.ThanhTien),
-                new SqlParameter("@GhiChu",phieuXuat.NgayXuat)
+                new SqlParameter("@GhiChu",phieuXuat.GhiChu)
              };
             return DataProvider.NonQuery(Config.PROC_INSERT_PHIEUXUAT, para);
+        }
+        public static int AddPhieuNhap(PhieuNhap phieuNhap)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter(@"MaPN",phieuNhap.MaPN),
+                    new SqlParameter(@"MaNCC",phieuNhap.MaNCC),
+                    new SqlParameter(@"MaNV",phieuNhap.MaNV),
+                    new SqlParameter(@"NgayNhap",phieuNhap.NgayNhap),
+                    new SqlParameter(@"TongTien",phieuNhap.TongTien),
+                    new SqlParameter(@"ChietKhau",phieuNhap.ChietKhau),
+                    new SqlParameter(@"ThanhTien",phieuNhap.ThanhTien),
+                    new SqlParameter(@"GhiChu",phieuNhap.GhiChu)
+                };
+            return DataProvider.NonQuery(Config.PROC_INSERT_PHIEUNHAP, para);
         }
         // Table Nhan Vien
         public static DataTable GetMaNVNext()
@@ -187,6 +229,10 @@ namespace QuanLyNhaKho.DAO
         }
         
         //// Table NhaCungCap
+        public static DataTable GetListTenNCC()
+        {
+            return DataProvider.Query(Config.PROC_GET_LIST_TENNCC);
+        }
         public static DataTable GetMaNCCNext()
         {
             return DataProvider.Query(Config.PROC_GET_MA_NCC_NEXT);
@@ -229,6 +275,10 @@ namespace QuanLyNhaKho.DAO
             return DataProvider.NonQuery(Config.PROC_DELETE_NCC, para);
         }
         ///// CuaHang
+        public static DataTable GetListTenCH()
+        {
+            return DataProvider.Query(Config.PROC_GET_LIST_TENCH);
+        }
         public static DataTable GetListCH()
         {
             return DataProvider.Query(Config.PROC_GET_LIST_CH);
@@ -273,6 +323,10 @@ namespace QuanLyNhaKho.DAO
 
         /// Hang Hoa
         /// 
+        public static DataTable GetListTenHH()
+        {
+            return DataProvider.Query(Config.PROC_GET_LIST_TENHH);
+        }
         public static DataTable GetListHH()
         {
             return DataProvider.Query(Config.PROC_GET_LIST_HH_BYNHOMHANG);
@@ -325,7 +379,51 @@ namespace QuanLyNhaKho.DAO
               };
               return DataProvider.NonQuery(Config.PROC_DELETE_HH, para);
         }
-
+        ////// Phieu Nhap
+        public static DataTable GetListPN()
+        {
+            return DataProvider.Query(Config.PROC_GET_LIST_PHIEUNHAP);
+        }
+        public static DataTable GetMaPNNext()
+        {
+            return DataProvider.Query(Config.PROC_GET_MAPN_NEXT);
+        }
+        public static int AddPN(PhieuNhap phieuNhap)
+        {
+            SqlParameter[] para = new SqlParameter[] 
+            {
+                new SqlParameter(@"MaPN",phieuNhap.MaPN),
+                new SqlParameter(@"MaNCC",phieuNhap.MaNCC),
+                new SqlParameter(@"MaNV",phieuNhap.MaNV),
+                new SqlParameter(@"NgayNhap",phieuNhap.NgayNhap),
+                new SqlParameter(@"TongTien",phieuNhap.TongTien),
+                new SqlParameter(@"ChietKhau",phieuNhap.ThanhTien),
+                new SqlParameter(@"GhiChu",phieuNhap.GhiChu)
+            };
+            return DataProvider.NonQuery(Config.PROC_INSERT_PN, para);
+        }
+        public static int UpdatePN(PhieuNhap phieuNhap)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter(@"MaPN",phieuNhap.MaPN),
+                new SqlParameter(@"MaNCC",phieuNhap.MaNCC),
+                new SqlParameter(@"MaNV",phieuNhap.MaNV),
+                new SqlParameter(@"NgayNhap",phieuNhap.NgayNhap),
+                new SqlParameter(@"TongTien",phieuNhap.TongTien),
+                new SqlParameter(@"ChietKhau",phieuNhap.ThanhTien),
+                new SqlParameter(@"GhiChu",phieuNhap.GhiChu)
+            };
+            return DataProvider.NonQuery(Config.PROC_UPDATE_PN, para);
+        }
+        public static int DeletePN(PhieuNhap phieuNhap)
+        {
+            SqlParameter[] para = new SqlParameter[]
+           {
+                new SqlParameter(@"MaPN",phieuNhap.MaPN),
+           };
+            return DataProvider.NonQuery(Config.PROC_DELETE_PN, para);
+       }
     }
 
 

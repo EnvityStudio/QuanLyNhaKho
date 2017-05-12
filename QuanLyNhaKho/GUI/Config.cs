@@ -18,6 +18,8 @@ namespace QuanLyNhaKho
         public static string EDIT = "EDIT";
         public static string DELETE = "DELETE";
 
+        public static string CURRENT_NHANVIEN = "";
+     
         //
         public static string TAB_PHIEU_XUAT = "PHIEUXUAT";
         public static string TAB_CURRENT = "";
@@ -33,9 +35,11 @@ namespace QuanLyNhaKho
         public static string PROC_GET_LIST_PHIEUXUAT = "[GetListPhieuXuat]";
         public static string PROC_SEARCH_CUAHANG = "[SearchCuaHang]";
         public static string PROC_SEARCH_NHANVIEN = "[SearchNhanVien]";
+        public static string PROC_SEARCH_NCC = "SearchNCC";
         public static string PROC_GET_MA_PHIEUXUAT_NEXT = "[GetMaPXNext]";
         public static string PROC_GET_CHITIET_PHIEUXUAT = "[GetListCTPXByMaPX]";
         public static string PROC_INSERT_CHITIET_PHIEUXUAT = "[InsertCTPX]";
+        public static string PROC_INSERT_CHITIET_PHIEUNHAP = "InsertCTPN";
         public static string PROC_SEARCH_HANGHOA = "[SearchHangHoa]";
         public static string PROC_INSERT_PHIEUXUAT = "[InsertPX]";
         public static string PROC_GET_LIST_PHIEUNHAP = "GetListPhieuNhap";
@@ -62,12 +66,14 @@ namespace QuanLyNhaKho
         public static string PROC_UPDATE_NCC = "UpdateNCC";
         public static string PROC_DELETE_NCC = "DeleteNCC";
         public static string PROC_GET_LIST_NCC = "GetListNCC";
+        public static string PROC_GET_LIST_TENNCC = "GetListTenNCC";
         ///// Table CuaHang
         public static string PROC_GET_MA_CH_NEXT = "GetMaCHNext";
         public static string PROC_INSERT_CH = "InsertCH";
         public static string PROC_UPDATE_CH = "UpdateCH";
         public static string PROC_DELETE_CH = "DeleteCH";
         public static string PROC_GET_LIST_CH = "GetListCH";
+        public static string PROC_GET_LIST_TENCH = "GetListTenCH";
         /// Hang Hoa
         ///
         public static string PROC_GET_MA_HH_NEXT = "GetMaHHNext";
@@ -76,8 +82,15 @@ namespace QuanLyNhaKho
         public static string PROC_INSERT_HH = "InsertHangHoa";
         public static string PROC_DELETE_HH = "DeleteHangHoa";
         public static string PROC_GET_LIST_HH_BYNHOMHANG = "GetListHHByNhomHang";
-        
+        public static string PROC_GET_LIST_TENHH = "GetListTenHH";
+        /// Phieu Nhap
+        /// 
 
+        public static string PROC_GET_MAPN_NEXT = "GetMaPNNext";
+        public static string PROC_GET_LIST_PN = "GetListPhieuNhap";
+        public static string PROC_INSERT_PN = "InsertPhieuNhap";
+        public static string PROC_UPDATE_PN = "UpdatePhieuNhap";
+        public static string PROC_DELETE_PN = "DeletePhieuNhap";
 
 
 

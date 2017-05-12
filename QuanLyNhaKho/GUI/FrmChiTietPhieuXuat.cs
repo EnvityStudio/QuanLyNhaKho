@@ -35,21 +35,37 @@ namespace QuanLyNhaKho.GUI
             {
                 if (type == 0)
                 {
-                  
+                    LoadCombobox();
                 }
                 else if(type == 1)
                 {
-                    dtgChiTietPhieuXuat.DataSource = Bus.getChiTietPhieuXuat(maPX);
+                    dgv_ChiTietPhieuXuat.DataSource = Bus.getChiTietPhieuXuat(maPX);
+                    LoadCombobox();
+
                 }
 
             }
                 txtMaPX.Text = maPX;
         }
-
+        public void LoadCombobox()
+        {
+            cbb_TenCH.DataSource = Bus.GetListTenCH();
+            cbb_TenCH.ValueMember = "MaCH";
+            cbb_TenCH.DisplayMember = "TenCH";
+            //
+            cbb_TenHH.DataSource = Bus.GetListTenHH();
+            cbb_TenHH.ValueMember = "MaHH";
+            cbb_TenHH.DisplayMember = "TenHang";
+        }
+        public string MaHH()
+        {
+            string maHH = cbb_TenHH.SelectedValue.ToString();
+            return maHH;
+        }
         public void EnableToolBox(bool bol)
         {
             txtTenNV.Enabled = false;
-            txtMaCH.Enabled = bol;
+      //      txtMaCH.Enabled = bol;
             rtxtGhiChu.Enabled = bol;
             dtpNgayXuat.Enabled = bol;
             txtMaPX.Enabled = false;
@@ -58,7 +74,7 @@ namespace QuanLyNhaKho.GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!checkChiTietPXInvalid(txtMaHH.Text))
+            if (!checkChiTietPXInvalid(MaHH()))
                 return;
             if(txtSoLuong.Text == null || txtSoLuong.Text == "0")
             {
@@ -77,7 +93,7 @@ namespace QuanLyNhaKho.GUI
             newChiTiet["ThanhTien"] = txtThanhTien.Text;
             newChiTiet["GhiChu"] = rtxtGhiChu.Text;
             dataTableChiTiet.Rows.Add(newChiTiet);
-            dtgChiTietPhieuXuat.DataSource = dataTableChiTiet;
+            dgv_ChiTietPhieuXuat.DataSource = dataTableChiTiet;
         }
 
         private bool checkChiTietPXInvalid(string maHH)
@@ -89,7 +105,7 @@ namespace QuanLyNhaKho.GUI
                     return false ;
                 }
             }
-            if (txtTenHH == null || txtTenHH.Text == "")
+            if (cbb_TenHH.SelectedValue== null)
                 return false;
             return true;
         }
@@ -125,7 +141,7 @@ namespace QuanLyNhaKho.GUI
             ChiTietPhieuXuat chiTiet = new ChiTietPhieuXuat()
             {
                 MaPX = maPX,
-                MaHH = txtMaHH.Text,
+                MaHH = MaHH(),
                 SoLuong = int.Parse(txtSoLuong.Text),
                 ThanhTien = float.Parse(txtThanhTien.Text),
                 GhiChu = rtxtGhiChu.Text
@@ -133,22 +149,22 @@ namespace QuanLyNhaKho.GUI
             return chiTiet;
         }
 
-        private void txtMaHH_TextChanged(object sender, EventArgs e)
-        {
-            if (txtMaHH.Text != null)
-            {
-                DataTable dt = Bus.SearchHangHoa(txtMaHH.Text.ToUpper());
-                if (dt.Rows.Count > 0) {
-                    txtTenHH.Text = dt.Rows[0]["TenHang"].ToString();
-                    txtDonGia.Text = dt.Rows[0]["GiaXuat"].ToString();
-                }
-                else
-                {
-                    txtTenHH.Text = "";
-                    txtDonGia.Text = "";
-                }
-            }
-        }
+        //private void txtMaHH_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (MaHH() != null)
+        //    {
+        //        DataTable dt = Bus.SearchHangHoa(MaHH().ToUpper());
+        //        if (dt.Rows.Count > 0) {
+        //            txtTenHH.Text = dt.Rows[0]["TenHang"].ToString();
+        //            txtDonGia.Text = dt.Rows[0]["GiaXuat"].ToString();
+        //        }
+        //        else
+        //        {
+        //            txtTenHH.Text = "";
+        //            txtDonGia.Text = "";
+        //        }
+        //    }
+        //}
         private void setThanhTien()
         {
             if (txtSoLuong.Text == "" || txtSoLuong.Text == null || txtDonGia.Text == null || txtDonGia.Text == "")
@@ -167,7 +183,7 @@ namespace QuanLyNhaKho.GUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string maHH = txtMaHH.Text;
+            string maHH = MaHH();
             
             for(int i = 0; i < dataTableChiTiet.Rows.Count; i++)
             {
@@ -177,26 +193,33 @@ namespace QuanLyNhaKho.GUI
                     return;
                 }
             }
-            dtgChiTietPhieuXuat.DataSource = dataTableChiTiet;
+            dgv_ChiTietPhieuXuat.DataSource = dataTableChiTiet;
         }
 
         private void dtgChiTietPhieuXuat_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtMaHH.Text =  dtgChiTietPhieuXuat.Rows[e.RowIndex].Cells["MaHH"].Value.ToString();
-            txtSoLuong.Text = dtgChiTietPhieuXuat.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString();
-            txtThanhTien.Text = dtgChiTietPhieuXuat.Rows[e.RowIndex].Cells["ThanhTien"].Value.ToString();
-            txtDonGia.Text = dtgChiTietPhieuXuat.Rows[e.RowIndex].Cells["DonGia"].Value.ToString();
-            rtxtGhiChu.Text = dtgChiTietPhieuXuat.Rows[e.RowIndex].Cells["GhiChu"].Value.ToString();
+            //txtMaHH.Text =  dgv_ChiTietPhieuXuat.Rows[e.RowIndex].Cells["MaHH"].Value.ToString();
+            txtSoLuong.Text = dgv_ChiTietPhieuXuat.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString();
+            txtThanhTien.Text = dgv_ChiTietPhieuXuat.Rows[e.RowIndex].Cells["ThanhTien"].Value.ToString();
+            txtDonGia.Text = dgv_ChiTietPhieuXuat.Rows[e.RowIndex].Cells["DonGia"].Value.ToString();
+            rtxtGhiChu.Text = dgv_ChiTietPhieuXuat.Rows[e.RowIndex].Cells["GhiChu"].Value.ToString();
         }
-
+        private void dgv_ChiTietPhieuXuat_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dt = dgv_ChiTietPhieuXuat.SelectedRows[0];
+            txtMaPX.Text = dt.Cells["MaPX"].Value.ToString();
+       //     txtMaNV.Text = dt.Cells["MaNV"].Value.ToString();
+          
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             ChiTietPhieuXuat chiTiet;
             PhieuXuat phieuXuat = new PhieuXuat()
             {
                 MaPX = txtMaPX.Text.ToUpper(),
-                MaNV = txtMaNV.Text.ToUpper(),
-                MaCH = txtMaCH.Text.ToUpper(),
+                MaNV = Config.CURRENT_NHANVIEN,
+                //      MaCH = txtMaCH.Text.ToUpper(),
+                MaCH = cbb_TenCH.SelectedValue.ToString(),
                 NgayXuat = dtpNgayXuat.Value,
                 ChietKhau = 0,
                 ThanhTien = 0,
@@ -207,6 +230,8 @@ namespace QuanLyNhaKho.GUI
             int res = Bus.AddPhieuXuat(phieuXuat);
             if(res <= 0)
             {
+         
+                MessageBox.Show("Không thêm phiếu xuất!", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
             foreach (DataRow dr in dataTableChiTiet.Rows)
@@ -216,6 +241,8 @@ namespace QuanLyNhaKho.GUI
                     MaHH = dr["MaHH"].ToString(),
                     MaPX = dr["MaPX"].ToString(),
                     SoLuong = int.Parse(dr["SoLuong"].ToString()),
+                    DonGia = int.Parse(dr["DonGia"].ToString()),
+                    ThanhTien=int.Parse(dr["ThanhTien"].ToString()),
                     GhiChu = dr["GhiChu"].ToString()
                 };
                int result =  Bus.AddChiTietPhieuXuat(chiTiet);
@@ -226,13 +253,17 @@ namespace QuanLyNhaKho.GUI
                }
             }
             MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK);
+            this.Close();
         }
 
-        private void txtMaCH_TextChanged(object sender, EventArgs e)
-        {
-                txtTenCH.Text = Bus.getTenCuaHang(txtMaCH.Text.ToUpper());
-                txtDiaChiCH.Text = Bus.getDiaChiCuaHang(txtMaCH.Text.ToUpper());
-        }
+        //private void txtmach_textchanged(object sender, eventargs e)
+        //{
+        //    string mach = cbb_tench.selectedvalue.tostring();
+        //    //    txttench.text = bus.gettencuahang(txtmach.text.toupper());
+        //  //  txttench.text = bus.gettencuahang(mach.toupper());
+
+        //    txtdiachich.text = bus.getdiachicuahang(mach.toupper());
+        //}
 
         private void txtMaNV_TextChanged(object sender, EventArgs e)
         {
@@ -242,8 +273,38 @@ namespace QuanLyNhaKho.GUI
         private void btnCancel_Click(object sender, EventArgs e)
         {
             dataTableChiTiet.Reset();
-            dtgChiTietPhieuXuat.DataSource = null;
+            dgv_ChiTietPhieuXuat.DataSource = null;
             this.Close();
+        }
+
+        private void cbb_TenHH_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+            if (MaHH() != null)
+            {
+                DataTable dt = Bus.SearchHangHoa(MaHH().ToUpper());
+                if (dt.Rows.Count > 0)
+                {
+                  
+                    txtDonGia.Text = dt.Rows[0]["GiaXuat"].ToString();
+                }
+                else
+                {
+              
+                    txtDonGia.Text = "";
+                }
+            }
+        }
+
+        private void cbb_TenCH_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string maCH = cbb_TenCH.SelectedValue.ToString();
+            txtDiaChiCH.Text = Bus.getDiaChiCuaHang(maCH);
+            //    string mach = cbb_tench.selectedvalue.tostring();
+            //    //    txttench.text = bus.gettencuahang(txtmach.text.toupper());
+            //  //  txttench.text = bus.gettencuahang(mach.toupper());
+
+            //    txtdiachich.text = bus.getdiachicuahang(mach.toupper());
         }
     }
 }

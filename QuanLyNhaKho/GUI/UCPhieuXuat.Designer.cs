@@ -45,9 +45,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.txtTenCH = new System.Windows.Forms.TextBox();
-            this.txtMaCH = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cbb_TenCH = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lb_TongTien = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPhieuXuat)).BeginInit();
             this.SuspendLayout();
@@ -78,15 +78,16 @@
             this.dtgPhieuXuat.Location = new System.Drawing.Point(0, 0);
             this.dtgPhieuXuat.Name = "dtgPhieuXuat";
             this.dtgPhieuXuat.ReadOnly = true;
+            this.dtgPhieuXuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgPhieuXuat.Size = new System.Drawing.Size(1168, 297);
             this.dtgPhieuXuat.TabIndex = 0;
             this.dtgPhieuXuat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPhieuXuat_CellContentClick);
             // 
             // rtxtGhiChu
             // 
-            this.rtxtGhiChu.Location = new System.Drawing.Point(139, 179);
+            this.rtxtGhiChu.Location = new System.Drawing.Point(139, 218);
             this.rtxtGhiChu.Name = "rtxtGhiChu";
-            this.rtxtGhiChu.Size = new System.Drawing.Size(765, 83);
+            this.rtxtGhiChu.Size = new System.Drawing.Size(765, 44);
             this.rtxtGhiChu.TabIndex = 23;
             this.rtxtGhiChu.Text = "";
             // 
@@ -110,9 +111,9 @@
             // txtDiaChiCH
             // 
             this.txtDiaChiCH.Enabled = false;
-            this.txtDiaChiCH.Location = new System.Drawing.Point(139, 142);
+            this.txtDiaChiCH.Location = new System.Drawing.Point(139, 130);
             this.txtDiaChiCH.Name = "txtDiaChiCH";
-            this.txtDiaChiCH.Size = new System.Drawing.Size(249, 20);
+            this.txtDiaChiCH.Size = new System.Drawing.Size(333, 20);
             this.txtDiaChiCH.TabIndex = 16;
             // 
             // label8
@@ -127,7 +128,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(40, 145);
+            this.label7.Location = new System.Drawing.Point(39, 130);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 13);
             this.label7.TabIndex = 11;
@@ -136,7 +137,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 110);
+            this.label3.Location = new System.Drawing.Point(40, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 10;
@@ -203,35 +204,43 @@
             this.txtMaNV.Size = new System.Drawing.Size(100, 20);
             this.txtMaNV.TabIndex = 21;
             // 
-            // txtTenCH
+            // cbb_TenCH
             // 
-            this.txtTenCH.Enabled = false;
-            this.txtTenCH.Location = new System.Drawing.Point(140, 107);
-            this.txtTenCH.Name = "txtTenCH";
-            this.txtTenCH.Size = new System.Drawing.Size(130, 20);
-            this.txtTenCH.TabIndex = 15;
+            this.cbb_TenCH.FormattingEnabled = true;
+            this.cbb_TenCH.Location = new System.Drawing.Point(139, 89);
+            this.cbb_TenCH.Name = "cbb_TenCH";
+            this.cbb_TenCH.Size = new System.Drawing.Size(165, 21);
+            this.cbb_TenCH.TabIndex = 27;
             // 
-            // txtMaCH
+            // label15
             // 
-            this.txtMaCH.Location = new System.Drawing.Point(140, 76);
-            this.txtMaCH.Name = "txtMaCH";
-            this.txtMaCH.Size = new System.Drawing.Size(100, 20);
-            this.txtMaCH.TabIndex = 14;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(758, 187);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(81, 16);
+            this.label15.TabIndex = 28;
+            this.label15.Text = "Tổng tiền :";
             // 
-            // label2
+            // lb_TongTien
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Mã cửa hàng :";
+            this.lb_TongTien.AutoSize = true;
+            this.lb_TongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TongTien.ForeColor = System.Drawing.Color.Firebrick;
+            this.lb_TongTien.Location = new System.Drawing.Point(855, 183);
+            this.lb_TongTien.Name = "lb_TongTien";
+            this.lb_TongTien.Size = new System.Drawing.Size(49, 20);
+            this.lb_TongTien.TabIndex = 29;
+            this.lb_TongTien.Text = "1000";
             // 
             // UCPhieuXuat
             // 
             this.AccessibleDescription = "Phiếu xuất";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lb_TongTien);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.cbb_TenCH);
             this.Controls.Add(this.dtpNgayXuat);
             this.Controls.Add(this.btnViewMore);
             this.Controls.Add(this.panel1);
@@ -242,14 +251,11 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDiaChiCH);
-            this.Controls.Add(this.txtTenCH);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtMaPX);
-            this.Controls.Add(this.txtMaCH);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UCPhieuXuat";
             this.Size = new System.Drawing.Size(1168, 563);
@@ -279,8 +285,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMaNV;
-        private System.Windows.Forms.TextBox txtTenCH;
-        private System.Windows.Forms.TextBox txtMaCH;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbb_TenCH;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lb_TongTien;
     }
 }

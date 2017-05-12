@@ -242,6 +242,7 @@
             this.btn_PhieuNhap.Name = "btn_PhieuNhap";
             this.btn_PhieuNhap.Size = new System.Drawing.Size(152, 22);
             this.btn_PhieuNhap.Text = "Phiếu Nhâp";
+            this.btn_PhieuNhap.Click += new System.EventHandler(this.btn_PhieuNhap_Click);
             // 
             // btn_PhieuXuat
             // 
@@ -278,11 +279,12 @@
             this.btn_NhapHang.Name = "btn_NhapHang";
             this.btn_NhapHang.Size = new System.Drawing.Size(152, 22);
             this.btn_NhapHang.Text = "Nhập Hàng";
+            this.btn_NhapHang.Click += new System.EventHandler(this.btn_NhapHang_Click);
             // 
             // btn_XuatHang
             // 
             this.btn_XuatHang.Name = "btn_XuatHang";
-            this.btn_XuatHang.Size = new System.Drawing.Size(152, 22);
+            this.btn_XuatHang.Size = new System.Drawing.Size(135, 22);
             this.btn_XuatHang.Text = "Xuất Hàng";
             this.btn_XuatHang.Click += new System.EventHandler(this.btn_XuatHang_Click);
             // 

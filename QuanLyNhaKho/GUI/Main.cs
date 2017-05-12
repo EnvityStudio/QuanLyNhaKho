@@ -22,6 +22,7 @@ namespace QuanLyNhaKho
         private UCCuaHang ucCuaHang;
         private UCHangHoa ucHangHoa;
         private UCNhaCungCap ucNhaCungCap;
+        private UCPhieuNhap ucPhieuNhap;
 
 
         private Bitmap img = Properties.Resources.delete;
@@ -35,7 +36,7 @@ namespace QuanLyNhaKho
             ucNhomHang = new UCNhomHang();
             ucCuaHang = new UCCuaHang();
             ucNhaCungCap = new UCNhaCungCap();
-
+            ucPhieuNhap = new UCPhieuNhap();
 
         }
 
@@ -305,6 +306,17 @@ namespace QuanLyNhaKho
         {
             FrmChiTietPhieuXuat frmChiTietPhieuXuat = new FrmChiTietPhieuXuat(Bus.getMaPXNext(),0);
             frmChiTietPhieuXuat.Show();
+        }
+
+        private void btn_PhieuNhap_Click(object sender, EventArgs e)
+        {
+            AddNewTab(ucPhieuNhap);
+        }
+
+        private void btn_NhapHang_Click(object sender, EventArgs e)
+        {
+            FrmChiTietPhieuNhap frm = new FrmChiTietPhieuNhap(Bus.GetMaPNNext(), 0);
+            frm.Show();
         }
     }
 }

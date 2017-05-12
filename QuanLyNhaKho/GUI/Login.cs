@@ -22,11 +22,12 @@ namespace QuanLyNhaKho
         private void btnLogin_Click(object sender, EventArgs e)
         {
           
-            var userName = txtUserName.Text;
+            var maNV = txtUserName.Text;
             var password = txtPassword.Text;
+            Config.CURRENT_NHANVIEN = maNV;
             NhanVien nhanVien = new NhanVien()
             {
-                UserName = userName,
+                MaNV = maNV,
                 Password = password
             };
             var isExist = Bus.CheckAccount(nhanVien);
@@ -44,7 +45,7 @@ namespace QuanLyNhaKho
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

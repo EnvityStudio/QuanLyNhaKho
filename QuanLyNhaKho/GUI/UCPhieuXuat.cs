@@ -24,25 +24,35 @@ namespace QuanLyNhaKho.GUI
         public void LoadData()
         {
             dtgPhieuXuat.DataSource = Bus.getListPhieuXuat();
+            cbb_TenCH.DataSource = Bus.GetListTenCH();
+            cbb_TenCH.ValueMember = "MaCH";
+            cbb_TenCH.DisplayMember = "TenCH";
         }
 
         private void dtgPhieuXuat_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMaPX.Text =  dtgPhieuXuat.Rows[e.RowIndex].Cells["MaPX"].Value.ToString();
-            txtMaCH.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["MaCH"].Value.ToString();
+       //     txtMaCH.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["MaCH"].Value.ToString();
             rtxtGhiChu.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["GhiChu"].Value.ToString();
             txtMaNV.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["MaNV"].Value.ToString();
             dtpNgayXuat.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["NgayXuat"].Value.ToString();
-            txtTenCH.Text = Bus.getTenCuaHang(txtMaCH.Text);
+            //  txtTenCH.Text = Bus.getTenCuaHang(txtMaCH.Text);
+         //   cbb_TenCH.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells[""].Value.ToString();
             txtTenNV.Text = Bus.getTenNhanVien(txtMaNV.Text);
-            txtDiaChiCH.Text = Bus.getDiaChiCuaHang(txtMaCH.Text);
+            lb_TongTien.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["TongTien"].Value.ToString();
+     //       txtDiaChiCH.Text = Bus.getDiaChiCuaHang(txtMaCH.Text);
+        }
+        private void dtgPhieuXuat_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dt = dtgPhieuXuat.SelectedRows[0];
+
         }
         public void ClearToolBox()
         {
-            txtMaCH.Text = "";
+       //     txtMaCH.Text = "";
             txtMaNV.Text = "";
             txtMaPX.Text = "";
-            txtTenCH.Text = "";
+       //     txtTenCH.Text = "";
             txtTenNV.Text = "";
             rtxtGhiChu.Text = "";
         }
@@ -55,7 +65,7 @@ namespace QuanLyNhaKho.GUI
         public void EnableToolBox(bool bol)
         {
             txtTenNV.Enabled = false;
-            txtMaCH.Enabled = bol;
+   //         txtMaCH.Enabled = bol;
             rtxtGhiChu.Enabled = bol;
             dtpNgayXuat.Enabled = bol;
             txtMaPX.Enabled = false;
@@ -74,7 +84,6 @@ namespace QuanLyNhaKho.GUI
             frmChiTiet.ShowDialog();
             LoadData();
         }
-
 
         
     }

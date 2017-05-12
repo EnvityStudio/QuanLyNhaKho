@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyNhaKho.DAO;
+using QuanLyNhaKho.BUS;
 
 namespace QuanLyNhaKho.GUI
 {
@@ -15,6 +17,68 @@ namespace QuanLyNhaKho.GUI
         public UCPhieuNhap()
         {
             InitializeComponent();
+            LoadData();
+        }
+        public void LoadData()
+        {
+            dgvPhieuNhap.DataSource = Dao.GetListPN();
+
+            dgvPhieuNhap.Columns["MaPN"].HeaderText = "Mã Phiếu Nhập";
+            dgvPhieuNhap.Columns["TenNCC"].HeaderText = "Tên NCC";
+            dgvPhieuNhap.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
+            dgvPhieuNhap.Columns["NgayNhap"].HeaderText = "Ngày Nhập";
+            dgvPhieuNhap.Columns["TongTien"].HeaderText = "Tổng Tiền";
+            dgvPhieuNhap.Columns["ChietKhau"].HeaderText = "Chiết Khấu";
+            dgvPhieuNhap.Columns["ThanhTien"].HeaderText = "Thành Tiền";
+            dgvPhieuNhap.Columns["GhiChu"].HeaderText = "Ghi Chú";
+            dgvPhieuNhap.Columns["MaNCC"].Visible = false;
+            panel_PN.Enabled = true;
+            cbbTenNCC.DataSource = Bus.GetListTenNCC();
+            cbbTenNCC.DisplayMember = "TenNCC";
+            cbbTenNCC.ValueMember = "MaNCC";
+            
+        }
+
+        private void dgvPhieuNhap_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dt = dgvPhieuNhap.SelectedRows[0];
+            txtMaPN.Text = dt.Cells["MaPN"].Value.ToString();
+            txtThanhTien.Text = dt.Cells["ThanhTien"].Value.ToString();
+            lb_TongTien.Text = dt.Cells["TongTien"].Value.ToString();
+            txtChietKhau.Text = dt.Cells["ChietKhau"].Value.ToString();
+            dtpNgayNhap.Text = dt.Cells["NgayNhap"].Value.ToString();
+            rtxtGhiChu.Text = dt.Cells["GhiChu"].Value.ToString();
+            cbbTenNCC.Text = dt.Cells["TenNCC"].Value.ToString();
+            cbbTenNCC.SelectedValue = dt.Cells["MaNCC"].Value.ToString();
+
+
+        }
+
+        private void cbbTenNCC_TextChanged(object sender, EventArgs e)
+        {
+            
+            
+        }
+      
+                
+
+        private void cbbTenNCC_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string MaNCC = cbbTenNCC.SelectedValue.ToString();
+            DataTable dt = Bus.SearchNCC(MaNCC);
+            if (dt.Rows.Count>0)
+            {
+                
+                txtDiaChiNCC.Text = dt.Rows[0]["DiaChi"].ToString();
+            }
+            else
+                txtDiaChiNCC.Text = "";
+        }
+
+        private void btnXCT_Click(object sender, EventArgs e)
+        {
+            FrmChiTietPhieuNhap frm = new FrmChiTietPhieuNhap(txtMaPN.Text,1);
+            frm.Show();
         }
     }
 }
