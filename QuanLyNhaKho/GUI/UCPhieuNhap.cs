@@ -80,5 +80,12 @@ namespace QuanLyNhaKho.GUI
             FrmChiTietPhieuNhap frm = new FrmChiTietPhieuNhap(txtMaPN.Text,1);
             frm.Show();
         }
+
+        private void btn_TimKiem_Click(object sender, EventArgs e)
+        {
+            String str = string.Format("MaPN like '%{0}' or TenNCC like '%{0}' or MaNV like '%{0}' ", txtTimKiem.Text);
+            (dgvPhieuNhap.DataSource as DataTable).DefaultView.RowFilter = str;
+
+        }
     }
 }

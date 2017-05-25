@@ -30,20 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel_InforNCC = new System.Windows.Forms.Panel();
+            this.rtxt_GhiChu = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.lb_SDT = new System.Windows.Forms.Label();
+            this.txt_DiaChi = new System.Windows.Forms.TextBox();
+            this.lb_DiaChi = new System.Windows.Forms.Label();
+            this.txt_TenNCC = new System.Windows.Forms.TextBox();
+            this.lb_TenNCC = new System.Windows.Forms.Label();
+            this.txt_MaNCC = new System.Windows.Forms.TextBox();
+            this.lb_MaNCC = new System.Windows.Forms.Label();
             this.panel_SearchNCC = new System.Windows.Forms.Panel();
             this.btn_TimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.dgv_NhaCungCap = new System.Windows.Forms.DataGridView();
-            this.lb_MaNCC = new System.Windows.Forms.Label();
-            this.txt_MaNCC = new System.Windows.Forms.TextBox();
-            this.txt_TenNCC = new System.Windows.Forms.TextBox();
-            this.lb_TenNCC = new System.Windows.Forms.Label();
-            this.txt_DiaChi = new System.Windows.Forms.TextBox();
-            this.lb_DiaChi = new System.Windows.Forms.Label();
-            this.txtSDT = new System.Windows.Forms.TextBox();
-            this.lb_SDT = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.rtxt_GhiChu = new System.Windows.Forms.RichTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel_InforNCC.SuspendLayout();
             this.panel_SearchNCC.SuspendLayout();
@@ -69,6 +69,88 @@
             this.panel_InforNCC.Name = "panel_InforNCC";
             this.panel_InforNCC.Size = new System.Drawing.Size(929, 211);
             this.panel_InforNCC.TabIndex = 0;
+            // 
+            // rtxt_GhiChu
+            // 
+            this.rtxt_GhiChu.Location = new System.Drawing.Point(538, 80);
+            this.rtxt_GhiChu.Name = "rtxt_GhiChu";
+            this.rtxt_GhiChu.Size = new System.Drawing.Size(311, 96);
+            this.rtxt_GhiChu.TabIndex = 5;
+            this.rtxt_GhiChu.Text = "";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(412, 111);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Ghi Chú: ";
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(222, 174);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(100, 20);
+            this.txtSDT.TabIndex = 4;
+            // 
+            // lb_SDT
+            // 
+            this.lb_SDT.AutoSize = true;
+            this.lb_SDT.Location = new System.Drawing.Point(84, 174);
+            this.lb_SDT.Name = "lb_SDT";
+            this.lb_SDT.Size = new System.Drawing.Size(81, 13);
+            this.lb_SDT.TabIndex = 6;
+            this.lb_SDT.Text = "Số Điện Thoại: ";
+            // 
+            // txt_DiaChi
+            // 
+            this.txt_DiaChi.Location = new System.Drawing.Point(222, 123);
+            this.txt_DiaChi.Name = "txt_DiaChi";
+            this.txt_DiaChi.Size = new System.Drawing.Size(100, 20);
+            this.txt_DiaChi.TabIndex = 3;
+            // 
+            // lb_DiaChi
+            // 
+            this.lb_DiaChi.AutoSize = true;
+            this.lb_DiaChi.Location = new System.Drawing.Point(88, 123);
+            this.lb_DiaChi.Name = "lb_DiaChi";
+            this.lb_DiaChi.Size = new System.Drawing.Size(44, 13);
+            this.lb_DiaChi.TabIndex = 4;
+            this.lb_DiaChi.Text = "Địa Chỉ:";
+            // 
+            // txt_TenNCC
+            // 
+            this.txt_TenNCC.Location = new System.Drawing.Point(222, 67);
+            this.txt_TenNCC.Name = "txt_TenNCC";
+            this.txt_TenNCC.Size = new System.Drawing.Size(100, 20);
+            this.txt_TenNCC.TabIndex = 2;
+            // 
+            // lb_TenNCC
+            // 
+            this.lb_TenNCC.AutoSize = true;
+            this.lb_TenNCC.Location = new System.Drawing.Point(84, 70);
+            this.lb_TenNCC.Name = "lb_TenNCC";
+            this.lb_TenNCC.Size = new System.Drawing.Size(57, 13);
+            this.lb_TenNCC.TabIndex = 2;
+            this.lb_TenNCC.Text = "Tên NCC: ";
+            // 
+            // txt_MaNCC
+            // 
+            this.txt_MaNCC.Enabled = false;
+            this.txt_MaNCC.Location = new System.Drawing.Point(222, 31);
+            this.txt_MaNCC.Name = "txt_MaNCC";
+            this.txt_MaNCC.Size = new System.Drawing.Size(100, 20);
+            this.txt_MaNCC.TabIndex = 1;
+            // 
+            // lb_MaNCC
+            // 
+            this.lb_MaNCC.AutoSize = true;
+            this.lb_MaNCC.Location = new System.Drawing.Point(88, 31);
+            this.lb_MaNCC.Name = "lb_MaNCC";
+            this.lb_MaNCC.Size = new System.Drawing.Size(53, 13);
+            this.lb_MaNCC.TabIndex = 0;
+            this.lb_MaNCC.Text = "Mã NCC: ";
             // 
             // panel_SearchNCC
             // 
@@ -99,6 +181,8 @@
             // 
             // dgv_NhaCungCap
             // 
+            this.dgv_NhaCungCap.AccessibleDescription = "nha cung cap";
+            this.dgv_NhaCungCap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_NhaCungCap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_NhaCungCap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_NhaCungCap.Location = new System.Drawing.Point(0, 237);
@@ -109,94 +193,13 @@
             this.dgv_NhaCungCap.TabIndex = 2;
             this.dgv_NhaCungCap.Click += new System.EventHandler(this.dgv_NhaCungCap_Click);
             // 
-            // lb_MaNCC
-            // 
-            this.lb_MaNCC.AutoSize = true;
-            this.lb_MaNCC.Location = new System.Drawing.Point(88, 31);
-            this.lb_MaNCC.Name = "lb_MaNCC";
-            this.lb_MaNCC.Size = new System.Drawing.Size(53, 13);
-            this.lb_MaNCC.TabIndex = 0;
-            this.lb_MaNCC.Text = "Mã NCC: ";
-            // 
-            // txt_MaNCC
-            // 
-            this.txt_MaNCC.Enabled = false;
-            this.txt_MaNCC.Location = new System.Drawing.Point(222, 31);
-            this.txt_MaNCC.Name = "txt_MaNCC";
-            this.txt_MaNCC.Size = new System.Drawing.Size(100, 20);
-            this.txt_MaNCC.TabIndex = 1;
-            // 
-            // txt_TenNCC
-            // 
-            this.txt_TenNCC.Location = new System.Drawing.Point(222, 67);
-            this.txt_TenNCC.Name = "txt_TenNCC";
-            this.txt_TenNCC.Size = new System.Drawing.Size(100, 20);
-            this.txt_TenNCC.TabIndex = 3;
-            // 
-            // lb_TenNCC
-            // 
-            this.lb_TenNCC.AutoSize = true;
-            this.lb_TenNCC.Location = new System.Drawing.Point(84, 70);
-            this.lb_TenNCC.Name = "lb_TenNCC";
-            this.lb_TenNCC.Size = new System.Drawing.Size(57, 13);
-            this.lb_TenNCC.TabIndex = 2;
-            this.lb_TenNCC.Text = "Tên NCC: ";
-            // 
-            // txt_DiaChi
-            // 
-            this.txt_DiaChi.Location = new System.Drawing.Point(222, 123);
-            this.txt_DiaChi.Name = "txt_DiaChi";
-            this.txt_DiaChi.Size = new System.Drawing.Size(100, 20);
-            this.txt_DiaChi.TabIndex = 5;
-            // 
-            // lb_DiaChi
-            // 
-            this.lb_DiaChi.AutoSize = true;
-            this.lb_DiaChi.Location = new System.Drawing.Point(88, 123);
-            this.lb_DiaChi.Name = "lb_DiaChi";
-            this.lb_DiaChi.Size = new System.Drawing.Size(44, 13);
-            this.lb_DiaChi.TabIndex = 4;
-            this.lb_DiaChi.Text = "Địa Chỉ:";
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Location = new System.Drawing.Point(222, 174);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(100, 20);
-            this.txtSDT.TabIndex = 7;
-            // 
-            // lb_SDT
-            // 
-            this.lb_SDT.AutoSize = true;
-            this.lb_SDT.Location = new System.Drawing.Point(84, 174);
-            this.lb_SDT.Name = "lb_SDT";
-            this.lb_SDT.Size = new System.Drawing.Size(81, 13);
-            this.lb_SDT.TabIndex = 6;
-            this.lb_SDT.Text = "Số Điện Thoại: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(412, 111);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Ghi Chú: ";
-            // 
-            // rtxt_GhiChu
-            // 
-            this.rtxt_GhiChu.Location = new System.Drawing.Point(538, 80);
-            this.rtxt_GhiChu.Name = "rtxt_GhiChu";
-            this.rtxt_GhiChu.Size = new System.Drawing.Size(311, 96);
-            this.rtxt_GhiChu.TabIndex = 9;
-            this.rtxt_GhiChu.Text = "";
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
             // UCNhaCungCap
             // 
+            this.AccessibleDescription = "Nhà CC";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgv_NhaCungCap);

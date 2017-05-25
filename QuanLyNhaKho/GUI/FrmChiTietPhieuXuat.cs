@@ -82,6 +82,7 @@ namespace QuanLyNhaKho.GUI
                 MessageBox.Show("Nhập số lượng","Thông báo!",MessageBoxButtons.OK);
                 return ;
             }
+            
             tongTien += int.Parse(txtThanhTien.Text);
             txtTongTien.Text = tongTien.ToString();
             DataRow newChiTiet = dataTableChiTiet.NewRow();
@@ -92,6 +93,13 @@ namespace QuanLyNhaKho.GUI
             newChiTiet["DonGia"] = txtDonGia.Text;
             newChiTiet["ThanhTien"] = txtThanhTien.Text;
             newChiTiet["GhiChu"] = rtxtGhiChu.Text;
+            foreach(DataRow dr in dataTableChiTiet.Rows)
+            {
+                if(dr["MaHH"].ToString() == chiTiet.MaHH.ToString())
+                {
+                //    MessageBox.Show("Hàng đã tồn tại",);
+                }
+            }
             dataTableChiTiet.Rows.Add(newChiTiet);
             dgv_ChiTietPhieuXuat.DataSource = dataTableChiTiet;
         }

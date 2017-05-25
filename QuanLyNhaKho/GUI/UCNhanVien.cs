@@ -14,7 +14,7 @@ namespace QuanLyNhaKho.GUI
 {
     public partial class UCNhanVien : UserControl
     {
-        
+        private bool action =true;
         public UCNhanVien()
         {
             InitializeComponent();
@@ -29,6 +29,12 @@ namespace QuanLyNhaKho.GUI
         {
            
             dgv_NhanVien.DataSource =  Bus.GetListNhanVien();
+            dgv_NhanVien.Columns["MaNV"].HeaderText = "Mã NV";
+            dgv_NhanVien.Columns["HoTen"].HeaderText = "Họ Tên";
+            dgv_NhanVien.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
+            dgv_NhanVien.Columns["GioiTinh"].HeaderText = "Giới Tính";
+            dgv_NhanVien.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+            dgv_NhanVien.Columns["SDT"].HeaderText = "Số ĐT";
         }
         public void EnablePanel()
         {
@@ -46,40 +52,47 @@ namespace QuanLyNhaKho.GUI
             
         }
 
-      
-
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
             DataTable dataTableEmployee = Bus.GetListNhanVien();
-            String str = string.Format("HoTen like '%{0}%'", txtTimKiem.Text);
-            String str1 = string.Format("MaNV like '%{0}'", txtTimKiem.Text);
-            String str2 = string.Format("DiaChi like '%{0}'", txtTimKiem.Text);
-            dataTableEmployee.DefaultView.RowFilter = str;
-            dataTableEmployee.DefaultView.RowFilter = str1;
-            dataTableEmployee.DefaultView.RowFilter = str2;
-         
+            String str = string.Format("HoTen like '%{0}%' or MaNV like '%{0}%' or DiaChi like '%{0}%' or GioiTinh like '%{0}%'", txtTimKiem.Text);
+            (dgv_NhanVien.DataSource as DataTable).DefaultView.RowFilter = str;
         }
+ 
 
         private void dgv_NhanVien_Click(object sender, EventArgs e)
         {
-
-            DataGridViewRow dtRow = dgv_NhanVien.SelectedRows[0];
-            txtMaNV.Text = dtRow.Cells["MaNV"].Value.ToString();
-            txtHoTen.Text = dtRow.Cells["HoTen"].Value.ToString();
-            txtQueQuan.Text = dtRow.Cells["DiaChi"].Value.ToString();
-            txtSoDT.Text = dtRow.Cells["SDT"].Value.ToString();
-            txtTaiKhoan.Text = dtRow.Cells["UserName"].Value.ToString();
-            txtMK.Text = dtRow.Cells["Password"].Value.ToString();
-            dtp_NgaySinh.Text = dtRow.Cells["NgaySinh"].Value.ToString();
-            if (dtRow.Cells["GioiTinh"].Value.ToString().Contains("Nam"))
+            if (action == false)
             {
-                rdGTNam.Checked = true;
-                rdGTNu.Checked = false;
+                return;
             }
             else
             {
-                rdGTNu.Checked = true;
-                rdGTNam.Checked = false;
+                try
+                {
+                    DataGridViewRow dtRow = dgv_NhanVien.SelectedRows[0];
+                    txtMaNV.Text = dtRow.Cells["MaNV"].Value.ToString();
+                    txtHoTen.Text = dtRow.Cells["HoTen"].Value.ToString();
+                    txtQueQuan.Text = dtRow.Cells["DiaChi"].Value.ToString();
+                    txtSoDT.Text = dtRow.Cells["SDT"].Value.ToString();
+                    txtTaiKhoan.Text = dtRow.Cells["UserName"].Value.ToString();
+                    txtMK.Text = dtRow.Cells["Password"].Value.ToString();
+                    dtp_NgaySinh.Text = dtRow.Cells["NgaySinh"].Value.ToString();
+                    if (dtRow.Cells["GioiTinh"].Value.ToString().Contains("Nam"))
+                    {
+                        rdGTNam.Checked = true;
+                        rdGTNu.Checked = false;
+                    }
+                    else
+                    {
+                        rdGTNu.Checked = true;
+                        rdGTNam.Checked = false;
+                    }
+                }
+                catch(Exception err)
+                {
+                    Console.Write(err.Message);
+                }
             }
         }
         public void SetMaNVNext()
@@ -88,6 +101,7 @@ namespace QuanLyNhaKho.GUI
             txtMaNV.Text = Bus.GetMaNVNext();
             txtMaNV.Enabled = false;
             pn_Info.Enabled = true;
+            action = false;
         }
         public bool CheckTextBox()
         {
@@ -150,7 +164,6 @@ namespace QuanLyNhaKho.GUI
         }
         public void AddNhanVien()
         {
-
             if(!CheckTextBox())
             {
                 return;

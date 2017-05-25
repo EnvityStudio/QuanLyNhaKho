@@ -50,6 +50,12 @@
     <Compile Include="BUS\Bus.cs" />
     <Compile Include="DAO\Dao.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="GUI\DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FrmChiTietPhieuNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     <Compile Include="VO\NhomHang.cs" />
     <Compile Include="VO\PhieuNhap.cs" />
     <Compile Include="VO\PhieuXuat.cs" />
+    <EmbeddedResource Include="GUI\DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmChiTietPhieuNhap.resx">
       <DependentUpon>FrmChiTietPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>

@@ -66,6 +66,14 @@ namespace QuanLyNhaKho.BUS
             string name = dt.Rows[0]["HoTen"].ToString();
             return name;
         }
+        public static DataTable SearchNhanVien(string MaNV)
+        {
+            return Dao.SearchNhanVien(MaNV);
+        }
+        public static int UpdatePassword(NhanVien nhanVien)
+        {
+          return  Dao.UpdatePassword(nhanVien);
+        }
 
         public static DataTable getChiTietPhieuXuat(string maPX)
         {
@@ -78,6 +86,20 @@ namespace QuanLyNhaKho.BUS
         public static DataTable SearchHangHoa(string maHH)
         {
             return Dao.SearchHangHoa(maHH);
+        }
+        public static NhanVien GetDataNhanVien(string MaNV)
+        {
+            DataTable dt = SearchNhanVien(MaNV);
+            string hoTen, diaChi, sdt, username, password, gioiTinh;
+            DateTime ngaySinh = new DateTime();
+            hoTen = dt.Rows[0]["HoTen"].ToString();
+            ngaySinh = DateTime.Parse(dt.Rows[0]["NgaySinh"].ToString());
+            diaChi = dt.Rows[0]["DiaChi"].ToString();
+            sdt = dt.Rows[0]["SDT"].ToString();
+            gioiTinh = dt.Rows[0]["GioiTinh"].ToString();
+            username = dt.Rows[0]["UserName"].ToString();
+            password = dt.Rows[0]["Password"].ToString();
+            return new NhanVien(MaNV,hoTen,ngaySinh,gioiTinh,diaChi,sdt,username,password);
         }
         public static int AddChiTietPhieuXuat(ChiTietPhieuXuat chiTiet)
         {

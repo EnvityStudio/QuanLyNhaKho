@@ -19,8 +19,11 @@ namespace QuanLyNhaKho
         public static string DELETE = "DELETE";
 
         public static string CURRENT_NHANVIEN = "";
-     
+
+
+        public static string PROC_EDIT_PASSWORD = "EditPassword";
         //
+        public static string TAB_PHIEUNHAP = "PHIEUNHAP";
         public static string TAB_PHIEU_XUAT = "PHIEUXUAT";
         public static string TAB_CURRENT = "";
         public static string TAB_NHANVIEN = "NHANVIEN";

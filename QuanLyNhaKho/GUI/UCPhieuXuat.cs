@@ -34,11 +34,11 @@ namespace QuanLyNhaKho.GUI
             txtMaPX.Text =  dtgPhieuXuat.Rows[e.RowIndex].Cells["MaPX"].Value.ToString();
        //     txtMaCH.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["MaCH"].Value.ToString();
             rtxtGhiChu.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["GhiChu"].Value.ToString();
-            txtMaNV.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["MaNV"].Value.ToString();
+     //       txtMaNV.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["MaNV"].Value.ToString();
             dtpNgayXuat.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["NgayXuat"].Value.ToString();
             //  txtTenCH.Text = Bus.getTenCuaHang(txtMaCH.Text);
          //   cbb_TenCH.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells[""].Value.ToString();
-            txtTenNV.Text = Bus.getTenNhanVien(txtMaNV.Text);
+  //          txtTenNV.Text = Bus.getTenNhanVien(txtMaNV.Text);
             lb_TongTien.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["TongTien"].Value.ToString();
      //       txtDiaChiCH.Text = Bus.getDiaChiCuaHang(txtMaCH.Text);
         }
@@ -50,7 +50,7 @@ namespace QuanLyNhaKho.GUI
         public void ClearToolBox()
         {
        //     txtMaCH.Text = "";
-            txtMaNV.Text = "";
+            //txtMaNV.Text = "";
             txtMaPX.Text = "";
        //     txtTenCH.Text = "";
             txtTenNV.Text = "";
@@ -65,11 +65,9 @@ namespace QuanLyNhaKho.GUI
         public void EnableToolBox(bool bol)
         {
             txtTenNV.Enabled = false;
-   //         txtMaCH.Enabled = bol;
             rtxtGhiChu.Enabled = bol;
             dtpNgayXuat.Enabled = bol;
             txtMaPX.Enabled = false;
-            txtMaNV.Enabled = bol;
         } 
 
         private void btnViewMore_Click(object sender, EventArgs e)
@@ -85,6 +83,11 @@ namespace QuanLyNhaKho.GUI
             LoadData();
         }
 
-        
+        private void btn_TimKiem_Click(object sender, EventArgs e)
+        {
+            String str = string.Format("MaPX like '%{0}' or MaCH like '%{0}' or MaNV like '%{0}' ", txtTimKiem.Text);
+            (dtgPhieuXuat.DataSource as DataTable).DefaultView.RowFilter = str;
+
+        }
     }
 }

@@ -83,7 +83,7 @@
             this.rtxt_GhiChu.Location = new System.Drawing.Point(475, 36);
             this.rtxt_GhiChu.Name = "rtxt_GhiChu";
             this.rtxt_GhiChu.Size = new System.Drawing.Size(412, 69);
-            this.rtxt_GhiChu.TabIndex = 105;
+            this.rtxt_GhiChu.TabIndex = 3;
             this.rtxt_GhiChu.Text = "";
             // 
             // lb_TenNhom
@@ -100,7 +100,7 @@
             this.txt_TenNhom.Location = new System.Drawing.Point(182, 72);
             this.txt_TenNhom.Name = "txt_TenNhom";
             this.txt_TenNhom.Size = new System.Drawing.Size(129, 20);
-            this.txt_TenNhom.TabIndex = 103;
+            this.txt_TenNhom.TabIndex = 1;
             // 
             // lb_SoLuong
             // 
@@ -126,7 +126,7 @@
             this.txtSoLuong.Location = new System.Drawing.Point(182, 112);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(129, 20);
-            this.txtSoLuong.TabIndex = 101;
+            this.txtSoLuong.TabIndex = 2;
             // 
             // txt_MaNhomHang
             // 
@@ -134,7 +134,7 @@
             this.txt_MaNhomHang.Location = new System.Drawing.Point(182, 36);
             this.txt_MaNhomHang.Name = "txt_MaNhomHang";
             this.txt_MaNhomHang.Size = new System.Drawing.Size(129, 20);
-            this.txt_MaNhomHang.TabIndex = 100;
+            this.txt_MaNhomHang.TabIndex = 0;
             // 
             // panel_SearchNhomHang
             // 
@@ -165,6 +165,7 @@
             // 
             // dgv_NhomHang
             // 
+            this.dgv_NhomHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_NhomHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_NhomHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_NhomHang.Location = new System.Drawing.Point(0, 241);
@@ -176,6 +177,7 @@
             // 
             // UCNhomHang
             // 
+            this.AccessibleDescription = "Nhóm Hàng";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgv_NhomHang);

@@ -181,6 +181,7 @@
             // 
             // dgv_ChiTietPhieuXuat
             // 
+            this.dgv_ChiTietPhieuXuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_ChiTietPhieuXuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ChiTietPhieuXuat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_ChiTietPhieuXuat.Location = new System.Drawing.Point(0, 0);

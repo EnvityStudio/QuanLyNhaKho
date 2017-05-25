@@ -59,11 +59,9 @@ namespace QuanLyNhaKho.GUI
 
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
+            String str = string.Format("MaNhom like '%{0}' or TenNhom like '%{0}'", txtTimKiem.Text);
+            (dgv_NhomHang.DataSource as DataTable).DefaultView.RowFilter = str;
 
-            String str = string.Format("MaNhom like '%{0}'", txtTimKiem.Text);
-            String str1 = string.Format("TenNhom like '%{0}'", txtTimKiem.Text);
-            dt.DefaultView.RowFilter = str;
-            dt.DefaultView.RowFilter = str1;
         }
         public void ClearData()
         {

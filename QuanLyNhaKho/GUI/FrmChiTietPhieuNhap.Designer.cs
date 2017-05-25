@@ -157,6 +157,7 @@
             this.txtSoLuong.TabIndex = 62;
             this.txtSoLuong.Text = "0";
             this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // label7
             // 
@@ -251,7 +252,8 @@
             // 
             // dgvChiTietPhieuNhap
             // 
-            this.dgvChiTietPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChiTietPhieuNhap.AllowUserToAddRows = false;
+            this.dgvChiTietPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvChiTietPhieuNhap.Location = new System.Drawing.Point(5, 375);
             this.dgvChiTietPhieuNhap.Name = "dgvChiTietPhieuNhap";
             this.dgvChiTietPhieuNhap.ReadOnly = true;
@@ -402,7 +404,7 @@
             this.Controls.Add(this.dgvChiTietPhieuNhap);
             this.Controls.Add(this.lb_PhieuNhapKho);
             this.Name = "FrmChiTietPhieuNhap";
-            this.Text = "FrmChiTietPhieuNhap";
+            this.Text = "Chi Tiết Phiếu Nhập";
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuNhap)).EndInit();
             this.panel_InforCTPN.ResumeLayout(false);
             this.panel_InforCTPN.PerformLayout();

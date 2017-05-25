@@ -87,7 +87,7 @@ namespace QuanLyNhaKho.GUI
             cbbTenHH.ValueMember = "MaHH";
 
         }
-
+     
         private void cbbTenNCC_SelectedValueChanged(object sender, EventArgs e)
         {
             string MaNCC = cbbTenNCC.SelectedValue.ToString();
@@ -224,6 +224,7 @@ namespace QuanLyNhaKho.GUI
             {
                 chiTiet = new ChiTietPhieuNhap()
                 {
+                    
                     MaHH = dr["MaHH"].ToString(),
                     MaPN = dr["MaPN"].ToString(),
                     SoLuong = int.Parse(dr["SoLuong"].ToString()),
@@ -244,7 +245,27 @@ namespace QuanLyNhaKho.GUI
         private void dgvChiTietPhieuNhap_Click(object sender, EventArgs e)
         {
             DataGridViewRow dt = dgvChiTietPhieuNhap.SelectedRows[0];
-            //cbbTenHH.Text=dt.Cells[""]
+            cbbTenHH.SelectedValue = dt.Cells["MaHH"].Value.ToString();
+            txtSoLuong.Text = dt.Cells["SoLuong"].Value.ToString();
+            txtThanhTien.Text = dt.Cells["ThanhTien"].Value.ToString();
+
+            
+        }
+
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+      (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }

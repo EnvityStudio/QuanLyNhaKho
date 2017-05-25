@@ -424,6 +424,15 @@ namespace QuanLyNhaKho.DAO
            };
             return DataProvider.NonQuery(Config.PROC_DELETE_PN, para);
        }
+        public static int UpdatePassword(NhanVien nhanVien)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter(@"MaNV",nhanVien.MaNV),
+                    new SqlParameter(@"Password",nhanVien.Password)
+                };
+            return DataProvider.NonQuery(Config.PROC_EDIT_PASSWORD, para);
+        }
     }
 
 

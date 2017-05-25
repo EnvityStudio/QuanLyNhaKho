@@ -35,7 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnResetPass = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.dtp_NgaySinh = new System.Windows.Forms.DateTimePicker();
@@ -56,7 +55,6 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.pn_Info.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.panel_Search.SuspendLayout();
@@ -70,7 +68,6 @@
             this.pn_Info.Controls.Add(this.label3);
             this.pn_Info.Controls.Add(this.label26);
             this.pn_Info.Controls.Add(this.txtMaNV);
-            this.pn_Info.Controls.Add(this.pictureBox1);
             this.pn_Info.Controls.Add(this.btnResetPass);
             this.pn_Info.Controls.Add(this.label23);
             this.pn_Info.Controls.Add(this.dtp_NgaySinh);
@@ -87,7 +84,7 @@
             this.pn_Info.Location = new System.Drawing.Point(0, 0);
             this.pn_Info.Name = "pn_Info";
             this.pn_Info.Size = new System.Drawing.Size(922, 255);
-            this.pn_Info.TabIndex = 0;
+            this.pn_Info.TabIndex = 1;
             // 
             // label2
             // 
@@ -103,7 +100,7 @@
             this.txtTaiKhoan.Location = new System.Drawing.Point(538, 80);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(144, 20);
-            this.txtTaiKhoan.TabIndex = 97;
+            this.txtTaiKhoan.TabIndex = 7;
             // 
             // label3
             // 
@@ -129,19 +126,8 @@
             this.txtMaNV.Location = new System.Drawing.Point(182, 25);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(65, 20);
-            this.txtMaNV.TabIndex = 69;
+            this.txtMaNV.TabIndex = 1;
             this.txtMaNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(105, 121);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 96;
-            this.pictureBox1.TabStop = false;
             // 
             // btnResetPass
             // 
@@ -169,7 +155,7 @@
             this.dtp_NgaySinh.Location = new System.Drawing.Point(182, 160);
             this.dtp_NgaySinh.Name = "dtp_NgaySinh";
             this.dtp_NgaySinh.Size = new System.Drawing.Size(120, 20);
-            this.dtp_NgaySinh.TabIndex = 74;
+            this.dtp_NgaySinh.TabIndex = 4;
             // 
             // panel4
             // 
@@ -179,7 +165,7 @@
             this.panel4.Location = new System.Drawing.Point(182, 92);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(167, 30);
-            this.panel4.TabIndex = 72;
+            this.panel4.TabIndex = 3;
             // 
             // rdGTNu
             // 
@@ -187,18 +173,18 @@
             this.rdGTNu.Location = new System.Drawing.Point(110, 6);
             this.rdGTNu.Name = "rdGTNu";
             this.rdGTNu.Size = new System.Drawing.Size(39, 17);
-            this.rdGTNu.TabIndex = 8;
-            this.rdGTNu.TabStop = true;
+            this.rdGTNu.TabIndex = 1;
             this.rdGTNu.Text = "Nữ";
             this.rdGTNu.UseVisualStyleBackColor = true;
             // 
             // rdGTNam
             // 
             this.rdGTNam.AutoSize = true;
+            this.rdGTNam.Checked = true;
             this.rdGTNam.Location = new System.Drawing.Point(17, 6);
             this.rdGTNam.Name = "rdGTNam";
             this.rdGTNam.Size = new System.Drawing.Size(47, 17);
-            this.rdGTNam.TabIndex = 8;
+            this.rdGTNam.TabIndex = 0;
             this.rdGTNam.TabStop = true;
             this.rdGTNam.Text = "Nam";
             this.rdGTNam.UseVisualStyleBackColor = true;
@@ -235,28 +221,28 @@
             this.txtMK.Location = new System.Drawing.Point(538, 138);
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(144, 20);
-            this.txtMK.TabIndex = 82;
+            this.txtMK.TabIndex = 8;
             // 
             // txtSoDT
             // 
             this.txtSoDT.Location = new System.Drawing.Point(538, 25);
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.Size = new System.Drawing.Size(129, 20);
-            this.txtSoDT.TabIndex = 81;
+            this.txtSoDT.TabIndex = 6;
             // 
             // txtQueQuan
             // 
             this.txtQueQuan.Location = new System.Drawing.Point(182, 210);
             this.txtQueQuan.Name = "txtQueQuan";
             this.txtQueQuan.Size = new System.Drawing.Size(485, 20);
-            this.txtQueQuan.TabIndex = 75;
+            this.txtQueQuan.TabIndex = 5;
             // 
             // txtHoTen
             // 
             this.txtHoTen.Location = new System.Drawing.Point(182, 59);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(167, 20);
-            this.txtHoTen.TabIndex = 71;
+            this.txtHoTen.TabIndex = 2;
             // 
             // label1
             // 
@@ -269,10 +255,12 @@
             // 
             // dgv_NhanVien
             // 
+            this.dgv_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_NhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_NhanVien.Location = new System.Drawing.Point(0, 285);
             this.dgv_NhanVien.Name = "dgv_NhanVien";
+            this.dgv_NhanVien.ReadOnly = true;
             this.dgv_NhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_NhanVien.Size = new System.Drawing.Size(922, 285);
             this.dgv_NhanVien.TabIndex = 1;
@@ -290,7 +278,7 @@
             // 
             // btn_TimKiem
             // 
-            this.btn_TimKiem.Location = new System.Drawing.Point(248, 3);
+            this.btn_TimKiem.Location = new System.Drawing.Point(210, 4);
             this.btn_TimKiem.Name = "btn_TimKiem";
             this.btn_TimKiem.Size = new System.Drawing.Size(75, 23);
             this.btn_TimKiem.TabIndex = 1;
@@ -300,7 +288,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(42, 4);
+            this.txtTimKiem.Location = new System.Drawing.Point(4, 5);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(200, 20);
             this.txtTimKiem.TabIndex = 0;
@@ -311,6 +299,7 @@
             // 
             // UCNhanVien
             // 
+            this.AccessibleDescription = "Nhân Viên";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgv_NhanVien);
@@ -321,7 +310,6 @@
             this.Load += new System.EventHandler(this.UCNhanVien_Load);
             this.pn_Info.ResumeLayout(false);
             this.pn_Info.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).EndInit();
@@ -340,7 +328,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtMaNV;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnResetPass;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.DateTimePicker dtp_NgaySinh;

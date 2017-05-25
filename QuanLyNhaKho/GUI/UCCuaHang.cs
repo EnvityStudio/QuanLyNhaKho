@@ -14,6 +14,7 @@ namespace QuanLyNhaKho.GUI
 {
     public partial class UCCuaHang : UserControl
     {
+        private bool action =true;
         public UCCuaHang()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace QuanLyNhaKho.GUI
             txt_MaCH.Text = Bus.GetMaCHNext();
             ClearData();
             panel_InforCuaHang.Enabled = true;
+            action = false;
         }
         public bool CheckEmpty(TextBox txt)
         {
@@ -130,12 +132,33 @@ namespace QuanLyNhaKho.GUI
         }
         private void dgv_CuaHang_Click(object sender, EventArgs e)
         {
-            DataGridViewRow dt = dgv_CuaHang.SelectedRows[0];
-            txt_MaCH.Text = dt.Cells["MaCH"].Value.ToString();
-            txt_TenCH.Text = dt.Cells["TenCH"].Value.ToString();
-            txt_DiaChi.Text = dt.Cells["DiaChi"].Value.ToString();
-            txtSDT.Text = dt.Cells["SDT"].Value.ToString();
-            rtxt_GhiChu.Text = dt.Cells["GhiChu"].Value.ToString();
+            if (action == false)
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    DataGridViewRow dt = dgv_CuaHang.SelectedRows[0];
+                    txt_MaCH.Text = dt.Cells["MaCH"].Value.ToString();
+                    txt_TenCH.Text = dt.Cells["TenCH"].Value.ToString();
+                    txt_DiaChi.Text = dt.Cells["DiaChi"].Value.ToString();
+                    txtSDT.Text = dt.Cells["SDT"].Value.ToString();
+                    rtxt_GhiChu.Text = dt.Cells["GhiChu"].Value.ToString();
+                }
+                catch (Exception err)
+                {
+                    Console.Write(err.Message);
+                }
+            }
+        }
+
+        private void btn_TimKiem_Click(object sender, EventArgs e)
+        {
+            String str = string.Format("MaCH like '%{0}' or TenCH like '%{0}' or DiaChi like '%{0}' ", txtTimKiem.Text);
+            (dgv_CuaHang.DataSource as DataTable).DefaultView.RowFilter = str;
+
         }
     }
 }

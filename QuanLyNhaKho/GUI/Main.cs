@@ -42,8 +42,6 @@ namespace QuanLyNhaKho
 
         public void AddNewTab(UserControl userControl)
         {
-
-
             foreach (TabPage tab in tabControlHome.TabPages)
             {
                 if (tab.Name == userControl.Name)
@@ -52,7 +50,6 @@ namespace QuanLyNhaKho
                     return;
                 }
             }
-
             userControl.Dock = DockStyle.Fill;
             TabPage newTab = new TabPage(userControl.AccessibleDescription + "         ");//Create new tabpage , set name tab
             newTab.Controls.Add(userControl);
@@ -99,12 +96,11 @@ namespace QuanLyNhaKho
 
         private void tabControlHome_DrawItem(object sender, DrawItemEventArgs e)
         {
-            if (e.Index != 0)
-            {
+           
                 e.Graphics.DrawImage(img, new Point(e.Bounds.Right - 18, e.Bounds.Top + 1));
                 e.Graphics.DrawString(this.tabControlHome.TabPages[e.Index].Text, e.Font, Brushes.Black, e.Bounds.Left + 3, e.Bounds.Top + 4);
                 e.DrawFocusRectangle();
-            }
+            
         }
 
         private void tabControlHome_MouseDown(object sender, MouseEventArgs e)
@@ -305,7 +301,7 @@ namespace QuanLyNhaKho
         private void btn_XuatHang_Click(object sender, EventArgs e)
         {
             FrmChiTietPhieuXuat frmChiTietPhieuXuat = new FrmChiTietPhieuXuat(Bus.getMaPXNext(),0);
-            frmChiTietPhieuXuat.Show();
+            frmChiTietPhieuXuat.ShowDialog();
         }
 
         private void btn_PhieuNhap_Click(object sender, EventArgs e)
@@ -316,7 +312,80 @@ namespace QuanLyNhaKho
         private void btn_NhapHang_Click(object sender, EventArgs e)
         {
             FrmChiTietPhieuNhap frm = new FrmChiTietPhieuNhap(Bus.GetMaPNNext(), 0);
-            frm.Show();
+            frm.ShowDialog();
+        }
+
+        private void btnAdd_MouseHover(object sender, EventArgs e)
+        {
+            btnAdd.ForeColor = Color.Blue;
+        }
+
+        private void btnEdit_MouseLeave(object sender, EventArgs e)
+        {
+            btnEdit.ForeColor = Color.Black;
+        }
+
+        private void btnEdit_MouseHover(object sender, EventArgs e)
+        {
+            btnEdit.ForeColor = Color.Blue;
+        }
+
+        private void btnAdd_MouseLeave(object sender, EventArgs e)
+        {
+            btnAdd.ForeColor = Color.Black;
+        }
+
+        private void btnDelete_MouseHover(object sender, EventArgs e)
+        {
+            btnDelete.ForeColor = Color.Blue;
+        }
+
+        private void btnDelete_MouseLeave(object sender, EventArgs e)
+        {
+            btnDelete.ForeColor = Color.Black;
+        }
+
+        private void btnSave_MouseHover(object sender, EventArgs e)
+        {
+            btnSave.ForeColor = Color.Blue;
+        }
+
+        private void btnSave_MouseLeave(object sender, EventArgs e)
+        {
+            btnSave.ForeColor = Color.Black;
+        }
+
+        private void btnCancel_MouseHover(object sender, EventArgs e)
+        {
+            btnCancel.ForeColor = Color.Blue;
+        }
+
+        private void btnCancel_MouseLeave(object sender, EventArgs e)
+        {
+            btnCancel.ForeColor = Color.Black;
+        }
+
+        private void btnUpdate_MouseHover(object sender, EventArgs e)
+        {
+            btnUpdate.ForeColor = Color.Blue;
+        }
+
+        private void btnUpdate_MouseLeave(object sender, EventArgs e)
+        {
+            btnUpdate.ForeColor = Color.Black;
+        }
+
+        private void btn_DoiMatKhau_Click(object sender, EventArgs e)
+        {
+            DoiMatKhau doiMatKhau = new DoiMatKhau(Config.CURRENT_NHANVIEN);
+            doiMatKhau.ShowDialog();
+        }
+
+        private void btn_DangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
         }
     }
 }
