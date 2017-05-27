@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaKho
 {
-    public partial class toolstrip_Them : Form
+    public partial class Main : Form
     {
         private UCPhieuXuat ucPhieuXuat;
         private UCNhanVien ucNhanVien;
@@ -27,7 +27,7 @@ namespace QuanLyNhaKho
 
         private Bitmap img = Properties.Resources.delete;
 
-        public toolstrip_Them()
+        public Main()
         {
             InitializeComponent();
             ucPhieuXuat = new UCPhieuXuat();
@@ -272,7 +272,7 @@ namespace QuanLyNhaKho
         {
             btnAdd.Enabled = true;
             btnEdit.Enabled = true;
-            btnUpdate.Enabled = true;
+            //btnUpdate.Enabled = true;
             btnDelete.Enabled = true;
             btnCancel.Enabled = true;
         }
@@ -314,66 +314,7 @@ namespace QuanLyNhaKho
             FrmChiTietPhieuNhap frm = new FrmChiTietPhieuNhap(Bus.GetMaPNNext(), 0);
             frm.ShowDialog();
         }
-
-        private void btnAdd_MouseHover(object sender, EventArgs e)
-        {
-            btnAdd.ForeColor = Color.Blue;
-        }
-
-        private void btnEdit_MouseLeave(object sender, EventArgs e)
-        {
-            btnEdit.ForeColor = Color.Black;
-        }
-
-        private void btnEdit_MouseHover(object sender, EventArgs e)
-        {
-            btnEdit.ForeColor = Color.Blue;
-        }
-
-        private void btnAdd_MouseLeave(object sender, EventArgs e)
-        {
-            btnAdd.ForeColor = Color.Black;
-        }
-
-        private void btnDelete_MouseHover(object sender, EventArgs e)
-        {
-            btnDelete.ForeColor = Color.Blue;
-        }
-
-        private void btnDelete_MouseLeave(object sender, EventArgs e)
-        {
-            btnDelete.ForeColor = Color.Black;
-        }
-
-        private void btnSave_MouseHover(object sender, EventArgs e)
-        {
-            btnSave.ForeColor = Color.Blue;
-        }
-
-        private void btnSave_MouseLeave(object sender, EventArgs e)
-        {
-            btnSave.ForeColor = Color.Black;
-        }
-
-        private void btnCancel_MouseHover(object sender, EventArgs e)
-        {
-            btnCancel.ForeColor = Color.Blue;
-        }
-
-        private void btnCancel_MouseLeave(object sender, EventArgs e)
-        {
-            btnCancel.ForeColor = Color.Black;
-        }
-
-        private void btnUpdate_MouseHover(object sender, EventArgs e)
-        {
-            btnUpdate.ForeColor = Color.Blue;
-        }
-
-        private void btnUpdate_MouseLeave(object sender, EventArgs e)
-        {
-            btnUpdate.ForeColor = Color.Black;
-        }
+        
 
         private void btn_DoiMatKhau_Click(object sender, EventArgs e)
         {
@@ -387,5 +328,7 @@ namespace QuanLyNhaKho
             Login login = new Login();
             login.Show();
         }
+
+      
     }
 }

@@ -34,7 +34,7 @@ namespace QuanLyNhaKho
             if (isExist)
             {
                 this.Hide();
-                var main = new toolstrip_Them();
+                var main = new Main();
                 main.Closed += (s, args) => this.Close();
                 main.Show();
             } else

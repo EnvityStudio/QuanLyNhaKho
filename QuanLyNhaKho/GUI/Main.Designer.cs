@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaKho
 {
-    partial class toolstrip_Them
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,15 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnAdd = new System.Windows.Forms.ToolStripButton();
+            this.btnEdit = new System.Windows.Forms.ToolStripButton();
+            this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSave = new System.Windows.Forms.ToolStripButton();
+            this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.btnPrint = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menutrip_HeThong = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_DangXuat = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,13 +61,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControlHome = new System.Windows.Forms.TabControl();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.ToolStripLabel();
-            this.btnEdit = new System.Windows.Forms.ToolStripLabel();
-            this.btnDelete = new System.Windows.Forms.ToolStripLabel();
-            this.btnSave = new System.Windows.Forms.ToolStripLabel();
-            this.btnCancel = new System.Windows.Forms.ToolStripLabel();
-            this.btnUpdate = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -75,12 +74,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1013, 74);
+            this.panel1.Size = new System.Drawing.Size(1013, 56);
             this.panel1.TabIndex = 0;
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAdd,
             this.btnEdit,
@@ -89,29 +88,80 @@
             this.btnSave,
             this.btnCancel,
             this.toolStripSeparator2,
-            this.btnUpdate,
-            this.toolStripSeparator3,
-            this.toolStripLabel6});
+            this.btnRefresh,
+            this.btnPrint});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1013, 50);
+            this.toolStrip1.Size = new System.Drawing.Size(1013, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Image = global::QuanLyNhaKho.Properties.Resources.add;
+            this.btnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(58, 22);
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::QuanLyNhaKho.Properties.Resources.edit;
+            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(46, 22);
+            this.btnEdit.Text = "Sửa";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Image = global::QuanLyNhaKho.Properties.Resources.delete;
+            this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(47, 22);
+            this.btnDelete.Text = "Xóa";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 50);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Image = global::QuanLyNhaKho.Properties.Resources.save;
+            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(47, 22);
+            this.btnSave.Text = "Lưu";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Image = global::QuanLyNhaKho.Properties.Resources.cen1;
+            this.btnCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(49, 22);
+            this.btnCancel.Text = "Hủy";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 50);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripSeparator3
+            // btnRefresh
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 50);
+            this.btnRefresh.Image = global::QuanLyNhaKho.Properties.Resources.refresh;
+            this.btnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(77, 22);
+            this.btnRefresh.Text = "Cập Nhật";
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Image = global::QuanLyNhaKho.Properties.Resources.iconprint;
+            this.btnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(37, 22);
+            this.btnPrint.Text = "In";
             // 
             // menuStrip1
             // 
@@ -139,14 +189,14 @@
             // btn_DangXuat
             // 
             this.btn_DangXuat.Name = "btn_DangXuat";
-            this.btn_DangXuat.Size = new System.Drawing.Size(152, 22);
+            this.btn_DangXuat.Size = new System.Drawing.Size(146, 22);
             this.btn_DangXuat.Text = "Đăng Xuất";
             this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
             // 
             // btn_DoiMatKhau
             // 
             this.btn_DoiMatKhau.Name = "btn_DoiMatKhau";
-            this.btn_DoiMatKhau.Size = new System.Drawing.Size(152, 22);
+            this.btn_DoiMatKhau.Size = new System.Drawing.Size(146, 22);
             this.btn_DoiMatKhau.Text = "Đổi Mật Khẩu";
             this.btn_DoiMatKhau.Click += new System.EventHandler(this.btn_DoiMatKhau_Click);
             // 
@@ -268,9 +318,9 @@
             this.panel2.Controls.Add(this.tabControlHome);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 74);
+            this.panel2.Location = new System.Drawing.Point(0, 56);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1013, 411);
+            this.panel2.Size = new System.Drawing.Size(1013, 429);
             this.panel2.TabIndex = 1;
             // 
             // tabControlHome
@@ -280,7 +330,7 @@
             this.tabControlHome.Location = new System.Drawing.Point(0, 0);
             this.tabControlHome.Name = "tabControlHome";
             this.tabControlHome.SelectedIndex = 0;
-            this.tabControlHome.Size = new System.Drawing.Size(1013, 411);
+            this.tabControlHome.Size = new System.Drawing.Size(1013, 429);
             this.tabControlHome.TabIndex = 1;
             this.tabControlHome.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControlHome_DrawItem);
             this.tabControlHome.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControlHome_MouseDown);
@@ -295,78 +345,7 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "TRANG CHỦ";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnAdd.Image = global::QuanLyNhaKho.Properties.Resources.add;
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(54, 47);
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            this.btnAdd.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
-            this.btnAdd.MouseHover += new System.EventHandler(this.btnAdd_MouseHover);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnEdit.Image = global::QuanLyNhaKho.Properties.Resources.edit;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(42, 47);
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            this.btnEdit.MouseLeave += new System.EventHandler(this.btnEdit_MouseLeave);
-            this.btnEdit.MouseHover += new System.EventHandler(this.btnEdit_MouseHover);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnDelete.Image = global::QuanLyNhaKho.Properties.Resources.delete;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(43, 47);
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            this.btnDelete.MouseLeave += new System.EventHandler(this.btnDelete_MouseLeave);
-            this.btnDelete.MouseHover += new System.EventHandler(this.btnDelete_MouseHover);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnSave.Image = global::QuanLyNhaKho.Properties.Resources.save1;
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(43, 47);
-            this.btnSave.Text = "Lưu";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
-            this.btnSave.MouseHover += new System.EventHandler(this.btnSave_MouseHover);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCancel.Image = global::QuanLyNhaKho.Properties.Resources.cen1;
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(45, 47);
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            this.btnCancel.MouseLeave += new System.EventHandler(this.btnCancel_MouseLeave);
-            this.btnCancel.MouseHover += new System.EventHandler(this.btnCancel_MouseHover);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Image = global::QuanLyNhaKho.Properties.Resources.refresh;
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(71, 47);
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.MouseLeave += new System.EventHandler(this.btnUpdate_MouseLeave);
-            this.btnUpdate.MouseHover += new System.EventHandler(this.btnUpdate_MouseHover);
-            // 
-            // toolStripLabel6
-            // 
-            this.toolStripLabel6.Image = global::QuanLyNhaKho.Properties.Resources.iconprint;
-            this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(33, 47);
-            this.toolStripLabel6.Text = "In";
-            // 
-            // toolstrip_Them
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -375,7 +354,7 @@
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
             this.MinimizeBox = false;
-            this.Name = "toolstrip_Them";
+            this.Name = "Main";
             this.Text = "Quản Lý Kho Hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
@@ -410,22 +389,21 @@
         private System.Windows.Forms.ToolStripMenuItem btn_HangTonKho;
         private System.Windows.Forms.ToolStripMenuItem menuStrip_TroGiup;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel btnAdd;
-        private System.Windows.Forms.ToolStripLabel btnEdit;
-        private System.Windows.Forms.ToolStripLabel btnDelete;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel btnSave;
-        private System.Windows.Forms.ToolStripLabel btnCancel;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripLabel btnUpdate;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel6;
         private System.Windows.Forms.ToolStripMenuItem btn_DangXuat;
         private System.Windows.Forms.ToolStripMenuItem btn_DoiMatKhau;
         private System.Windows.Forms.ToolStripMenuItem btn_NhapHang;
         private System.Windows.Forms.ToolStripMenuItem btn_XuatHang;
         private System.Windows.Forms.TabControl tabControlHome;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnAdd;
+        private System.Windows.Forms.ToolStripButton btnEdit;
+        private System.Windows.Forms.ToolStripButton btnDelete;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnSave;
+        private System.Windows.Forms.ToolStripButton btnCancel;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton btnRefresh;
+        private System.Windows.Forms.ToolStripButton btnPrint;
     }
 }
 

@@ -27,6 +27,7 @@ namespace QuanLyNhaKho.GUI
             dataTableChiTiet = new DataTable();
             initDataTableChiTiet(dataTableChiTiet);
         }
+       
         public void LoadData()
         {
 
@@ -216,7 +217,6 @@ namespace QuanLyNhaKho.GUI
             int res = Bus.AddPhieuNhap(phieuNhap);
             if (res <= 0)
             {
-
                 MessageBox.Show("Không thêm phiếu xuất!", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
