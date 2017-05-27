@@ -29,8 +29,6 @@ namespace QuanLyNhaKho.GUI
             dgv_HangHoa.Columns["TenHang"].HeaderText = "Tên Hàng Hóa";
             dgv_HangHoa.Columns["SoLuong"].HeaderText = "Số Lượng";
             dgv_HangHoa.Columns["DonViTinh"].HeaderText = "Đơn Vị Tính";
-            dgv_HangHoa.Columns["GiaNhap"].HeaderText = "Giá Nhập";
-            dgv_HangHoa.Columns["GiaXuat"].HeaderText = "Giá Xuất";
             dgv_HangHoa.Columns["NSX"].HeaderText = "NSX";
             dgv_HangHoa.Columns["HSD"].HeaderText = "HSD";
             dgv_HangHoa.Columns["ThongTin"].HeaderText = "Thông Tin";
@@ -70,9 +68,7 @@ namespace QuanLyNhaKho.GUI
             txtTenHH.Text = dt.Cells["TenHang"].Value.ToString();
             txtSoLuong.Text = dt.Cells["SoLuong"].Value.ToString();
             txtDonViTinh.Text = dt.Cells["DonViTinh"].Value.ToString();
-            txtGiaNhap.Text = dt.Cells["GiaNhap"].Value.ToString();
-            txtGiaXuat.Text = dt.Cells["GiaXuat"].Value.ToString();
-            dtpNSX.Text = dt.Cells["NSX"].Value.ToString();
+             dtpNSX.Text = dt.Cells["NSX"].Value.ToString();
             dtpHSD.Text = dt.Cells["HSD"].Value.ToString();
             rtxtGhiChu.Text = dt.Cells["ThongTin"].Value.ToString();
             dtpNgayNhap.Text = dt.Cells["NgayNhap"].Value.ToString();
@@ -102,7 +98,7 @@ namespace QuanLyNhaKho.GUI
         {
             string MaHH, MaNhom, ThongTin, TenHang, DonViTinh;
             int SoLuong;
-            float GiaNhap, GiaXuat;
+           
             DateTime NSX, HSD, NgayNhap;
             MaNhom = cbb_TenNhom.SelectedValue.ToString();
             MaHH = txtMaHH.Text;
@@ -110,12 +106,10 @@ namespace QuanLyNhaKho.GUI
             SoLuong = int.Parse(txtSoLuong.Text);
             DonViTinh = txtDonViTinh.Text;
             ThongTin = rtxtGhiChu.Text;
-            GiaNhap = float.Parse(txtGiaNhap.Text);
-            GiaXuat = float.Parse(txtGiaXuat.Text);
-            NSX = (DateTime)dtpNSX.Value;
+             NSX = (DateTime)dtpNSX.Value;
             HSD = (DateTime)dtpHSD.Value;
             NgayNhap = (DateTime)dtpNgayNhap.Value;
-            return new HangHoa(MaHH, MaNhom, TenHang, SoLuong, DonViTinh, GiaNhap, GiaXuat, NSX, HSD, ThongTin, NgayNhap);
+            return new HangHoa(MaHH, MaNhom, TenHang, SoLuong, DonViTinh, NSX, HSD, ThongTin, NgayNhap);
 
 
         }

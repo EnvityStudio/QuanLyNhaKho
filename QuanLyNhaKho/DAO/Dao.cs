@@ -344,9 +344,7 @@ namespace QuanLyNhaKho.DAO
                     new SqlParameter(@"TenHang",hangHoa.TenHang),
                     new SqlParameter(@"SoLuong",hangHoa.SoLuong),
                     new SqlParameter(@"DonViTinh",hangHoa.DonViTinh),
-                    new SqlParameter(@"GiaNhap",hangHoa.GiaNhap),
-                    new SqlParameter(@"GiaXuat",hangHoa.GiaXuat),
-                    new SqlParameter(@"NSX",hangHoa.NSX),
+                   new SqlParameter(@"NSX",hangHoa.NSX),
                     new SqlParameter(@"HSD",hangHoa.HSD),
                     new SqlParameter(@"ThongTin",hangHoa.ThongTin),
                     new SqlParameter(@"NgayNhap",hangHoa.NgayNhap)
@@ -362,9 +360,7 @@ namespace QuanLyNhaKho.DAO
                     new SqlParameter(@"TenHang",hangHoa.TenHang),
                     new SqlParameter(@"SoLuong",hangHoa.SoLuong),
                     new SqlParameter(@"DonViTinh",hangHoa.DonViTinh),
-                    new SqlParameter(@"GiaNhap",hangHoa.GiaNhap),
-                    new SqlParameter(@"GiaXuat",hangHoa.GiaXuat),
-                    new SqlParameter(@"NSX",hangHoa.NSX),
+                  new SqlParameter(@"NSX",hangHoa.NSX),
                     new SqlParameter(@"HSD",hangHoa.HSD),
                     new SqlParameter(@"ThongTin",hangHoa.ThongTin),
                     new SqlParameter(@"NgayNhap",hangHoa.NgayNhap)

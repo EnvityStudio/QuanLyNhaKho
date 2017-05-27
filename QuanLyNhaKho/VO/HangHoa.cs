@@ -13,14 +13,12 @@ namespace QuanLyNhaKho.VO
         public string TenHang { get; set; }
         public int SoLuong { get; set; }
         public string DonViTinh { get; set; }
-        public float GiaNhap { get; set; }
-        public float GiaXuat { get; set; }
         public DateTime NSX { get; set; }
         public DateTime HSD { get; set; }
         public string ThongTin { get; set; }
         public DateTime NgayNhap { get; set; }
         public HangHoa() { }
-        public HangHoa(string MaHH,string MaNhom ,string TenHang, int SoLuong, string DonViTinh, float GiaNhap, float GiaXuat, DateTime NSX, DateTime HSD, string ThongTin,DateTime NgayNhap)
+        public HangHoa(string MaHH,string MaNhom ,string TenHang, int SoLuong, string DonViTinh, DateTime NSX, DateTime HSD, string ThongTin,DateTime NgayNhap)
         {
 
             this.MaHH = MaHH;
@@ -28,8 +26,7 @@ namespace QuanLyNhaKho.VO
             this.TenHang = TenHang;
             this.SoLuong = SoLuong;
             this.DonViTinh = DonViTinh;
-            this.GiaNhap = GiaNhap;
-            this.GiaXuat = GiaXuat;
+     
             this.NSX = NSX;
             this.HSD = HSD;
             this.ThongTin = ThongTin;
