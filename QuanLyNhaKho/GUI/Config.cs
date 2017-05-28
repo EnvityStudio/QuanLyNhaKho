@@ -95,6 +95,9 @@ namespace QuanLyNhaKho
         public static string PROC_UPDATE_PN = "UpdatePhieuNhap";
         public static string PROC_DELETE_PN = "DeletePhieuNhap";
 
+        public static string PROC_GET_PX_BYID = "GetExportByID";
+        public static string PROC_GET_PN_BYID = "GetImportByID";
+
 
 
     }

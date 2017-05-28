@@ -77,8 +77,8 @@ namespace QuanLyNhaKho.GUI
 
         private void btnXCT_Click(object sender, EventArgs e)
         {
-            FrmChiTietPhieuNhap frm = new FrmChiTietPhieuNhap(txtMaPN.Text,1);
-            frm.Show();
+            FrmChiTietPhieuNhap frm = new FrmChiTietPhieuNhap(txtMaPN.Text);
+            frm.ShowDialog();
         }
 
         private void btn_TimKiem_Click(object sender, EventArgs e)

@@ -54,6 +54,22 @@ namespace QuanLyNhaKho.DAO
            };
             return DataProvider.Query(Config.PROC_SEARCH_NHANVIEN, para);
         }
+        public static DataTable GetPhieuXuatByID(string MaPX)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@MaPX",MaPX)
+                };
+            return DataProvider.Query(Config.PROC_GET_PX_BYID, para);
+        }
+        public static DataTable GetPhieuNhapByID(string MaPN)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@MaPN",MaPN)
+                };
+            return DataProvider.Query(Config.PROC_GET_PN_BYID, para);
+        }
         public static DataTable getMaPXNext()
         {
             return DataProvider.Query(Config.PROC_GET_MA_PHIEUXUAT_NEXT);

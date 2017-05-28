@@ -17,42 +17,38 @@ namespace QuanLyNhaKho.GUI
         private string MaPN;
         private int tongTien = 0;
         private DataTable dataTableChiTiet;
-        private int type;
-        public FrmChiTietPhieuNhap(string MaPN, int type)
+   
+        public FrmChiTietPhieuNhap(string MaPN)
         {
             InitializeComponent();
             this.MaPN = MaPN;
-            this.type = type;
-            LoadData();
+            
+            //LoadData();
             dataTableChiTiet = new DataTable();
-            initDataTableChiTiet(dataTableChiTiet);
-        }
-       
-        public void LoadData()
-        {
-
-            if (MaPN != null)
-            {
-                if (type == 0)
-                {
-                    LoadCombobox();
-                }
-                else if (type == 1)
-                {
-
-                    // dgvChiTietPhieuNhap.DataSource = Bus.GetChiTietPhieuNhap(MaPN);
-                    LoadData1();
-                    LoadCombobox();
-
-                }
-
-            }
+      //      initDataTableChiTiet(dataTableChiTiet);
+            LoadCombobox();
             txtMaPN.Text = MaPN;
+            LoadDataImportDetailByID();
         }
-        private void LoadData1()
+        public FrmChiTietPhieuNhap()
+        {
+            InitializeComponent();
+           
+            dataTableChiTiet = new DataTable();
+            LoadCombobox();
+            initDataTableChiTiet(dataTableChiTiet);
+            txtMaPN.Text = Bus.GetMaPNNext();
+
+        }
+
+      
+        private void LoadDataImportDetailByID()
         {
             dgvChiTietPhieuNhap.DataSource = Bus.GetChiTietPhieuNhap(MaPN);
-            dgvChiTietPhieuNhap.Columns["MaPN"].HeaderText = "Ma Phieu Nhap";
+            dataTableChiTiet = (DataTable)dgvChiTietPhieuNhap.DataSource;
+            dgvChiTietPhieuNhap.DataSource = dataTableChiTiet;
+            //dgvChiTietPhieuNhap.Columns["MaPN"].HeaderText = "Ma Phieu Nhap";
+            txtTongTien.Text = Bus.GetTongTienPhieuNhap(MaPN).ToString();
         }
         private void initDataTableChiTiet(DataTable dt)
         {
@@ -63,6 +59,9 @@ namespace QuanLyNhaKho.GUI
             dt.Columns.Add(dc);
 
             dc = new DataColumn("MaHH", typeof(String));
+            dt.Columns.Add(dc);
+
+            dc = new DataColumn("TenHH", typeof(String));
             dt.Columns.Add(dc);
 
             dc = new DataColumn("SoLuong", typeof(String));
@@ -131,7 +130,7 @@ namespace QuanLyNhaKho.GUI
                 if (dt.Rows.Count > 0)
                 {
                     
-                    txtDonGia.Text = dt.Rows[0]["GiaXuat"].ToString();
+                  //  txtDonGia.Text = dt.Rows[0]["GiaXuat"].ToString();
                 }
                 else
                 {

@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\Bus.cs" />
+    <Compile Include="BUS\StatisticBus.cs" />
     <Compile Include="DAO\Dao.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="GUI\DoiMatKhau.cs">
@@ -122,11 +124,17 @@
     <Compile Include="GUI\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UCThongKeHangTonKho.cs">
+    <Compile Include="GUI\UCThongKeBieuDo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UCThongKeHangTonKho.Designer.cs">
-      <DependentUpon>UCThongKeHangTonKho.cs</DependentUpon>
+    <Compile Include="GUI\UCThongKeBieuDo.Designer.cs">
+      <DependentUpon>UCThongKeBieuDo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UCThongKeHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UCThongKeHoaDon.Designer.cs">
+      <DependentUpon>UCThongKeHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +148,7 @@
     <Compile Include="VO\NhomHang.cs" />
     <Compile Include="VO\PhieuNhap.cs" />
     <Compile Include="VO\PhieuXuat.cs" />
+    <Compile Include="VO\ThongKe.cs" />
     <EmbeddedResource Include="GUI\DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,8 +185,11 @@
     <EmbeddedResource Include="GUI\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UCThongKeHangTonKho.resx">
-      <DependentUpon>UCThongKeHangTonKho.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UCThongKeBieuDo.resx">
+      <DependentUpon>UCThongKeBieuDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UCThongKeHoaDon.resx">
+      <DependentUpon>UCThongKeHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

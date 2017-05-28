@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaKho.GUI
 {
-    public partial class UCThongKeHangTonKho : UserControl
+    public partial class UCThongKeHoaDon : UserControl
     {
-        public UCThongKeHangTonKho()
+        public UCThongKeHoaDon()
         {
             InitializeComponent();
         }

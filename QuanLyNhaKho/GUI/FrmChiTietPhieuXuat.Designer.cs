@@ -60,6 +60,7 @@
             this.cbb_TenHH = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.btnAddNew = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ChiTietPhieuXuat)).BeginInit();
             this.SuspendLayout();
@@ -302,7 +303,7 @@
             // 
             this.btnCancel.Image = global::QuanLyNhaKho.Properties.Resources.cen1;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(637, 310);
+            this.btnCancel.Location = new System.Drawing.Point(713, 309);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(68, 42);
             this.btnCancel.TabIndex = 44;
@@ -315,7 +316,7 @@
             // 
             this.btnSave.Image = global::QuanLyNhaKho.Properties.Resources.save;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSave.Location = new System.Drawing.Point(553, 310);
+            this.btnSave.Location = new System.Drawing.Point(637, 309);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(68, 42);
             this.btnSave.TabIndex = 44;
@@ -328,7 +329,7 @@
             // 
             this.btnAdd.Image = global::QuanLyNhaKho.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAdd.Location = new System.Drawing.Point(553, 253);
+            this.btnAdd.Location = new System.Drawing.Point(563, 309);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(68, 42);
             this.btnAdd.TabIndex = 44;
@@ -371,11 +372,24 @@
             this.txtMaNV.TabIndex = 41;
             this.txtMaNV.TextChanged += new System.EventHandler(this.txtMaNV_TextChanged);
             // 
+            // btnAddNew
+            // 
+            this.btnAddNew.Image = global::QuanLyNhaKho.Properties.Resources.add;
+            this.btnAddNew.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddNew.Location = new System.Drawing.Point(563, 253);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(68, 42);
+            this.btnAddNew.TabIndex = 92;
+            this.btnAddNew.Text = "Thêm Mới";
+            this.btnAddNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAddNew.UseVisualStyleBackColor = true;
+            // 
             // FrmChiTietPhieuXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 621);
+            this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.cbb_TenHH);
             this.Controls.Add(this.cbb_TenCH);
             this.Controls.Add(this.label13);
@@ -451,5 +465,6 @@
         private System.Windows.Forms.ComboBox cbb_TenHH;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMaNV;
+        private System.Windows.Forms.Button btnAddNew;
     }
 }

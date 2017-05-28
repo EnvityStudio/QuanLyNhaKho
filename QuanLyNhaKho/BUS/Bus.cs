@@ -279,6 +279,19 @@ namespace QuanLyNhaKho.BUS
         {
             return Dao.GetListPN();
         }
-        
+        public static decimal GetTongTienPhieuNhap(string MaPN)
+        {
+            DataTable dt = Dao.GetPhieuNhapByID(MaPN);
+            decimal totalMoney = decimal.Parse(dt.Rows[0]["ThanhTien"].ToString());
+            return totalMoney;
+        }
+        public static decimal GetTongTienPhieuXuat(string MaPX)
+        {
+            DataTable dt = Dao.GetPhieuXuatByID(MaPX);
+            decimal totalMoney = decimal.Parse(dt.Rows[0]["ThanhTien"].ToString());
+            return totalMoney;
+        }
+
+
     }
 }

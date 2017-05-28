@@ -127,6 +127,8 @@ namespace QuanLyNhaKho.GUI
             dc = new DataColumn("MaHH", typeof(String));
             dt.Columns.Add(dc);
 
+            dc = new DataColumn("TenHH", typeof(String));
+
             dc = new DataColumn("SoLuong", typeof(String));
             dt.Columns.Add(dc);
 
@@ -294,7 +296,7 @@ namespace QuanLyNhaKho.GUI
                 if (dt.Rows.Count > 0)
                 {
                   
-                    txtDonGia.Text = dt.Rows[0]["GiaXuat"].ToString();
+   //                 txtDonGia.Text = dt.Rows[0]["GiaXuat"].ToString();
                 }
                 else
                 {

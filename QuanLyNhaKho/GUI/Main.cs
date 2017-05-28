@@ -311,7 +311,7 @@ namespace QuanLyNhaKho
 
         private void btn_NhapHang_Click(object sender, EventArgs e)
         {
-            FrmChiTietPhieuNhap frm = new FrmChiTietPhieuNhap(Bus.GetMaPNNext(), 0);
+            FrmChiTietPhieuNhap frm = new FrmChiTietPhieuNhap();
             frm.ShowDialog();
         }
         
