@@ -102,7 +102,22 @@ namespace QuanLyNhaKho.GUI
         }
         public void AddNhomHang()
         {
-
+            action = false;
+            if (!CheckTextBox())
+            {
+                return;
+            }
+            int result = Bus.AddNhomHang(GetDataNhomHang());
+            if (result > 0)
+            {
+                MessageBox.Show("Thêm Thành Công", "Thông báo", MessageBoxButtons.OK);
+                ClearData();
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Thêm không thành công", "Thông báo", MessageBoxButtons.OK);
+            }
         }
 
         public void UpdateNhomHang()
