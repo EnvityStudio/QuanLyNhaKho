@@ -38,6 +38,12 @@
             this.btnStatistic = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lb_TotalImport = new System.Windows.Forms.Label();
+            this.lb_totalExport = new System.Windows.Forms.Label();
+            this.lb_profit = new System.Windows.Forms.Label();
             this.grb_PhieuNhap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImport)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -139,11 +145,77 @@
             this.label2.TabIndex = 54;
             this.label2.Text = "To";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(780, 336);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(146, 16);
+            this.label3.TabIndex = 55;
+            this.label3.Text = "Tổng Tiền Phiếu Nhập ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(780, 399);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(136, 16);
+            this.label4.TabIndex = 56;
+            this.label4.Text = "Tổng Tiền Phiếu Xuất";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(833, 453);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 16);
+            this.label5.TabIndex = 57;
+            this.label5.Text = "Thu Nhập ";
+            // 
+            // lb_TotalImport
+            // 
+            this.lb_TotalImport.AutoSize = true;
+            this.lb_TotalImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TotalImport.Location = new System.Drawing.Point(976, 330);
+            this.lb_TotalImport.Name = "lb_TotalImport";
+            this.lb_TotalImport.Size = new System.Drawing.Size(32, 24);
+            this.lb_TotalImport.TabIndex = 58;
+            this.lb_TotalImport.Text = "00";
+            // 
+            // lb_totalExport
+            // 
+            this.lb_totalExport.AutoSize = true;
+            this.lb_totalExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_totalExport.Location = new System.Drawing.Point(976, 391);
+            this.lb_totalExport.Name = "lb_totalExport";
+            this.lb_totalExport.Size = new System.Drawing.Size(32, 24);
+            this.lb_totalExport.TabIndex = 59;
+            this.lb_totalExport.Text = "00";
+            // 
+            // lb_profit
+            // 
+            this.lb_profit.AutoSize = true;
+            this.lb_profit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_profit.Location = new System.Drawing.Point(975, 445);
+            this.lb_profit.Name = "lb_profit";
+            this.lb_profit.Size = new System.Drawing.Size(32, 24);
+            this.lb_profit.TabIndex = 60;
+            this.lb_profit.Text = "00";
+            // 
             // UCThongKeHoaDon
             // 
             this.AccessibleName = "Thống Kê";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lb_profit);
+            this.Controls.Add(this.lb_totalExport);
+            this.Controls.Add(this.lb_TotalImport);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnStatistic);
@@ -175,5 +247,11 @@
         private System.Windows.Forms.Button btnStatistic;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lb_TotalImport;
+        private System.Windows.Forms.Label lb_totalExport;
+        private System.Windows.Forms.Label lb_profit;
     }
 }

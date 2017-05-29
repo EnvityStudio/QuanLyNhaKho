@@ -25,6 +25,19 @@ namespace QuanLyNhaKho.BUS
         {
             return Dao.StatisticExportByTime(fromTime, toTime);
         }
-
+        public static string GetTotalMoneyImport(DateTime fromTime,DateTime toTime)
+        {
+            DataTable dt = Dao.GetTotalMoneyImport(fromTime, toTime);
+            if (dt.Rows.Count == 0) return "0";
+            string totalMoney =dt.Rows[0]["ThanhTien"].ToString();
+            return totalMoney;
+        }
+        public static string GetTotalMoneyExport(DateTime fromTime, DateTime toTime)
+        {
+            DataTable dt = Dao.GetTotalMoneyExport(fromTime, toTime);
+            if (dt.Rows.Count == 0) return "0";
+            string totalMoney = dt.Rows[0]["ThanhTien"].ToString();
+            return totalMoney;
+        }
     }
 }
