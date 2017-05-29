@@ -72,13 +72,13 @@ namespace QuanLyNhaKho.GUI
 
         private void btnViewMore_Click(object sender, EventArgs e)
         {
-            FrmChiTietPhieuXuat frmChiTiet = new FrmChiTietPhieuXuat(txtMaPX.Text,1);
+            FrmChiTietPhieuXuat frmChiTiet = new FrmChiTietPhieuXuat(txtMaPX.Text);
             frmChiTiet.Show();
         }
 
         public void addPhieuXuat()
         {
-            FrmChiTietPhieuXuat frmChiTiet = new FrmChiTietPhieuXuat(Bus.getMaPXNext(),0);
+            FrmChiTietPhieuXuat frmChiTiet = new FrmChiTietPhieuXuat();
             frmChiTiet.ShowDialog();
             LoadData();
         }

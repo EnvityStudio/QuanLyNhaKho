@@ -17,35 +17,33 @@ namespace QuanLyNhaKho.GUI
         private string maPX;
         private DataTable dataTableChiTiet;
         private int tongTien = 0;
-        private int type;  
-        // type = 0 : add  new
-        // type = 1 : view more
-        public FrmChiTietPhieuXuat(string maPX,int type)
+        public FrmChiTietPhieuXuat(string maPX)
         {
             InitializeComponent();
             this.maPX = maPX;
-            this.type = type;
-            LoadData();
+            dataTableChiTiet = new DataTable();
+            txtMaPX.Text = maPX;
+            LoadDataExportDetailByID();
             dataTableChiTiet = new DataTable();
             initDataTableChiTiet(dataTableChiTiet);
         }
-        private void LoadData()
+        public FrmChiTietPhieuXuat()
         {
-            if (maPX != null)
-            {
-                if (type == 0)
-                {
-                    LoadCombobox();
-                }
-                else if(type == 1)
-                {
-                    dgv_ChiTietPhieuXuat.DataSource = Bus.getChiTietPhieuXuat(maPX);
-                    LoadCombobox();
+            InitializeComponent();
+            dataTableChiTiet = new DataTable();
+            LoadCombobox();
+            initDataTableChiTiet(dataTableChiTiet);
+            txtMaPX.Text = Bus.GetMaPNNext();
+            txtTenNV.Text = Bus.getTenNhanVien(Config.CURRENT_NHANVIEN);
 
-                }
-
-            }
-                txtMaPX.Text = maPX;
+        }
+        private void LoadDataExportDetailByID()
+        {
+            dgv_ChiTietPhieuXuat.DataSource = Bus.getChiTietPhieuXuat(maPX);
+            dataTableChiTiet = (DataTable)dgv_ChiTietPhieuXuat.DataSource;
+            dgv_ChiTietPhieuXuat.DataSource = dataTableChiTiet;
+            //dgvChiTietPhieuNhap.Columns["MaPN"].HeaderText = "Ma Phieu Nhap";
+            txtTongTien.Text = Bus.GetTongTienPhieuXuat(maPX).ToString();
         }
         public void LoadCombobox()
         {
@@ -89,6 +87,7 @@ namespace QuanLyNhaKho.GUI
             ChiTietPhieuXuat chiTiet = getChiTietFormFRM();
             newChiTiet["MaPX"] = chiTiet.MaPX;
             newChiTiet["MaHH"] = chiTiet.MaHH;
+            newChiTiet["TenHang"] = cbb_TenHH.Text;
             newChiTiet["SoLuong"] = chiTiet.SoLuong;
             newChiTiet["DonGia"] = txtDonGia.Text;
             newChiTiet["ThanhTien"] = txtThanhTien.Text;
@@ -127,7 +126,7 @@ namespace QuanLyNhaKho.GUI
             dc = new DataColumn("MaHH", typeof(String));
             dt.Columns.Add(dc);
 
-            dc = new DataColumn("TenHH", typeof(String));
+            dc = new DataColumn("TenHang", typeof(String));
 
             dc = new DataColumn("SoLuong", typeof(String));
             dt.Columns.Add(dc);

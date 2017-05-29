@@ -300,7 +300,7 @@ namespace QuanLyNhaKho
 
         private void btn_XuatHang_Click(object sender, EventArgs e)
         {
-            FrmChiTietPhieuXuat frmChiTietPhieuXuat = new FrmChiTietPhieuXuat(Bus.getMaPXNext(),0);
+            FrmChiTietPhieuXuat frmChiTietPhieuXuat = new FrmChiTietPhieuXuat();
             frmChiTietPhieuXuat.ShowDialog();
         }
 

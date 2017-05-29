@@ -110,8 +110,6 @@ namespace QuanLyNhaKho.GUI
             HSD = (DateTime)dtpHSD.Value;
             NgayNhap = (DateTime)dtpNgayNhap.Value;
             return new HangHoa(MaHH, MaNhom, TenHang, SoLuong, DonViTinh, NSX, HSD, ThongTin, NgayNhap);
-
-
         }
         public void InputKeyPress(object sender, KeyPressEventArgs e)
         {
