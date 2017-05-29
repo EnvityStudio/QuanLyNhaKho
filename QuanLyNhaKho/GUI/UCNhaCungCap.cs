@@ -83,7 +83,8 @@ namespace QuanLyNhaKho.GUI
         }
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
-         
+            String str = string.Format("MaNCC like '%{0}' or TenNCC like '%{0}' or DiaChi like '%{0}' ", txtTimKiem.Text);
+            (dgv_NhaCungCap.DataSource as DataTable).DefaultView.RowFilter = str;
         }
         public void AddNCC()
         {
