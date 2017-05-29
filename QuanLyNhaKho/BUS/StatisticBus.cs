@@ -15,5 +15,6 @@ namespace QuanLyNhaKho.BUS
         //    DateTime date = DateTime.Now;
             
         //}
+
     }
 }

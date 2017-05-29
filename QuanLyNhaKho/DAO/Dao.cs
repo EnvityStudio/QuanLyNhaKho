@@ -445,6 +445,25 @@ namespace QuanLyNhaKho.DAO
                 };
             return DataProvider.NonQuery(Config.PROC_EDIT_PASSWORD, para);
         }
+        // statistic
+        public static DataTable StatisticImportByTime(DateTime fromTime, DateTime toTime)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@fromTime",fromTime),
+                    new SqlParameter("@toTime",toTime)
+                };
+            return DataProvider.Query(Config.PROC_Statistic_Import_ByTime, para);
+        }
+        public static DataTable  StatisticExportByTime(DateTime fromTime, DateTime toTime)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@fromTime",fromTime),
+                    new SqlParameter("@toTime",toTime)
+                };
+            return DataProvider.Query(Config.PROC_Statistic_Export_ByTime, para);
+        }
     }
 
 

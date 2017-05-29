@@ -97,8 +97,10 @@ namespace QuanLyNhaKho
 
         public static string PROC_GET_PX_BYID = "GetExportByID";
         public static string PROC_GET_PN_BYID = "GetImportByID";
-
-
+        /// statistic 
+        /// 
+        public static string PROC_Statistic_Import_ByTime = "GetListStatisticByTimeImport";
+        public static string PROC_Statistic_Export_ByTime = "GetListStatisticByTimeExport";
 
     }
 }
