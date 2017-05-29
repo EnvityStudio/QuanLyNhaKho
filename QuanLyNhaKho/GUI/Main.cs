@@ -23,6 +23,8 @@ namespace QuanLyNhaKho
         private UCHangHoa ucHangHoa;
         private UCNhaCungCap ucNhaCungCap;
         private UCPhieuNhap ucPhieuNhap;
+        private UCThongKeBieuDo ucThongKeBieuDo;
+        private UCThongKeHoaDon ucThongKeHoaDon;
 
 
         private Bitmap img = Properties.Resources.delete;
@@ -37,6 +39,8 @@ namespace QuanLyNhaKho
             ucCuaHang = new UCCuaHang();
             ucNhaCungCap = new UCNhaCungCap();
             ucPhieuNhap = new UCPhieuNhap();
+            ucThongKeBieuDo = new UCThongKeBieuDo();
+            ucThongKeHoaDon = new UCThongKeHoaDon();
 
         }
 
@@ -329,6 +333,14 @@ namespace QuanLyNhaKho
             login.Show();
         }
 
-      
+        private void btn_BieuDoThongKe_Click(object sender, EventArgs e)
+        {
+            AddNewTab(ucThongKeBieuDo);
+        }
+
+        private void btn_thongKeHoaDon_Click(object sender, EventArgs e)
+        {
+            AddNewTab(ucThongKeBieuDo);
+        }
     }
 }

@@ -10,10 +10,10 @@ namespace QuanLyNhaKho.BUS
     public class StatisticBus
     {
         public StatisticBus() { }
-        //public List<ThongKe> getListStatisticByDay()
+        //public List<ThongKe> GetListStatisticByDay()
         //{
         //    DateTime date = DateTime.Now;
-
+            
         //}
     }
 }

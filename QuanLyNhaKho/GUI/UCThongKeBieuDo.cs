@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyNhaKho.VO;
+using QuanLyNhaKho.BUS;
 
 namespace QuanLyNhaKho.GUI
 {
@@ -15,6 +17,7 @@ namespace QuanLyNhaKho.GUI
         public UCThongKeBieuDo()
         {
             InitializeComponent();
+            LoadData();
         }
         public void LoadData()
         {
@@ -23,7 +26,7 @@ namespace QuanLyNhaKho.GUI
 
         private void btnDate_Click(object sender, EventArgs e)
         {
-
+            //List<ThongKe> listStatistic = StatisticBus.GetListStatisticByDay();
         }
 
         private void btnMonth_Click(object sender, EventArgs e)

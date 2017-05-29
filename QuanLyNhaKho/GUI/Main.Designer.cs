@@ -55,8 +55,8 @@
             this.btn_NhapHang = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_XuatHang = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_ThongKe = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_TheoThang = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_HangTonKho = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_BieuDoThongKe = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_thongKeHoaDon = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_TroGiup = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControlHome = new System.Windows.Forms.TabControl();
@@ -289,23 +289,25 @@
             // menuStrip_ThongKe
             // 
             this.menuStrip_ThongKe.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_TheoThang,
-            this.btn_HangTonKho});
+            this.btn_BieuDoThongKe,
+            this.btn_thongKeHoaDon});
             this.menuStrip_ThongKe.Name = "menuStrip_ThongKe";
             this.menuStrip_ThongKe.Size = new System.Drawing.Size(70, 20);
             this.menuStrip_ThongKe.Text = "Thống Kê";
             // 
-            // btn_TheoThang
+            // btn_BieuDoThongKe
             // 
-            this.btn_TheoThang.Name = "btn_TheoThang";
-            this.btn_TheoThang.Size = new System.Drawing.Size(151, 22);
-            this.btn_TheoThang.Text = "Theo Tháng";
+            this.btn_BieuDoThongKe.Name = "btn_BieuDoThongKe";
+            this.btn_BieuDoThongKe.Size = new System.Drawing.Size(171, 22);
+            this.btn_BieuDoThongKe.Text = "Biểu đồ thống kê";
+            this.btn_BieuDoThongKe.Click += new System.EventHandler(this.btn_BieuDoThongKe_Click);
             // 
-            // btn_HangTonKho
+            // btn_thongKeHoaDon
             // 
-            this.btn_HangTonKho.Name = "btn_HangTonKho";
-            this.btn_HangTonKho.Size = new System.Drawing.Size(151, 22);
-            this.btn_HangTonKho.Text = "Hàng Tồn Kho";
+            this.btn_thongKeHoaDon.Name = "btn_thongKeHoaDon";
+            this.btn_thongKeHoaDon.Size = new System.Drawing.Size(171, 22);
+            this.btn_thongKeHoaDon.Text = "Thống kê hóa đơn";
+            this.btn_thongKeHoaDon.Click += new System.EventHandler(this.btn_thongKeHoaDon_Click);
             // 
             // menuStrip_TroGiup
             // 
@@ -385,8 +387,8 @@
         private System.Windows.Forms.ToolStripMenuItem btn_CuaHang;
         private System.Windows.Forms.ToolStripMenuItem menuStrip_NghiepVu;
         private System.Windows.Forms.ToolStripMenuItem menuStrip_ThongKe;
-        private System.Windows.Forms.ToolStripMenuItem btn_TheoThang;
-        private System.Windows.Forms.ToolStripMenuItem btn_HangTonKho;
+        private System.Windows.Forms.ToolStripMenuItem btn_BieuDoThongKe;
+        private System.Windows.Forms.ToolStripMenuItem btn_thongKeHoaDon;
         private System.Windows.Forms.ToolStripMenuItem menuStrip_TroGiup;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem btn_DangXuat;

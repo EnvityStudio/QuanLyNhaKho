@@ -67,7 +67,7 @@ namespace QuanLyNhaKho.GUI
             rtxtGhiChu.Enabled = bol;
             dtpNgayXuat.Enabled = bol;
             txtMaPX.Enabled = false;
-            txtMaNV.Enabled = bol;
+     //       txtMaNV.Enabled = bol;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -265,18 +265,10 @@ namespace QuanLyNhaKho.GUI
             this.Close();
         }
 
-        //private void txtmach_textchanged(object sender, eventargs e)
-        //{
-        //    string mach = cbb_tench.selectedvalue.tostring();
-        //    //    txttench.text = bus.gettencuahang(txtmach.text.toupper());
-        //  //  txttench.text = bus.gettencuahang(mach.toupper());
-
-        //    txtdiachich.text = bus.getdiachicuahang(mach.toupper());
-        //}
-
+     
         private void txtMaNV_TextChanged(object sender, EventArgs e)
         {
-                txtTenNV.Text = Bus.getTenNhanVien(txtMaNV.Text.ToUpper());
+            //    txtTenNV.Text = Bus.getTenNhanVien(txtMaNV.Text.ToUpper());
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
