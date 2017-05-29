@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyNhaKho.BUS;
 
 namespace QuanLyNhaKho.GUI
 {
@@ -15,6 +16,19 @@ namespace QuanLyNhaKho.GUI
         public UCThongKeHoaDon()
         {
             InitializeComponent();
+            LoadData();
+        }
+        private void LoadData()
+        {
+            dgvImport.DataSource = StatisticBus.StatisticImportByTime(dtFrom.Value, dtTo.Value);
+            dgvExport.DataSource = StatisticBus.StatisticExportByTime(dtFrom.Value, dtTo.Value); 
+        }
+
+        private void btnStatistic_Click(object sender, EventArgs e)
+        {
+            dgvImport.DataSource = StatisticBus.StatisticImportByTime(dtFrom.Value, dtTo.Value);
+            dgvExport.DataSource = StatisticBus.StatisticExportByTime(dtFrom.Value, dtTo.Value);
+
         }
     }
 }

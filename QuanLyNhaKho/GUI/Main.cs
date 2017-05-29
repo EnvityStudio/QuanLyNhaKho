@@ -340,7 +340,7 @@ namespace QuanLyNhaKho
 
         private void btn_thongKeHoaDon_Click(object sender, EventArgs e)
         {
-            AddNewTab(ucThongKeBieuDo);
+            AddNewTab(ucThongKeHoaDon);
         }
     }
 }
