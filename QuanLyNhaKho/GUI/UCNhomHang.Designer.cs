@@ -43,6 +43,7 @@
             this.btn_TimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.dgv_NhomHang = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderHangHoa)).BeginInit();
             this.panel_InforNhomHang.SuspendLayout();
             this.panel_SearchNhomHang.SuspendLayout();
@@ -55,6 +56,7 @@
             // 
             // panel_InforNhomHang
             // 
+            this.panel_InforNhomHang.Controls.Add(this.label2);
             this.panel_InforNhomHang.Controls.Add(this.label1);
             this.panel_InforNhomHang.Controls.Add(this.rtxt_GhiChu);
             this.panel_InforNhomHang.Controls.Add(this.lb_TenNhom);
@@ -175,6 +177,17 @@
             this.dgv_NhomHang.TabIndex = 2;
             this.dgv_NhomHang.Click += new System.EventHandler(this.dgv_NhomHang_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Firebrick;
+            this.label2.Location = new System.Drawing.Point(339, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(134, 25);
+            this.label2.TabIndex = 107;
+            this.label2.Text = "Nhóm Hàng";
+            // 
             // UCNhomHang
             // 
             this.AccessibleDescription = "Nhóm Hàng";
@@ -211,5 +224,6 @@
         private System.Windows.Forms.TextBox txt_MaNhomHang;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox rtxt_GhiChu;
+        private System.Windows.Forms.Label label2;
     }
 }
