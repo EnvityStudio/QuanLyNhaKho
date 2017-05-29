@@ -464,6 +464,24 @@ namespace QuanLyNhaKho.DAO
                 };
             return DataProvider.Query(Config.PROC_Statistic_Export_ByTime, para);
         }
+        public static DataTable GetTotalMoneyImport(DateTime fromTime, DateTime toTime)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@fromTime",fromTime),
+                    new SqlParameter("@toTime",toTime)
+                };
+            return DataProvider.Query(Config.PROC_GetTotalMoneyImport, para);
+        }
+        public static DataTable GetTotalMoneyExport(DateTime fromTime, DateTime toTime)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@fromTime",fromTime),
+                    new SqlParameter("@toTime",toTime)
+                };
+            return DataProvider.Query(Config.PROC_GetTotalMoneyExport, para);
+        }
     }
 
 

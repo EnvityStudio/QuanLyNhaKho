@@ -101,6 +101,7 @@ namespace QuanLyNhaKho
         /// 
         public static string PROC_Statistic_Import_ByTime = "GetListStatisticByTimeImport";
         public static string PROC_Statistic_Export_ByTime = "GetListStatisticByTimeExport";
-
+        public static string PROC_GetTotalMoneyImport = "GetTotalMoneyImport";
+        public static string PROC_GetTotalMoneyExport = "GetTotalMoneyExport";
     }
 }
