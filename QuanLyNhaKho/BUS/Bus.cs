@@ -17,7 +17,7 @@ namespace QuanLyNhaKho.BUS
         {
             return Dao.GetListNhanVien();
         }
-
+        
         public static bool CheckAccount(NhanVien nhanVien)
         {
             DataTable dtNhanVien = GetListNhanVien();
@@ -255,6 +255,22 @@ namespace QuanLyNhaKho.BUS
         {
             return Dao.GetListHH();
         }
+        public static List<String> getNameHangHoa()
+        {
+            DataTable dt = Dao.GetListHH();
+            List<HangHoa> listHangHoa = new List<HangHoa>();
+            listHangHoa = (from DataRow row in dt.Rows
+                        select new HangHoa
+                         {
+                          TenHang =row["TenHang"].ToString()
+            }).ToList();
+            List<String> listName = new List<string>();
+            foreach (HangHoa obj in listHangHoa)
+            {
+                listName.Add(obj.TenHang);
+            }
+            return listName;
+        }
         /// Phieu Nhap 
         /// 
         public static string GetMaPNNext()
@@ -271,9 +287,13 @@ namespace QuanLyNhaKho.BUS
         {
             return Dao.UpdatePN(phieuNhap);
         }
-        public static int DeletePN(PhieuNhap phieuNhap)
+        public static int DeletePN(string phieuNhap)
         {
             return Dao.DeletePN(phieuNhap);
+        }
+        public static int DeletePX(string phieuXuat)
+        {
+            return Dao.DeletePX(phieuXuat);
         }
         public static DataTable GetListPN()
         {

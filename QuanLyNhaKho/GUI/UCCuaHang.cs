@@ -54,6 +54,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void AddCH()
         {
+            action = false;
             if (!CheckTextBox())
             {
                 return;
@@ -92,6 +93,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void EnablePanel()
         {
+            action = false;
             panel_InforCuaHang.Enabled = true;
         }
         public void DeleteCH()

@@ -15,6 +15,7 @@ namespace QuanLyNhaKho.GUI
 {
     public partial class UCHangHoa : UserControl
     {
+        private bool action = true;
         public UCHangHoa()
         {
             InitializeComponent();
@@ -47,6 +48,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void EnablePanel()
         {
+            action = false;
             panel_InforHangHoa.Enabled = true;
 
         }
@@ -54,8 +56,7 @@ namespace QuanLyNhaKho.GUI
         {
             txtDonViTinh.Text = "";
             txtTenHH.Text = "";
-            txtGiaNhap.Text = "";
-            txtGiaXuat.Text = "";
+           
             rtxtGhiChu.Text = "";
             txtSoLuong.Text = "";
             dtpNgayNhap.Value = DateTime.Now;
@@ -63,21 +64,32 @@ namespace QuanLyNhaKho.GUI
         }
         private void dgv_HangHoa_Click(object sender, EventArgs e)
         {
-            DataGridViewRow dt = dgv_HangHoa.SelectedRows[0];
-            txtMaHH.Text = dt.Cells["MaHH"].Value.ToString();
-            txtTenHH.Text = dt.Cells["TenHang"].Value.ToString();
-            txtSoLuong.Text = dt.Cells["SoLuong"].Value.ToString();
-            txtDonViTinh.Text = dt.Cells["DonViTinh"].Value.ToString();
-             dtpNSX.Text = dt.Cells["NSX"].Value.ToString();
-            dtpHSD.Text = dt.Cells["HSD"].Value.ToString();
-            rtxtGhiChu.Text = dt.Cells["ThongTin"].Value.ToString();
-            dtpNgayNhap.Text = dt.Cells["NgayNhap"].Value.ToString();
-            cbb_TenNhom.Text = dt.Cells["TenNhom"].Value.ToString();
-            cbb_TenNhom.SelectedValue = dt.Cells["MaNhom"].Value.ToString();
+            try
+            {
+                if(action==false)
+                {
+                    return;
+                }
+                DataGridViewRow dt = dgv_HangHoa.SelectedRows[0];
+                txtMaHH.Text = dt.Cells["MaHH"].Value.ToString();
+                txtTenHH.Text = dt.Cells["TenHang"].Value.ToString();
+                txtSoLuong.Text = dt.Cells["SoLuong"].Value.ToString();
+                txtDonViTinh.Text = dt.Cells["DonViTinh"].Value.ToString();
+                dtpNSX.Text = dt.Cells["NSX"].Value.ToString();
+                dtpHSD.Text = dt.Cells["HSD"].Value.ToString();
+                rtxtGhiChu.Text = dt.Cells["ThongTin"].Value.ToString();
+                dtpNgayNhap.Text = dt.Cells["NgayNhap"].Value.ToString();
+                cbb_TenNhom.Text = dt.Cells["TenNhom"].Value.ToString();
+                cbb_TenNhom.SelectedValue = dt.Cells["MaNhom"].Value.ToString();
+            }
+            catch(Exception err)
+            {
+                Console.Write(err.Message);
+            }
         }
         public bool CheckTextBox()
         {
-            if (!CheckEmpty(txtTenHH) || !CheckEmpty(txtDonViTinh) || !CheckEmpty(txtSoLuong) || !CheckEmpty(txtGiaNhap) || !CheckEmpty(txtGiaXuat))
+            if (!CheckEmpty(txtTenHH) || !CheckEmpty(txtDonViTinh) || !CheckEmpty(txtSoLuong) )
             {
                 MessageBox.Show("Có lỗi không thể thực hiện");
                 return false;
@@ -127,7 +139,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void AddHH()
         {
-
+            action = false;
             if (!CheckTextBox())
             {
                 return;

@@ -19,11 +19,18 @@ namespace QuanLyNhaKho.GUI
             InitializeComponent();
             LoadData();
         }
-        public void LoadData()
+        private void LoadData()
         {
 
         }
-
+        private void ResetValueChart()
+        {
+            foreach(var series in chart1.Series)
+            {
+                series.Points.Clear();
+            }
+        }
+        
         private void btnDate_Click(object sender, EventArgs e)
         {
             //List<ThongKe> listStatistic = StatisticBus.GetListStatisticByDay();
@@ -31,7 +38,12 @@ namespace QuanLyNhaKho.GUI
 
         private void btnMonth_Click(object sender, EventArgs e)
         {
-
+            //ResetValueChart();
+            //List<ThongKe> listStatistic = ;
+            //foreach (ThongKe int listStatistic)
+            //    {
+            //    chart1
+            //}
         }
 
         private void btnYear_Click(object sender, EventArgs e)

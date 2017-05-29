@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyNhaKho.BUS;
 using QuanLyNhaKho.VO;
-
+using QuanLyNhaKho.DAO;
 
 namespace QuanLyNhaKho.GUI
 {
@@ -28,25 +28,7 @@ namespace QuanLyNhaKho.GUI
             cbb_TenCH.ValueMember = "MaCH";
             cbb_TenCH.DisplayMember = "TenCH";
         }
-
-        private void dtgPhieuXuat_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtMaPX.Text =  dtgPhieuXuat.Rows[e.RowIndex].Cells["MaPX"].Value.ToString();
-       //     txtMaCH.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["MaCH"].Value.ToString();
-            rtxtGhiChu.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["GhiChu"].Value.ToString();
-     //       txtMaNV.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["MaNV"].Value.ToString();
-            dtpNgayXuat.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["NgayXuat"].Value.ToString();
-            //  txtTenCH.Text = Bus.getTenCuaHang(txtMaCH.Text);
-         //   cbb_TenCH.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells[""].Value.ToString();
-  //          txtTenNV.Text = Bus.getTenNhanVien(txtMaNV.Text);
-            lb_TongTien.Text = dtgPhieuXuat.Rows[e.RowIndex].Cells["TongTien"].Value.ToString();
-     //       txtDiaChiCH.Text = Bus.getDiaChiCuaHang(txtMaCH.Text);
-        }
-        private void dtgPhieuXuat_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow dt = dtgPhieuXuat.SelectedRows[0];
-
-        }
+        
         public void ClearToolBox()
         {
        //     txtMaCH.Text = "";
@@ -88,6 +70,41 @@ namespace QuanLyNhaKho.GUI
             String str = string.Format("MaPX like '%{0}' or MaCH like '%{0}' or MaNV like '%{0}' ", txtTimKiem.Text);
             (dtgPhieuXuat.DataSource as DataTable).DefaultView.RowFilter = str;
 
+        }
+        public void DeletePhieuXuat()
+        {
+            int result = Dao.DeletePX(txtMaPX.Text);
+            if (result < 0)
+            {
+                MessageBox.Show("Xoa khong thanh cong", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Xoa thanh cong!", "Thông báo", MessageBoxButtons.OK);
+                LoadData();
+                return;
+            }
+        }
+
+        private void dtgPhieuXuat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow dt = dtgPhieuXuat.SelectedRows[0];
+                txtMaPX.Text = dt.Cells["MaPX"].Value.ToString();
+               
+                lb_TongTien.Text = dt.Cells["TongTien"].Value.ToString();
+               
+                dtpNgayXuat.Text = dt.Cells["NgayNhap"].Value.ToString();
+                rtxtGhiChu.Text = dt.Cells["GhiChu"].Value.ToString();
+                cbb_TenCH.Text = dt.Cells["TenNCC"].Value.ToString();
+                cbb_TenCH.SelectedValue = dt.Cells["MaNCC"].Value.ToString();
+            }
+            catch (Exception err)
+            {
+                Console.Write(err.Message);
+            }
         }
     }
 }

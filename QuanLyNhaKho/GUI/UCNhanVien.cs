@@ -38,7 +38,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void EnablePanel()
         {
-            
+            action = false;
             pn_Info.Enabled = true;
         }
         public void ClearData()
@@ -164,6 +164,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void AddNhanVien()
         {
+            action = false;
             if(!CheckTextBox())
             {
                 return;

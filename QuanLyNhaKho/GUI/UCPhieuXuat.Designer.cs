@@ -30,6 +30,8 @@
         {
             this.btnViewMore = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_TimKiem = new System.Windows.Forms.Button();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.dtgPhieuXuat = new System.Windows.Forms.DataGridView();
             this.rtxtGhiChu = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@
             this.lb_TongTien = new System.Windows.Forms.Label();
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_TimKiem = new System.Windows.Forms.Button();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPhieuXuat)).BeginInit();
             this.SuspendLayout();
@@ -73,9 +73,27 @@
             this.panel1.Size = new System.Drawing.Size(1168, 297);
             this.panel1.TabIndex = 24;
             // 
+            // btn_TimKiem
+            // 
+            this.btn_TimKiem.Location = new System.Drawing.Point(420, 6);
+            this.btn_TimKiem.Name = "btn_TimKiem";
+            this.btn_TimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btn_TimKiem.TabIndex = 7;
+            this.btn_TimKiem.Text = "Tìm Kiếm";
+            this.btn_TimKiem.UseVisualStyleBackColor = true;
+            this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(214, 7);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(200, 20);
+            this.txtTimKiem.TabIndex = 6;
+            // 
             // dtgPhieuXuat
             // 
             this.dtgPhieuXuat.AccessibleDescription = "Phiếu Xuất";
+            this.dtgPhieuXuat.AllowUserToAddRows = false;
             this.dtgPhieuXuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgPhieuXuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgPhieuXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -85,7 +103,7 @@
             this.dtgPhieuXuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgPhieuXuat.Size = new System.Drawing.Size(1168, 264);
             this.dtgPhieuXuat.TabIndex = 0;
-            this.dtgPhieuXuat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPhieuXuat_CellContentClick);
+            this.dtgPhieuXuat.Click += new System.EventHandler(this.dtgPhieuXuat_Click);
             // 
             // rtxtGhiChu
             // 
@@ -220,23 +238,6 @@
             this.label6.Size = new System.Drawing.Size(82, 13);
             this.label6.TabIndex = 18;
             this.label6.Text = "Tên nhân viên :";
-            // 
-            // btn_TimKiem
-            // 
-            this.btn_TimKiem.Location = new System.Drawing.Point(420, 6);
-            this.btn_TimKiem.Name = "btn_TimKiem";
-            this.btn_TimKiem.Size = new System.Drawing.Size(75, 23);
-            this.btn_TimKiem.TabIndex = 7;
-            this.btn_TimKiem.Text = "Tìm Kiếm";
-            this.btn_TimKiem.UseVisualStyleBackColor = true;
-            this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(214, 7);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(200, 20);
-            this.txtTimKiem.TabIndex = 6;
             // 
             // UCPhieuXuat
             // 

@@ -12,8 +12,10 @@ using QuanLyNhaKho.VO;
 
 namespace QuanLyNhaKho.GUI
 {
+    
     public partial class UCNhomHang : UserControl
     {
+        private bool action = true;
         DataTable dt = Bus.GetListNhomHang();
         public UCNhomHang()
         {
@@ -29,11 +31,22 @@ namespace QuanLyNhaKho.GUI
 
         private void dgv_NhomHang_Click(object sender, EventArgs e)
         {
-            DataGridViewRow dt = dgv_NhomHang.SelectedRows[0];
-            txt_MaNhomHang.Text = dt.Cells["MaNhom"].Value.ToString();
-            txt_TenNhom.Text = dt.Cells["TenNhom"].Value.ToString();
-            txtSoLuong.Text = dt.Cells["SoLuong"].Value.ToString();
-            rtxt_GhiChu.Text = dt.Cells["GhiChu"].Value.ToString();
+            try
+            {
+                if(action==false)
+                {
+                    return;
+                }
+                DataGridViewRow dt = dgv_NhomHang.SelectedRows[0];
+                txt_MaNhomHang.Text = dt.Cells["MaNhom"].Value.ToString();
+                txt_TenNhom.Text = dt.Cells["TenNhom"].Value.ToString();
+                txtSoLuong.Text = dt.Cells["SoLuong"].Value.ToString();
+                rtxt_GhiChu.Text = dt.Cells["GhiChu"].Value.ToString();
+            }
+            catch(Exception err)
+            {
+                Console.Write(err.Message);
+            }
         }
 
         public bool CheckEmpty(TextBox txt)
@@ -89,6 +102,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void AddNhomHang()
         {
+            action = false;
             if (!CheckTextBox())
             {
                 return;
@@ -147,6 +161,7 @@ namespace QuanLyNhaKho.GUI
         }
        public void EnablePanel()
         {
+            action = false;
             panel_InforNhomHang.Enabled = true;
            
         }

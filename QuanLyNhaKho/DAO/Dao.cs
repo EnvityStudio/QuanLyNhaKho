@@ -106,7 +106,9 @@ namespace QuanLyNhaKho.DAO
              {
                 new SqlParameter("@MaPX",chiTiet.MaPX),
                 new SqlParameter("@MaHH",chiTiet.MaHH),
+                new SqlParameter("@DonGia",chiTiet.DonGia),
                 new SqlParameter("@SoLuong",chiTiet.SoLuong),
+                new SqlParameter("@ThanhTien",chiTiet.ThanhTien),
                 new SqlParameter("@GhiChu",chiTiet.GhiChu)
              };
             return DataProvider.NonQuery(Config.PROC_INSERT_CHITIET_PHIEUXUAT, para);
@@ -115,10 +117,12 @@ namespace QuanLyNhaKho.DAO
         {
             SqlParameter[] para = new SqlParameter[]
                 {
-                    new SqlParameter(@"MaPN",chiTiet.MaPN),
-                    new SqlParameter(@"MaHH",chiTiet.MaHH),
-                    new SqlParameter(@"SoLuong",chiTiet.SoLuong),
-                    new SqlParameter(@"GhiChu",chiTiet.GhiChu)
+                    new SqlParameter("@MaPN",chiTiet.MaPN),
+                    new SqlParameter("@MaHH",chiTiet.MaHH),
+                    new SqlParameter("@DonGia",chiTiet.DonGia),
+                    new SqlParameter("@SoLuong",chiTiet.SoLuong),
+                    new SqlParameter("@ThanhTien",chiTiet.ThanhTien),
+                    new SqlParameter("@GhiChu",chiTiet.GhiChu)
                 };
             return DataProvider.NonQuery(Config.PROC_INSERT_CHITIET_PHIEUNHAP,para);
         }
@@ -428,14 +432,22 @@ namespace QuanLyNhaKho.DAO
             };
             return DataProvider.NonQuery(Config.PROC_UPDATE_PN, para);
         }
-        public static int DeletePN(PhieuNhap phieuNhap)
+        public static int DeletePN(string phieuNhap)
         {
             SqlParameter[] para = new SqlParameter[]
            {
-                new SqlParameter(@"MaPN",phieuNhap.MaPN),
+                new SqlParameter(@"MaPN",phieuNhap),
            };
             return DataProvider.NonQuery(Config.PROC_DELETE_PN, para);
        }
+        public static int DeletePX(string phieuXuat)
+        {
+            SqlParameter[] para = new SqlParameter[]
+           {
+                new SqlParameter(@"MaPX",phieuXuat),
+           };
+            return DataProvider.NonQuery(Config.PROC_DELETE_PX, para);
+        }
         public static int UpdatePassword(NhanVien nhanVien)
         {
             SqlParameter[] para = new SqlParameter[]

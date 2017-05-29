@@ -14,6 +14,7 @@ namespace QuanLyNhaKho.GUI
 {
     public partial class UCNhaCungCap : UserControl
     {
+        private bool action = true;
         public UCNhaCungCap()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace QuanLyNhaKho.GUI
             GhiChu = rtxt_GhiChu.Text;
             return new NhaCungCap(MaNCC, TenNCC, DiaChi, SDT, GhiChu);
         }
-        private void ClearData()
+       public void ClearData()
         {
             txt_TenNCC.Text = "";
             txt_DiaChi.Text = "";
@@ -45,12 +46,22 @@ namespace QuanLyNhaKho.GUI
 
         private void dgv_NhaCungCap_Click(object sender, EventArgs e)
         {
-            DataGridViewRow dt = dgv_NhaCungCap.SelectedRows[0];
-            txt_MaNCC.Text = dt.Cells["MaNCC"].Value.ToString();
-            txt_TenNCC.Text = dt.Cells["TenNCC"].Value.ToString();
-            txt_DiaChi.Text = dt.Cells["DiaChi"].Value.ToString();
-            txtSDT.Text = dt.Cells["SDT"].Value.ToString();
-            rtxt_GhiChu.Text = dt.Cells["GhiChu"].Value.ToString();
+            try
+            {
+                if(action ==false)
+                { return;
+                }
+                DataGridViewRow dt = dgv_NhaCungCap.SelectedRows[0];
+                txt_MaNCC.Text = dt.Cells["MaNCC"].Value.ToString();
+                txt_TenNCC.Text = dt.Cells["TenNCC"].Value.ToString();
+                txt_DiaChi.Text = dt.Cells["DiaChi"].Value.ToString();
+                txtSDT.Text = dt.Cells["SDT"].Value.ToString();
+                rtxt_GhiChu.Text = dt.Cells["GhiChu"].Value.ToString();
+            }
+            catch(Exception err)
+            {
+                Console.Write(err.Message);
+            }
         }
         public bool CheckEmpty(TextBox txt)
         {
@@ -80,6 +91,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void EnablePanel()
         {
+            action = false;
             panel_InforNCC.Enabled = true;
         }
         private void btn_TimKiem_Click(object sender, EventArgs e)
@@ -90,6 +102,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void AddNCC()
         {
+            action = false;
             if (!CheckTextBox())
             {
                 return;

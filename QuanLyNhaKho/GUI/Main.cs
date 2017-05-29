@@ -23,8 +23,10 @@ namespace QuanLyNhaKho
         private UCHangHoa ucHangHoa;
         private UCNhaCungCap ucNhaCungCap;
         private UCPhieuNhap ucPhieuNhap;
+       
         private UCThongKeBieuDo ucThongKeBieuDo;
         private UCThongKeHoaDon ucThongKeHoaDon;
+        private bool isAction;
 
 
         private Bitmap img = Properties.Resources.delete;
@@ -67,6 +69,10 @@ namespace QuanLyNhaKho
             if (tabControlHome.TabPages.Count == 0)
             {
                 return;
+            }
+            if(tabControlHome.SelectedTab.Name=="UCPhieuNhap")
+            {
+                Config.TAB_CURRENT = Config.TAB_PHIEUNHAP;
             }
             if (tabControlHome.SelectedTab.Name == "UCPhieuXuat")
             {
@@ -127,10 +133,20 @@ namespace QuanLyNhaKho
         private void btnAdd_Click(object sender, EventArgs e)
         {
             SetTabCurrent();
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnAdd.Enabled = false;
+
             Config.ACTION = Config.ADD;
             if (Config.TAB_CURRENT == Config.TAB_PHIEU_XUAT)
             {
                 ucPhieuXuat.addPhieuXuat();
+            }
+            if(Config.TAB_CURRENT==Config.TAB_PHIEUNHAP)
+            {
+                ucPhieuNhap.AddPhieuNhap();
             }
             else if (Config.TAB_CURRENT == Config.TAB_NHANVIEN)
             {
@@ -178,99 +194,17 @@ namespace QuanLyNhaKho
             {
                 ucHangHoa.DeleteHH();
             }
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            SetTabCurrent();
-            Config.ACTION = Config.EDIT;
-            if (Config.TAB_CURRENT == Config.TAB_NHANVIEN)
+            else if (Config.TAB_CURRENT==Config.TAB_PHIEUNHAP)
             {
-                ucNhanVien.EnablePanel();
+                ucPhieuNhap.DeletePhieuNhap();
             }
-            else if (Config.TAB_CURRENT == Config.TAB_NHOMHANG)
+            else if(Config.TAB_CURRENT==Config.TAB_PHIEU_XUAT)
             {
-                ucNhomHang.EnablePanel();
-            }
-            else if (Config.TAB_CURRENT == Config.TAB_NHACUNGCAP)
-            {
-                ucNhaCungCap.EnablePanel();
-            }
-            else if (Config.TAB_CURRENT == Config.TAB_CUAHANG)
-            {
-                ucCuaHang.EnablePanel();
-            }
-            else if (Config.TAB_CURRENT == Config.TAB_HANGHOA)
-            {
-                ucHangHoa.EnablePanel();
+                ucPhieuXuat.DeletePhieuXuat();
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SetTabCurrent();
-            if (Config.ACTION == Config.ADD)
-            {
-                if (Config.TAB_CURRENT == Config.TAB_NHANVIEN)
-                {
-                    ucNhanVien.AddNhanVien();
 
-                }
-                else if (Config.TAB_CURRENT == Config.TAB_NHOMHANG)
-                {
-                    ucNhomHang.AddNhomHang();
-                }
-                else if (Config.TAB_CURRENT == Config.TAB_NHACUNGCAP)
-                {
-                    ucNhaCungCap.AddNCC();
-                }
-                else if (Config.TAB_CURRENT == Config.TAB_CUAHANG)
-                {
-                    ucCuaHang.AddCH();
-                }
-                else if (Config.TAB_CURRENT == Config.TAB_HANGHOA)
-                {
-                    ucHangHoa.AddHH();
-                }
-            }
-            if (Config.ACTION == Config.EDIT)
-            {
-                if (Config.TAB_CURRENT == Config.TAB_NHANVIEN)
-                {
-                    ucNhanVien.UpdateNhanVien();
-
-                }
-                else if (Config.TAB_CURRENT == Config.TAB_NHOMHANG)
-                {
-                    ucNhomHang.UpdateNhomHang();
-                }
-                else if (Config.TAB_CURRENT == Config.TAB_NHACUNGCAP)
-                {
-                    ucNhaCungCap.UpdateNCC();
-                }
-                else if (Config.TAB_CURRENT == Config.TAB_CUAHANG)
-                {
-                    ucCuaHang.UpdateCH();
-                }
-                else if (Config.TAB_CURRENT == Config.TAB_HANGHOA)
-                {
-                    ucHangHoa.UpdateHH();
-                }
-            }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Hủy thao tác", "Thông báo", MessageBoxButtons.OKCancel);
-            if (result == DialogResult.OK)
-            {
-                if (Config.TAB_CURRENT == Config.TAB_NHANVIEN)
-                {
-                    ucNhanVien.ClearData();
-                }
-
-            }
-        }
 
         private void EnableButton()
         {
@@ -341,6 +275,275 @@ namespace QuanLyNhaKho
         private void btn_thongKeHoaDon_Click(object sender, EventArgs e)
         {
             AddNewTab(ucThongKeHoaDon);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            
+            SetTabCurrent();
+            if (Config.ACTION == Config.ADD)
+            {
+                if (Config.TAB_CURRENT == Config.TAB_NHANVIEN)
+                {
+                    ucNhanVien.AddNhanVien();
+
+                }
+                else if (Config.TAB_CURRENT == Config.TAB_NHOMHANG)
+                {
+                    ucNhomHang.AddNhomHang();
+                }
+                else if (Config.TAB_CURRENT == Config.TAB_NHACUNGCAP)
+                {
+                    ucNhaCungCap.AddNCC();
+                }
+                else if (Config.TAB_CURRENT == Config.TAB_CUAHANG)
+                {
+                    ucCuaHang.AddCH();
+                }
+                else if (Config.TAB_CURRENT == Config.TAB_HANGHOA)
+                {
+                    ucHangHoa.AddHH();
+                }
+            }
+            if (Config.ACTION == Config.EDIT)
+            {
+                if (Config.TAB_CURRENT == Config.TAB_NHANVIEN)
+                {
+                    ucNhanVien.UpdateNhanVien();
+
+                }
+                else if (Config.TAB_CURRENT == Config.TAB_NHOMHANG)
+                {
+                    ucNhomHang.UpdateNhomHang();
+                }
+                else if (Config.TAB_CURRENT == Config.TAB_NHACUNGCAP)
+                {
+                    ucNhaCungCap.UpdateNCC();
+                }
+                else if (Config.TAB_CURRENT == Config.TAB_CUAHANG)
+                {
+                    ucCuaHang.UpdateCH();
+                }
+                else if (Config.TAB_CURRENT == Config.TAB_HANGHOA)
+                {
+                    ucHangHoa.UpdateHH();
+                }
+             
+            }
+            isAction = false;
+            btnDelete.Enabled = true;
+            btnSave.Enabled = false;
+            btnAdd.Enabled = true;
+
+            btnEdit.Enabled = true;
+            btnCancel.Enabled = false;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            isAction = true;
+            SetTabCurrent();
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnAdd.Enabled = false;
+            Config.ACTION = Config.EDIT;
+            if (Config.TAB_CURRENT == Config.TAB_NHANVIEN)
+            {
+                ucNhanVien.EnablePanel();
+            }
+            else if (Config.TAB_CURRENT == Config.TAB_NHOMHANG)
+            {
+                ucNhomHang.EnablePanel();
+            }
+            else if (Config.TAB_CURRENT == Config.TAB_NHACUNGCAP)
+            {
+                ucNhaCungCap.EnablePanel();
+            }
+            else if (Config.TAB_CURRENT == Config.TAB_CUAHANG)
+            {
+                ucCuaHang.EnablePanel();
+            }
+            else if (Config.TAB_CURRENT == Config.TAB_HANGHOA)
+            {
+                ucHangHoa.EnablePanel();
+            }
+        }
+
+        private void tabControlHome_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (isAction)
+            {
+                MessageBox.Show("Bạn chưa hoàn thành tác vụ!\nHãy hoàn thành để mở tab khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                setCurrent();
+                return;
+
+            }
+            TabPage current = (sender as TabControl).SelectedTab;
+            if (isAction) e.Cancel = true;
+           
+            if (current.Name == "UCNhanVien")
+            {
+                Config.TAB_CURRENT = Config.TAB_NHANVIEN;
+            }
+            else if (current.Name == "UCNhomHang")
+            {
+                Config.TAB_CURRENT = Config.TAB_NHOMHANG;
+            }
+            else if (current.Name == "UCHangHoa")
+            {
+                Config.TAB_CURRENT = Config.TAB_HANGHOA;
+            }
+            else if (current.Name == "UCCuaHang")
+            {
+                Config.TAB_CURRENT = Config.TAB_CUAHANG;
+            }
+            else if (current.Name == "UCNhaCungCap")
+            {
+                Config.TAB_CURRENT = Config.TAB_NHACUNGCAP;
+            }
+            else if (current.Name == "UCPhieuNhap")
+            {
+                Config.TAB_CURRENT = Config.TAB_PHIEUNHAP;
+            }
+            else if (current.Name == "UCPhieuXuat")
+            {
+                Config.TAB_CURRENT = Config.TAB_PHIEU_XUAT;
+            }
+        }
+        public void setCurrent()
+        {
+            if (Config.TAB_CURRENT == Config.TAB_NHANVIEN)
+            {
+                foreach (TabPage tab in tabControlHome.TabPages)
+                {
+                    if (tab.Name == "UCNhanVien")
+                    {
+                        tabControlHome.SelectedTab = tab;
+                        return;
+                    }
+                }
+            }
+            if (Config.TAB_CURRENT == Config.TAB_CUAHANG)
+            {
+                foreach (TabPage tab in tabControlHome.TabPages)
+                {
+                    if (tab.Name == "UCCuaHang")
+                    {
+                        tabControlHome.SelectedTab = tab;
+                        return;
+                    }
+                }
+            }
+            if (Config.TAB_CURRENT == Config.TAB_HANGHOA)
+            {
+                foreach (TabPage tab in tabControlHome.TabPages)
+                {
+                    if (tab.Name == "UCHangHoa")
+                    {
+                        tabControlHome.SelectedTab = tab;
+                        return;
+                    }
+                }
+            }
+            if (Config.TAB_CURRENT == Config.TAB_NHACUNGCAP)
+            {
+                foreach (TabPage tab in tabControlHome.TabPages)
+                {
+                    if (tab.Name == "UCNhaCungCap")
+                    {
+                        tabControlHome.SelectedTab = tab;
+                        return;
+                    }
+                }
+            }
+            if (Config.TAB_CURRENT == Config.TAB_NHOMHANG)
+            {
+                foreach (TabPage tab in tabControlHome.TabPages)
+                {
+                    if (tab.Name == "UCNhomHang")
+                    {
+                        tabControlHome.SelectedTab = tab;
+                        return;
+                    }
+                }
+            }
+            if (Config.TAB_CURRENT == Config.TAB_PHIEUNHAP)
+            {
+                foreach (TabPage tab in tabControlHome.TabPages)
+                {
+                    if (tab.Name == "UCPhieuNhap")
+                    {
+                        tabControlHome.SelectedTab = tab;
+                        return;
+                    }
+                }
+            }
+            if (Config.TAB_CURRENT == Config.TAB_PHIEU_XUAT)
+            {
+                foreach (TabPage tab in tabControlHome.TabPages)
+                {
+                    if (tab.Name == "UCPhieuXuat")
+                    {
+                        tabControlHome.SelectedTab = tab;
+                        return;
+                    }
+                }
+            }
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Hủy thao tác", "Thông báo", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                isAction = false;
+                btnCancel.Enabled = false;
+                btnSave.Enabled = false;
+                btnEdit.Enabled = true;
+                btnAdd.Enabled = true;
+                btnDelete.Enabled = true;
+                if (Config.TAB_CURRENT == Config.TAB_NHANVIEN)
+                {
+                    ucNhanVien.ClearData();
+                   // ucNhanVien.setIsAction(false);
+                }
+                if (Config.TAB_CURRENT == Config.TAB_CUAHANG)
+                {
+                    ucCuaHang.ClearData();
+               //     ucChucVu.EnableTextBox(false);
+                   // ucChucVu.setIsAction(false);
+                }
+                if (Config.TAB_CURRENT == Config.TAB_HANGHOA)
+                {
+                    ucHangHoa.ClearData();
+                 //   ucHocVan.enableToolBox(false);
+                 //   ucHocVan.setIsAction(false);
+                }
+                if (Config.TAB_CURRENT == Config.TAB_NHACUNGCAP)
+                {
+                    ucNhaCungCap.ClearData();
+              //      ucLuong.enableTextBox(false);
+                   // ucLuong.setIsAction(false);
+                }
+                if (Config.TAB_CURRENT == Config.TAB_NHOMHANG)
+                {
+                    ucNhomHang.ClearData();
+                    //   ucPhongBan.enableTextBox(false);
+                   // ucPhongBan.setIsAction(false);
+                }
+                if (Config.TAB_CURRENT == Config.TAB_PHIEUNHAP)
+                {
+                  
+                }
+                if (Config.TAB_CURRENT == Config.TAB_PHIEU_XUAT)
+                {
+                   
+                }
+                
+            }
         }
     }
 }

@@ -59,6 +59,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.rtxtGhiChu = new System.Windows.Forms.RichTextBox();
             this.btnAddNewImport = new System.Windows.Forms.Button();
+            this.listBoxHangHoa = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuNhap)).BeginInit();
             this.btnAddNew.SuspendLayout();
             this.SuspendLayout();
@@ -256,9 +257,11 @@
             this.cbbTenHH.Size = new System.Drawing.Size(121, 21);
             this.cbbTenHH.TabIndex = 82;
             this.cbbTenHH.SelectedValueChanged += new System.EventHandler(this.cbbTenHH_SelectedValueChanged);
+            this.cbbTenHH.TextChanged += new System.EventHandler(this.cbbTenHH_TextChanged);
             // 
             // btnAddNew
             // 
+            this.btnAddNew.Controls.Add(this.listBoxHangHoa);
             this.btnAddNew.Controls.Add(this.label4);
             this.btnAddNew.Controls.Add(this.cbbTenHH);
             this.btnAddNew.Controls.Add(this.label3);
@@ -395,6 +398,15 @@
             this.btnAddNewImport.UseVisualStyleBackColor = true;
             this.btnAddNewImport.Click += new System.EventHandler(this.btnAddNewImport_Click);
             // 
+            // listBoxHangHoa
+            // 
+            this.listBoxHangHoa.FormattingEnabled = true;
+            this.listBoxHangHoa.Location = new System.Drawing.Point(175, 126);
+            this.listBoxHangHoa.Name = "listBoxHangHoa";
+            this.listBoxHangHoa.Size = new System.Drawing.Size(120, 95);
+            this.listBoxHangHoa.TabIndex = 83;
+            this.listBoxHangHoa.SelectedIndexChanged += new System.EventHandler(this.listBoxHangHoa_SelectedIndexChanged);
+            // 
             // FrmChiTietPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,5 +466,6 @@
         private System.Windows.Forms.RichTextBox rtxtGhiChu;
         private System.Windows.Forms.Button btnAddNewImport;
         private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.ListBox listBoxHangHoa;
     }
 }

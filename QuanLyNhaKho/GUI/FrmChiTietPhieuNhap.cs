@@ -28,6 +28,7 @@ namespace QuanLyNhaKho.GUI
             dataTableChiTiet = new DataTable();
             txtMaPN.Text = MaPN;
             LoadDataImportDetailByID();
+            listBoxHangHoa.Visible = false;
         }
         public FrmChiTietPhieuNhap()
         {
@@ -37,6 +38,7 @@ namespace QuanLyNhaKho.GUI
             initDataTableChiTiet(dataTableChiTiet);
             txtMaPN.Text = Bus.GetMaPNNext();
             txtTenNV.Text = Bus.getTenNhanVien(Config.CURRENT_NHANVIEN);
+            listBoxHangHoa.Visible = false;
         }
 
       
@@ -174,7 +176,7 @@ namespace QuanLyNhaKho.GUI
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-           
+            txtThanhTien.Text = (int.Parse(txtDonGia.Text) * int.Parse(txtSoLuong.Text)).ToString();
             if (tongTien > 1700000000)
             {
                 MessageBox.Show("Số tiền của bạn quá cao");
@@ -216,6 +218,7 @@ namespace QuanLyNhaKho.GUI
                             int quantity = int.Parse(txtSoLuong.Text);
                             dr["SoLuong"] = int.Parse(dr["SoLuong"].ToString()) + quantity;
                             dr["ThanhTien"] = int.Parse(dr["SoLuong"].ToString()) * int.Parse(txtDonGia.Text);
+                            dr["DonGia"] = txtDonGia.Text;
                         }
                     }
                     if (a != 1)
@@ -227,7 +230,7 @@ namespace QuanLyNhaKho.GUI
                         newChiTiet["TenHang"] = cbbTenHH.Text;
                         newChiTiet["SoLuong"] = chiTiet.SoLuong;
                         newChiTiet["DonGia"] = txtDonGia.Text;
-                        newChiTiet["ThanhTien"] = txtThanhTien.Text;
+                        newChiTiet["ThanhTien"] = chiTiet.SoLuong * int.Parse(txtDonGia.Text);
                         newChiTiet["GhiChu"] = rtxtGhiChu.Text;
                         dataTableChiTiet.Rows.Add(newChiTiet);
                         dgvChiTietPhieuNhap.DataSource = dataTableChiTiet;
@@ -257,9 +260,10 @@ namespace QuanLyNhaKho.GUI
                 MaNCC = cbbTenNCC.SelectedValue.ToString(),
                 NgayNhap = dtpNgayNhap.Value,
                 ChietKhau = 0,
-                ThanhTien = 0,
-                TongTien = 0,
+                ThanhTien = int.Parse(txtTongTien.Text),
+                TongTien = int.Parse(txtTongTien.Text),
                 GhiChu = rtxtGhiChu.Text
+                
             };
 
             int res = Bus.AddPhieuNhap(phieuNhap);
@@ -287,7 +291,8 @@ namespace QuanLyNhaKho.GUI
                     return;
                 }
             }
-            MessageBox.Show("Thêm CT thành công!", "Thông báo", MessageBoxButtons.OK);
+            MessageBox.Show("Thêm Hóa Đơn thành công!", "Thông báo", MessageBoxButtons.OK);
+            this.Close();
         }
 
         private void dgvChiTietPhieuNhap_Click(object sender, EventArgs e)
@@ -343,6 +348,10 @@ namespace QuanLyNhaKho.GUI
 
         private void btnAddNewImport_Click(object sender, EventArgs e)
         {
+            txtSoLuong.Text = "1";
+            txtDonGia.Text = "";
+            txtThanhTien.Text = "0";
+            
             status = 1;
            txtSoLuong.Enabled = true;
            cbbTenHH.Enabled = true;
@@ -374,6 +383,36 @@ namespace QuanLyNhaKho.GUI
                 txtTongTien.Text = tongTien.ToString();
                 btnSave.Enabled = true;
             }
+        }
+
+        private void listBoxHangHoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbbTenHH.SelectedItem = listBoxHangHoa.SelectedItem;
+            listBoxHangHoa.Visible = false;
+        }
+
+        private void cbbTenHH_TextChanged(object sender, EventArgs e)
+        {
+            string textToSearch = cbbTenHH.Text.ToLower();
+            if (textToSearch.Length == 0)
+            {
+                //.Text = "";
+            }
+            else
+            {
+            }
+          
+            listBoxHangHoa.Visible = false; // hide the listbox, see below for why doing that
+            if (String.IsNullOrEmpty(textToSearch))
+                return; // return with listbox's Visible set to false if the keyword is empty
+                        //search
+            string[] result = Bus.getNameHangHoa().ToArray();
+            if (result.Length == 0)
+                return; // return with listbox's Visible set to false if nothing found
+
+            listBoxHangHoa.Items.Clear(); // remember to Clear before Add
+            listBoxHangHoa.Items.AddRange(result);
+            listBoxHangHoa.Visible = false; // show the listbox again
         }
     }
 }
