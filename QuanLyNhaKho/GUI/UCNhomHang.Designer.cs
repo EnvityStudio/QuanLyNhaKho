@@ -74,7 +74,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(407, 72);
+            this.label1.Location = new System.Drawing.Point(330, 99);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 106;
@@ -82,7 +82,7 @@
             // 
             // rtxt_GhiChu
             // 
-            this.rtxt_GhiChu.Location = new System.Drawing.Point(475, 36);
+            this.rtxt_GhiChu.Location = new System.Drawing.Point(398, 63);
             this.rtxt_GhiChu.Name = "rtxt_GhiChu";
             this.rtxt_GhiChu.Size = new System.Drawing.Size(412, 69);
             this.rtxt_GhiChu.TabIndex = 3;
@@ -91,7 +91,7 @@
             // lb_TenNhom
             // 
             this.lb_TenNhom.AutoSize = true;
-            this.lb_TenNhom.Location = new System.Drawing.Point(73, 79);
+            this.lb_TenNhom.Location = new System.Drawing.Point(62, 106);
             this.lb_TenNhom.Name = "lb_TenNhom";
             this.lb_TenNhom.Size = new System.Drawing.Size(63, 13);
             this.lb_TenNhom.TabIndex = 104;
@@ -99,7 +99,7 @@
             // 
             // txt_TenNhom
             // 
-            this.txt_TenNhom.Location = new System.Drawing.Point(182, 72);
+            this.txt_TenNhom.Location = new System.Drawing.Point(171, 99);
             this.txt_TenNhom.Name = "txt_TenNhom";
             this.txt_TenNhom.Size = new System.Drawing.Size(129, 20);
             this.txt_TenNhom.TabIndex = 1;
@@ -107,7 +107,7 @@
             // lb_SoLuong
             // 
             this.lb_SoLuong.AutoSize = true;
-            this.lb_SoLuong.Location = new System.Drawing.Point(73, 119);
+            this.lb_SoLuong.Location = new System.Drawing.Point(62, 146);
             this.lb_SoLuong.Name = "lb_SoLuong";
             this.lb_SoLuong.Size = new System.Drawing.Size(56, 13);
             this.lb_SoLuong.TabIndex = 102;
@@ -116,7 +116,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(73, 39);
+            this.label11.Location = new System.Drawing.Point(62, 66);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(85, 13);
             this.label11.TabIndex = 99;
@@ -125,7 +125,7 @@
             // txtSoLuong
             // 
             this.txtSoLuong.Enabled = false;
-            this.txtSoLuong.Location = new System.Drawing.Point(182, 112);
+            this.txtSoLuong.Location = new System.Drawing.Point(171, 139);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(129, 20);
             this.txtSoLuong.TabIndex = 2;
@@ -133,7 +133,7 @@
             // txt_MaNhomHang
             // 
             this.txt_MaNhomHang.Enabled = false;
-            this.txt_MaNhomHang.Location = new System.Drawing.Point(182, 36);
+            this.txt_MaNhomHang.Location = new System.Drawing.Point(171, 63);
             this.txt_MaNhomHang.Name = "txt_MaNhomHang";
             this.txt_MaNhomHang.Size = new System.Drawing.Size(129, 20);
             this.txt_MaNhomHang.TabIndex = 0;
@@ -150,7 +150,7 @@
             // 
             // btn_TimKiem
             // 
-            this.btn_TimKiem.Location = new System.Drawing.Point(224, 5);
+            this.btn_TimKiem.Location = new System.Drawing.Point(210, 2);
             this.btn_TimKiem.Name = "btn_TimKiem";
             this.btn_TimKiem.Size = new System.Drawing.Size(75, 23);
             this.btn_TimKiem.TabIndex = 3;
@@ -160,7 +160,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(18, 6);
+            this.txtTimKiem.Location = new System.Drawing.Point(4, 5);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(200, 20);
             this.txtTimKiem.TabIndex = 2;
@@ -182,7 +182,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Firebrick;
-            this.label2.Location = new System.Drawing.Point(339, 10);
+            this.label2.Location = new System.Drawing.Point(362, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 25);
             this.label2.TabIndex = 107;

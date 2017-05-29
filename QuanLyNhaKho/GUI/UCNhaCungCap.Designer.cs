@@ -176,7 +176,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(16, 4);
+            this.txtTimKiem.Location = new System.Drawing.Point(3, 3);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(200, 20);
             this.txtTimKiem.TabIndex = 4;
@@ -204,7 +204,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Firebrick;
-            this.label2.Location = new System.Drawing.Point(368, 9);
+            this.label2.Location = new System.Drawing.Point(410, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 25);
             this.label2.TabIndex = 13;

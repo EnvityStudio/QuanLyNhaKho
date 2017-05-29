@@ -38,6 +38,7 @@ namespace QuanLyNhaKho.GUI
             cbb_TenNhom.DataSource = Bus.GetListTenNhom();
             cbb_TenNhom.DisplayMember = "TenNhom";
             cbb_TenNhom.ValueMember = "MaNhom";
+            labelHangHoa.Enabled = true;
             ClearData();
         }
         public void GetMaHHNext()
@@ -48,7 +49,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void EnablePanel()
         {
-            action = false;
+            action = false; 
             panel_InforHangHoa.Enabled = true;
         }
         public void ClearData()
@@ -209,6 +210,10 @@ namespace QuanLyNhaKho.GUI
         private void txtGiaXuat_KeyPress(object sender, KeyPressEventArgs e)
         {
             InputKeyPress(sender, e);
+        }
+
+        private void label7_Click(object sender, EventArgs e) {
+
         }
     }
 }

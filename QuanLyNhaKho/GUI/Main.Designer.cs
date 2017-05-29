@@ -74,7 +74,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1013, 56);
+            this.panel1.Size = new System.Drawing.Size(944, 56);
             this.panel1.TabIndex = 0;
             // 
             // toolStrip1
@@ -92,7 +92,7 @@
             this.btnPrint});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1013, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(944, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -180,7 +180,7 @@
             this.menuStrip_TroGiup});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1013, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -329,7 +329,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 56);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1013, 429);
+            this.panel2.Size = new System.Drawing.Size(944, 545);
             this.panel2.TabIndex = 1;
             // 
             // tabControlHome
@@ -339,7 +339,7 @@
             this.tabControlHome.Location = new System.Drawing.Point(0, 0);
             this.tabControlHome.Name = "tabControlHome";
             this.tabControlHome.SelectedIndex = 0;
-            this.tabControlHome.Size = new System.Drawing.Size(1013, 429);
+            this.tabControlHome.Size = new System.Drawing.Size(944, 545);
             this.tabControlHome.TabIndex = 1;
             this.tabControlHome.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControlHome_DrawItem);
             this.tabControlHome.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlHome_Selecting);
@@ -359,14 +359,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 485);
+            this.ClientSize = new System.Drawing.Size(944, 601);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
             this.Text = "Quản Lý Kho Hàng";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
