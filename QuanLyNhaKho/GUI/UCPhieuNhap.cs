@@ -41,15 +41,22 @@ namespace QuanLyNhaKho.GUI
 
         private void dgvPhieuNhap_Click(object sender, EventArgs e)
         {
-            DataGridViewRow dt = dgvPhieuNhap.SelectedRows[0];
-            txtMaPN.Text = dt.Cells["MaPN"].Value.ToString();
-            txtThanhTien.Text = dt.Cells["ThanhTien"].Value.ToString();
-            lb_TongTien.Text = dt.Cells["TongTien"].Value.ToString();
-            txtChietKhau.Text = dt.Cells["ChietKhau"].Value.ToString();
-            dtpNgayNhap.Text = dt.Cells["NgayNhap"].Value.ToString();
-            rtxtGhiChu.Text = dt.Cells["GhiChu"].Value.ToString();
-            cbbTenNCC.Text = dt.Cells["TenNCC"].Value.ToString();
-            cbbTenNCC.SelectedValue = dt.Cells["MaNCC"].Value.ToString();
+            try
+            {
+                DataGridViewRow dt = dgvPhieuNhap.SelectedRows[0];
+                txtMaPN.Text = dt.Cells["MaPN"].Value.ToString();
+                txtThanhTien.Text = dt.Cells["ThanhTien"].Value.ToString();
+                lb_TongTien.Text = dt.Cells["TongTien"].Value.ToString();
+                txtChietKhau.Text = dt.Cells["ChietKhau"].Value.ToString();
+                dtpNgayNhap.Text = dt.Cells["NgayNhap"].Value.ToString();
+                rtxtGhiChu.Text = dt.Cells["GhiChu"].Value.ToString();
+                cbbTenNCC.Text = dt.Cells["TenNCC"].Value.ToString();
+                cbbTenNCC.SelectedValue = dt.Cells["MaNCC"].Value.ToString();
+            }
+            catch(Exception err)
+            {
+                Console.Write(err.Message);
+            }
 
 
         }
@@ -60,7 +67,22 @@ namespace QuanLyNhaKho.GUI
             
         }
       
-                
+         public void DeletePhieuNhap()
+           {
+            int result = Dao.DeletePN(txtMaPN.Text);
+            if(result<0)
+            {
+                MessageBox.Show("Xoa khong thanh cong", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Xoa thanh cong!", "Thông báo", MessageBoxButtons.OK);
+                LoadData();
+                return;
+            }
+           
+        }
 
         private void cbbTenNCC_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -73,6 +95,11 @@ namespace QuanLyNhaKho.GUI
             }
             else
                 txtDiaChiNCC.Text = "";
+        }
+        public void AddPhieuNhap()
+        {
+            FrmChiTietPhieuNhap frm = new FrmChiTietPhieuNhap();
+            frm.ShowDialog();
         }
 
         private void btnXCT_Click(object sender, EventArgs e)

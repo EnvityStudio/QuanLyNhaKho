@@ -94,11 +94,15 @@ namespace QuanLyNhaKho
         public static string PROC_INSERT_PN = "InsertPhieuNhap";
         public static string PROC_UPDATE_PN = "UpdatePhieuNhap";
         public static string PROC_DELETE_PN = "DeletePhieuNhap";
+        public static string PROC_DELETE_PX = "DeletePhieuXuat";
 
         public static string PROC_GET_PX_BYID = "GetExportByID";
         public static string PROC_GET_PN_BYID = "GetImportByID";
-
-
-
+        /// statistic 
+        /// 
+        public static string PROC_Statistic_Import_ByTime = "GetListStatisticByTimeImport";
+        public static string PROC_Statistic_Export_ByTime = "GetListStatisticByTimeExport";
+        public static string PROC_GetTotalMoneyImport = "GetTotalMoneyImport";
+        public static string PROC_GetTotalMoneyExport = "GetTotalMoneyExport";
     }
 }

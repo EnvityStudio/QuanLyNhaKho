@@ -30,9 +30,7 @@
         {
             this.label13 = new System.Windows.Forms.Label();
             this.txtTenNV = new System.Windows.Forms.TextBox();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.dtpNgayNhap = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDiaChiNCC = new System.Windows.Forms.TextBox();
@@ -52,6 +50,7 @@
             this.cbbTenNCC = new System.Windows.Forms.ComboBox();
             this.cbbTenHH = new System.Windows.Forms.ComboBox();
             this.btnAddNew = new System.Windows.Forms.Panel();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -59,8 +58,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.rtxtGhiChu = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.btnAddNewImport = new System.Windows.Forms.Button();
+            this.listBoxHangHoa = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuNhap)).BeginInit();
             this.btnAddNew.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +67,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(110, 180);
+            this.label13.Location = new System.Drawing.Point(105, 157);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(50, 13);
             this.label13.TabIndex = 79;
@@ -77,39 +76,24 @@
             // txtTenNV
             // 
             this.txtTenNV.Enabled = false;
-            this.txtTenNV.Location = new System.Drawing.Point(667, 54);
+            this.txtTenNV.Location = new System.Drawing.Point(667, 21);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(146, 20);
             this.txtTenNV.TabIndex = 72;
             // 
-            // txtMaNV
-            // 
-            this.txtMaNV.Location = new System.Drawing.Point(713, 23);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(100, 20);
-            this.txtMaNV.TabIndex = 71;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(579, 54);
+            this.label6.Location = new System.Drawing.Point(574, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 13);
             this.label6.TabIndex = 69;
             this.label6.Text = "Tên nhân viên :";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(579, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 13);
-            this.label5.TabIndex = 70;
-            this.label5.Text = "Mã nhân viên giao hàng :";
-            // 
             // dtpNgayNhap
             // 
             this.dtpNgayNhap.CustomFormat = "";
+            this.dtpNgayNhap.Enabled = false;
             this.dtpNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayNhap.Location = new System.Drawing.Point(397, 24);
             this.dtpNgayNhap.Name = "dtpNgayNhap";
@@ -149,6 +133,7 @@
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(130, 20);
             this.txtThanhTien.TabIndex = 63;
+            this.txtThanhTien.Text = "0";
             // 
             // label7
             // 
@@ -179,7 +164,8 @@
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(176, 180);
+            this.txtDonGia.Enabled = false;
+            this.txtDonGia.Location = new System.Drawing.Point(176, 151);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(100, 20);
             this.txtDonGia.TabIndex = 59;
@@ -196,7 +182,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(109, 155);
+            this.label12.Location = new System.Drawing.Point(105, 180);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 13);
             this.label12.TabIndex = 49;
@@ -243,6 +229,7 @@
             // dgvChiTietPhieuNhap
             // 
             this.dgvChiTietPhieuNhap.AllowUserToAddRows = false;
+            this.dgvChiTietPhieuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChiTietPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvChiTietPhieuNhap.Location = new System.Drawing.Point(5, 375);
             this.dgvChiTietPhieuNhap.Name = "dgvChiTietPhieuNhap";
@@ -263,15 +250,18 @@
             // 
             // cbbTenHH
             // 
+            this.cbbTenHH.Enabled = false;
             this.cbbTenHH.FormattingEnabled = true;
             this.cbbTenHH.Location = new System.Drawing.Point(175, 119);
             this.cbbTenHH.Name = "cbbTenHH";
             this.cbbTenHH.Size = new System.Drawing.Size(121, 21);
             this.cbbTenHH.TabIndex = 82;
             this.cbbTenHH.SelectedValueChanged += new System.EventHandler(this.cbbTenHH_SelectedValueChanged);
+            this.cbbTenHH.TextChanged += new System.EventHandler(this.cbbTenHH_TextChanged);
             // 
             // btnAddNew
             // 
+            this.btnAddNew.Controls.Add(this.listBoxHangHoa);
             this.btnAddNew.Controls.Add(this.label4);
             this.btnAddNew.Controls.Add(this.cbbTenHH);
             this.btnAddNew.Controls.Add(this.label3);
@@ -286,11 +276,9 @@
             this.btnAddNew.Controls.Add(this.txtMaPN);
             this.btnAddNew.Controls.Add(this.label7);
             this.btnAddNew.Controls.Add(this.txtTenNV);
-            this.btnAddNew.Controls.Add(this.txtMaNV);
             this.btnAddNew.Controls.Add(this.txtSoLuong);
             this.btnAddNew.Controls.Add(this.label6);
             this.btnAddNew.Controls.Add(this.txtThanhTien);
-            this.btnAddNew.Controls.Add(this.label5);
             this.btnAddNew.Controls.Add(this.txtTongTien);
             this.btnAddNew.Controls.Add(this.dtpNgayNhap);
             this.btnAddNew.Controls.Add(this.txtDiaChiNCC);
@@ -299,32 +287,48 @@
             this.btnAddNew.Size = new System.Drawing.Size(882, 210);
             this.btnAddNew.TabIndex = 83;
             // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Enabled = false;
+            this.txtSoLuong.Location = new System.Drawing.Point(176, 177);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(59, 20);
+            this.txtSoLuong.TabIndex = 62;
+            this.txtSoLuong.Text = "1";
+            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
+            // 
             // btnDelete
             // 
+            this.btnDelete.Enabled = false;
             this.btnDelete.Image = global::QuanLyNhaKho.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(763, 259);
+            this.btnDelete.Location = new System.Drawing.Point(763, 258);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(68, 42);
             this.btnDelete.TabIndex = 90;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
+            this.btnEdit.Enabled = false;
             this.btnEdit.Image = global::QuanLyNhaKho.Properties.Resources.edit;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnEdit.Location = new System.Drawing.Point(687, 258);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(68, 43);
+            this.btnEdit.Size = new System.Drawing.Size(68, 42);
             this.btnEdit.TabIndex = 89;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.Enabled = false;
             this.btnCancel.Image = global::QuanLyNhaKho.Properties.Resources.cen1;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCancel.Location = new System.Drawing.Point(763, 307);
@@ -334,12 +338,14 @@
             this.btnCancel.Text = "Hủy";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Image = global::QuanLyNhaKho.Properties.Resources.save;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSave.Location = new System.Drawing.Point(687, 314);
+            this.btnSave.Location = new System.Drawing.Point(687, 307);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(68, 42);
             this.btnSave.TabIndex = 87;
@@ -350,9 +356,10 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Enabled = false;
             this.btnAdd.Image = global::QuanLyNhaKho.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAdd.Location = new System.Drawing.Point(595, 314);
+            this.btnAdd.Location = new System.Drawing.Point(613, 306);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(68, 42);
             this.btnAdd.TabIndex = 86;
@@ -378,34 +385,34 @@
             this.rtxtGhiChu.TabIndex = 85;
             this.rtxtGhiChu.Text = "";
             // 
-            // button1
+            // btnAddNewImport
             // 
-            this.button1.Image = global::QuanLyNhaKho.Properties.Resources.add;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(595, 259);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 42);
-            this.button1.TabIndex = 91;
-            this.button1.Text = "Thêm Mới";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddNewImport.Image = global::QuanLyNhaKho.Properties.Resources.add;
+            this.btnAddNewImport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddNewImport.Location = new System.Drawing.Point(613, 258);
+            this.btnAddNewImport.Name = "btnAddNewImport";
+            this.btnAddNewImport.Size = new System.Drawing.Size(68, 42);
+            this.btnAddNewImport.TabIndex = 91;
+            this.btnAddNewImport.Text = "Thêm Mới";
+            this.btnAddNewImport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAddNewImport.UseVisualStyleBackColor = true;
+            this.btnAddNewImport.Click += new System.EventHandler(this.btnAddNewImport_Click);
             // 
-            // txtSoLuong
+            // listBoxHangHoa
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(176, 148);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(59, 20);
-            this.txtSoLuong.TabIndex = 62;
-            this.txtSoLuong.Text = "1";
-            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
-            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
+            this.listBoxHangHoa.FormattingEnabled = true;
+            this.listBoxHangHoa.Location = new System.Drawing.Point(175, 126);
+            this.listBoxHangHoa.Name = "listBoxHangHoa";
+            this.listBoxHangHoa.Size = new System.Drawing.Size(120, 95);
+            this.listBoxHangHoa.TabIndex = 83;
+            this.listBoxHangHoa.SelectedIndexChanged += new System.EventHandler(this.listBoxHangHoa_SelectedIndexChanged);
             // 
             // FrmChiTietPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 549);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAddNewImport);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnCancel);
@@ -430,9 +437,7 @@
 
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtTenNV;
-        private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpNgayNhap;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDiaChiNCC;
@@ -459,7 +464,8 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RichTextBox rtxtGhiChu;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddNewImport;
         private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.ListBox listBoxHangHoa;
     }
 }
