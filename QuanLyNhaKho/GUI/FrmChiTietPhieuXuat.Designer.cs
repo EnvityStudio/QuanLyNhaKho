@@ -189,7 +189,6 @@
             this.dgv_ChiTietPhieuXuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ChiTietPhieuXuat.Size = new System.Drawing.Size(790, 254);
             this.dgv_ChiTietPhieuXuat.TabIndex = 0;
-            this.dgv_ChiTietPhieuXuat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgChiTietPhieuXuat_CellContentClick);
             this.dgv_ChiTietPhieuXuat.Click += new System.EventHandler(this.dgv_ChiTietPhieuXuat_Click);
             // 
             // label11
@@ -275,6 +274,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Enabled = false;
             this.btnDelete.Image = global::QuanLyNhaKho.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDelete.Location = new System.Drawing.Point(713, 254);
@@ -288,6 +288,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Enabled = false;
             this.btnEdit.Image = global::QuanLyNhaKho.Properties.Resources.edit;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnEdit.Location = new System.Drawing.Point(637, 253);
@@ -297,9 +298,11 @@
             this.btnEdit.Text = "Sửa";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.Enabled = false;
             this.btnCancel.Image = global::QuanLyNhaKho.Properties.Resources.cen1;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCancel.Location = new System.Drawing.Point(713, 309);
@@ -313,6 +316,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Image = global::QuanLyNhaKho.Properties.Resources.save;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSave.Location = new System.Drawing.Point(637, 309);
@@ -326,6 +330,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Enabled = false;
             this.btnAdd.Image = global::QuanLyNhaKho.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAdd.Location = new System.Drawing.Point(563, 309);
@@ -344,6 +349,7 @@
             this.cbb_TenCH.Name = "cbb_TenCH";
             this.cbb_TenCH.Size = new System.Drawing.Size(146, 21);
             this.cbb_TenCH.TabIndex = 46;
+            this.cbb_TenCH.TextChanged += new System.EventHandler(this.cbb_TenCH_TextChanged);
             // 
             // cbb_TenHH
             // 
@@ -365,6 +371,7 @@
             this.btnAddNew.Text = "Thêm Mới";
             this.btnAddNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // FrmChiTietPhieuXuat
             // 

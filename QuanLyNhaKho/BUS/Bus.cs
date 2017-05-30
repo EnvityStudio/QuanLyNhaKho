@@ -299,10 +299,10 @@ namespace QuanLyNhaKho.BUS
         {
             return Dao.GetListPN();
         }
-        public static decimal GetTongTienPhieuNhap(string MaPN)
+        public static int GetTongTienPhieuNhap(string MaPN)
         {
             DataTable dt = Dao.GetPhieuNhapByID(MaPN);
-            decimal totalMoney = decimal.Parse(dt.Rows[0]["ThanhTien"].ToString());
+            int totalMoney = int.Parse(dt.Rows[0]["ThanhTien"].ToString());
             return totalMoney;
         }
         public static decimal GetTongTienPhieuXuat(string MaPX)

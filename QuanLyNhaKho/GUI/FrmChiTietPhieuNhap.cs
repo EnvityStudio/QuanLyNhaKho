@@ -28,6 +28,9 @@ namespace QuanLyNhaKho.GUI
             dataTableChiTiet = new DataTable();
             txtMaPN.Text = MaPN;
             LoadDataImportDetailByID();
+            tongTien= Bus.GetTongTienPhieuNhap(MaPN);
+            listBoxHangHoa.Visible = false;
+            LoadCombobox();
             listBoxHangHoa.Visible = false;
         }
         public FrmChiTietPhieuNhap()
@@ -248,6 +251,9 @@ namespace QuanLyNhaKho.GUI
             btnAdd.Enabled = false;
             txtSoLuong.Enabled = false;
             cbbTenHH.Enabled = false;
+            txtDonGia.Text = "0";
+            txtDonGia.Enabled = false;
+            status = 0;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -299,19 +305,25 @@ namespace QuanLyNhaKho.GUI
         {
             try
             {
-                if(status ==1)
+                if (status == 1)
                 {
                     return;
                 }
-                DataGridViewRow dt = dgvChiTietPhieuNhap.SelectedRows[0];
-                cbbTenHH.SelectedValue = dt.Cells["MaHH"].Value.ToString();
-                txtSoLuong.Text = dt.Cells["SoLuong"].Value.ToString();
-                txtThanhTien.Text = dt.Cells["ThanhTien"].Value.ToString();
-                txtDonGia.Text = dt.Cells["DonGia"].Value.ToString();
-                deleteMoney = int.Parse(txtThanhTien.Text);
-                btnDelete.Enabled = true;
+                else
+                {
+                    btnEdit.Enabled = true;
+                    btnDelete.Enabled = true;
+                    btnSave.Enabled = false;
+                    DataGridViewRow dt = dgvChiTietPhieuNhap.SelectedRows[0];
+                    cbbTenHH.SelectedValue = dt.Cells["MaHH"].Value.ToString();
+                    txtSoLuong.Text = dt.Cells["SoLuong"].Value.ToString();
+                    txtThanhTien.Text = dt.Cells["ThanhTien"].Value.ToString();
+                    txtDonGia.Text = dt.Cells["DonGia"].Value.ToString();
+                    deleteMoney = int.Parse(txtThanhTien.Text);
+                    btnDelete.Enabled = true;
+                }
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 Console.Write(err.Message);
             }
@@ -337,6 +349,7 @@ namespace QuanLyNhaKho.GUI
         private void btnEdit_Click(object sender, EventArgs e)
         {
             txtSoLuong.Enabled = true;
+            txtDonGia.Enabled = true;
             btnAdd.Text = "OK";
             btnEdit.Enabled = false;
             btnAddNewImport.Enabled = false;

@@ -17,6 +17,9 @@ namespace QuanLyNhaKho.GUI
         private string maPX;
         private DataTable dataTableChiTiet;
         private int tongTien = 0;
+        private int status;
+        private int action;
+        private int deleteMoney;
         public FrmChiTietPhieuXuat(string maPX)
         {
             InitializeComponent();
@@ -33,7 +36,7 @@ namespace QuanLyNhaKho.GUI
             dataTableChiTiet = new DataTable();
             LoadCombobox();
             initDataTableChiTiet(dataTableChiTiet);
-            txtMaPX.Text = Bus.GetMaPNNext();
+            txtMaPX.Text = Bus.getMaPXNext();
             txtTenNV.Text = Bus.getTenNhanVien(Config.CURRENT_NHANVIEN);
 
         }
@@ -72,35 +75,82 @@ namespace QuanLyNhaKho.GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!checkChiTietPXInvalid(MaHH()))
-                return;
-            if(txtSoLuong.Text == null || txtSoLuong.Text == "0")
+
+            txtThanhTien.Text = (int.Parse(txtDonGia.Text) * int.Parse(txtSoLuong.Text)).ToString();
+            if (tongTien > 1700000000)
             {
-                
-                MessageBox.Show("Nhập số lượng","Thông báo!",MessageBoxButtons.OK);
-                return ;
+                MessageBox.Show("Số tiền của bạn quá cao");
+
             }
-            
-            tongTien += int.Parse(txtThanhTien.Text);
-            txtTongTien.Text = tongTien.ToString();
-            DataRow newChiTiet = dataTableChiTiet.NewRow();
-            ChiTietPhieuXuat chiTiet = getChiTietFormFRM();
-            newChiTiet["MaPX"] = chiTiet.MaPX;
-            newChiTiet["MaHH"] = chiTiet.MaHH;
-            newChiTiet["TenHang"] = cbb_TenHH.Text;
-            newChiTiet["SoLuong"] = chiTiet.SoLuong;
-            newChiTiet["DonGia"] = txtDonGia.Text;
-            newChiTiet["ThanhTien"] = txtThanhTien.Text;
-            newChiTiet["GhiChu"] = rtxtGhiChu.Text;
-            foreach(DataRow dr in dataTableChiTiet.Rows)
+            else
             {
-                if(dr["MaHH"].ToString() == chiTiet.MaHH.ToString())
+                if (action == 1)
                 {
-                //    MessageBox.Show("Hàng đã tồn tại",);
+                    foreach (DataRow dr in dataTableChiTiet.Rows)
+                    {
+                        if (dr["MaHH"].ToString() == cbb_TenHH.SelectedValue.ToString())
+                        {
+
+                            int quantity = int.Parse(txtSoLuong.Text);
+                            int b = int.Parse((int.Parse(txtDonGia.Text) * (quantity - int.Parse(dr["SoLuong"].ToString()))).ToString());
+                            if ((quantity - int.Parse(dr["SoLuong"].ToString())) > 0)
+                            {
+                                tongTien = tongTien + b;
+                            }
+                            else
+                            {
+                                tongTien = tongTien - (int.Parse(txtDonGia.Text) * (int.Parse(dr["SoLuong"].ToString()) - quantity));
+                            }
+                            dr["SoLuong"] = quantity;
+                            dr["ThanhTien"] = quantity * int.Parse(txtDonGia.Text);
+                            btnAdd.Text = "Thêm";
+                        }
+                    }
                 }
+                else
+                {
+                    int a = 0;
+                    foreach (DataRow dr in dataTableChiTiet.Rows)
+                    {
+                        if (dr["MaHH"].ToString() == cbb_TenHH.SelectedValue.ToString())
+                        {
+                            a = 1;
+                            int quantity = int.Parse(txtSoLuong.Text);
+                            dr["SoLuong"] = int.Parse(dr["SoLuong"].ToString()) + quantity;
+                            dr["ThanhTien"] = int.Parse(dr["SoLuong"].ToString()) * int.Parse(txtDonGia.Text);
+                            dr["DonGia"] = txtDonGia.Text;
+                        }
+                    }
+                    if (a != 1)
+                    {
+                        DataRow newChiTiet = dataTableChiTiet.NewRow();
+                        ChiTietPhieuXuat chiTiet = getChiTietFormFRM();
+                        newChiTiet["MaPX"] = chiTiet.MaPX;
+                        newChiTiet["MaHH"] = chiTiet.MaHH;
+                        newChiTiet["TenHang"] = cbb_TenHH.Text;
+                        newChiTiet["SoLuong"] = chiTiet.SoLuong;
+                        newChiTiet["DonGia"] = txtDonGia.Text;
+                        newChiTiet["ThanhTien"] = chiTiet.SoLuong * int.Parse(txtDonGia.Text);
+                        newChiTiet["GhiChu"] = rtxtGhiChu.Text;
+                        dataTableChiTiet.Rows.Add(newChiTiet);
+                        dgv_ChiTietPhieuXuat.DataSource = dataTableChiTiet;
+                    }
+                }
+                dgv_ChiTietPhieuXuat.DataSource = dataTableChiTiet;
+                tongTien = tongTien + int.Parse(txtThanhTien.Text);
             }
-            dataTableChiTiet.Rows.Add(newChiTiet);
-            dgv_ChiTietPhieuXuat.DataSource = dataTableChiTiet;
+            txtTongTien.Text = tongTien.ToString();
+            btnAddNew.Enabled = true;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnAdd.Enabled = false;
+            txtSoLuong.Enabled = false;
+            cbb_TenHH.Enabled = false;
+            txtDonGia.Text = "0";
+            txtDonGia.Enabled = false;
+            status = 0;
         }
 
         private bool checkChiTietPXInvalid(string maHH)
@@ -127,7 +177,7 @@ namespace QuanLyNhaKho.GUI
             dt.Columns.Add(dc);
 
             dc = new DataColumn("TenHang", typeof(String));
-
+            dt.Columns.Add(dc);
             dc = new DataColumn("SoLuong", typeof(String));
             dt.Columns.Add(dc);
 
@@ -149,7 +199,7 @@ namespace QuanLyNhaKho.GUI
             }
             ChiTietPhieuXuat chiTiet = new ChiTietPhieuXuat()
             {
-                MaPX = maPX,
+                MaPX = txtMaPX.Text,
                 MaHH = MaHH(),
                 SoLuong = int.Parse(txtSoLuong.Text),
                 ThanhTien = float.Parse(txtThanhTien.Text),
@@ -158,22 +208,7 @@ namespace QuanLyNhaKho.GUI
             return chiTiet;
         }
 
-        //private void txtMaHH_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (MaHH() != null)
-        //    {
-        //        DataTable dt = Bus.SearchHangHoa(MaHH().ToUpper());
-        //        if (dt.Rows.Count > 0) {
-        //            txtTenHH.Text = dt.Rows[0]["TenHang"].ToString();
-        //            txtDonGia.Text = dt.Rows[0]["GiaXuat"].ToString();
-        //        }
-        //        else
-        //        {
-        //            txtTenHH.Text = "";
-        //            txtDonGia.Text = "";
-        //        }
-        //    }
-        //}
+   
         private void setThanhTien()
         {
             if (txtSoLuong.Text == "" || txtSoLuong.Text == null || txtDonGia.Text == null || txtDonGia.Text == "")
@@ -192,33 +227,43 @@ namespace QuanLyNhaKho.GUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string maHH = MaHH();
-            
-            for(int i = 0; i < dataTableChiTiet.Rows.Count; i++)
+            DialogResult rs = MessageBox.Show("Bạn có muốn xóa bản ghi?", "Xóa chi tiết", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (rs == DialogResult.OK)
             {
-                if(dataTableChiTiet.Rows[i]["MaHH"].ToString().Contains(maHH))
-                {
-                    dataTableChiTiet.Rows.RemoveAt(i);
-                    return;
-                }
+               dgv_ChiTietPhieuXuat.Rows.RemoveAt(dgv_ChiTietPhieuXuat.CurrentRow.Index);
+                tongTien = tongTien - deleteMoney;
+                txtTongTien.Text = tongTien.ToString();
+                btnSave.Enabled = true;
             }
-            dgv_ChiTietPhieuXuat.DataSource = dataTableChiTiet;
         }
 
-        private void dtgChiTietPhieuXuat_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //txtMaHH.Text =  dgv_ChiTietPhieuXuat.Rows[e.RowIndex].Cells["MaHH"].Value.ToString();
-            txtSoLuong.Text = dgv_ChiTietPhieuXuat.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString();
-            txtThanhTien.Text = dgv_ChiTietPhieuXuat.Rows[e.RowIndex].Cells["ThanhTien"].Value.ToString();
-            txtDonGia.Text = dgv_ChiTietPhieuXuat.Rows[e.RowIndex].Cells["DonGia"].Value.ToString();
-            rtxtGhiChu.Text = dgv_ChiTietPhieuXuat.Rows[e.RowIndex].Cells["GhiChu"].Value.ToString();
-        }
         private void dgv_ChiTietPhieuXuat_Click(object sender, EventArgs e)
         {
-            DataGridViewRow dt = dgv_ChiTietPhieuXuat.SelectedRows[0];
-            txtMaPX.Text = dt.Cells["MaPX"].Value.ToString();
-       //     txtMaNV.Text = dt.Cells["MaNV"].Value.ToString();
-          
+            try
+            {
+                if (status == 1)
+                {
+                    return;
+                }
+                else
+                {
+                    btnEdit.Enabled = true;
+                    btnDelete.Enabled = true;
+                    btnSave.Enabled = false;
+                    DataGridViewRow dt = dgv_ChiTietPhieuXuat.SelectedRows[0];
+                    cbb_TenHH.SelectedValue = dt.Cells["MaHH"].Value.ToString();
+                    txtSoLuong.Text = dt.Cells["SoLuong"].Value.ToString();
+                    txtThanhTien.Text = dt.Cells["ThanhTien"].Value.ToString();
+                    txtDonGia.Text = dt.Cells["DonGia"].Value.ToString();
+                    deleteMoney = int.Parse(txtThanhTien.Text);
+                    btnDelete.Enabled = true;
+                }
+            }
+            catch (Exception err)
+            {
+                Console.Write(err.Message);
+            }
+
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -231,15 +276,15 @@ namespace QuanLyNhaKho.GUI
                 MaCH = cbb_TenCH.SelectedValue.ToString(),
                 NgayXuat = dtpNgayXuat.Value,
                 ChietKhau = 0,
-                ThanhTien = 0,
-                TongTien = 0,
+                ThanhTien = int.Parse(txtTongTien.Text),
+                TongTien = int.Parse(txtTongTien.Text),
                 GhiChu = rtxtGhiChu.Text
+
             };
 
             int res = Bus.AddPhieuXuat(phieuXuat);
-            if(res <= 0)
+            if (res <= 0)
             {
-         
                 MessageBox.Show("Không thêm phiếu xuất!", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
@@ -247,21 +292,22 @@ namespace QuanLyNhaKho.GUI
             {
                 chiTiet = new ChiTietPhieuXuat()
                 {
+
                     MaHH = dr["MaHH"].ToString(),
                     MaPX = dr["MaPX"].ToString(),
                     SoLuong = int.Parse(dr["SoLuong"].ToString()),
-                    DonGia = int.Parse(dr["DonGia"].ToString()),
-                    ThanhTien=int.Parse(dr["ThanhTien"].ToString()),
-                    GhiChu = dr["GhiChu"].ToString()
+                    GhiChu = dr["GhiChu"].ToString(),
+                    ThanhTien = int.Parse(dr["ThanhTien"].ToString()),
+                    DonGia = int.Parse(dr["DonGia"].ToString())
                 };
-               int result =  Bus.AddChiTietPhieuXuat(chiTiet);
-               if(result <= 0)
-               {
-                    MessageBox.Show("Không thành công!" ,"Thông báo",MessageBoxButtons.OK);
-                    return ;
-               }
+                int result = Bus.AddChiTietPhieuXuat(chiTiet);
+                if (result <= 0)
+                {
+                    MessageBox.Show("Không them CT thành công!", "Thông báo", MessageBoxButtons.OK);
+                    return;
+                }
             }
-            MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK);
+            MessageBox.Show("Thêm Hóa Đơn thành công!", "Thông báo", MessageBoxButtons.OK);
             this.Close();
         }
 
@@ -273,8 +319,7 @@ namespace QuanLyNhaKho.GUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            dataTableChiTiet.Reset();
-            dgv_ChiTietPhieuXuat.DataSource = null;
+            
             this.Close();
         }
 
@@ -306,6 +351,45 @@ namespace QuanLyNhaKho.GUI
             //  //  txttench.text = bus.gettencuahang(mach.toupper());
 
             //    txtdiachich.text = bus.getdiachicuahang(mach.toupper());
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            txtSoLuong.Text = "1";
+            txtDonGia.Text = "";
+            txtThanhTien.Text = "0";
+
+            status = 1;
+            txtSoLuong.Enabled = true;
+            cbb_TenHH.Enabled = true;
+            btnAdd.Enabled = true;
+            btnCancel.Enabled = true;
+            btnDelete.Enabled = false;
+            btnEdit.Enabled = false;
+            txtSoLuong.Enabled = true;
+            txtDonGia.Enabled = true;
+            btnSave.Enabled = false;
+            btnAddNew.Enabled = false;
+            if (dataTableChiTiet.Rows.Count > 0) btnSave.Enabled = true;
+            else btnSave.Enabled = false;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            txtSoLuong.Enabled = true;
+            txtDonGia.Enabled = true;
+            btnAdd.Text = "OK";
+            btnEdit.Enabled = false;
+            btnAdd.Enabled = false;
+            btnDelete.Enabled = false;
+            btnAdd.Enabled = true;
+            btnCancel.Enabled = true;
+            action = 1;
+        }
+
+        private void cbb_TenCH_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
