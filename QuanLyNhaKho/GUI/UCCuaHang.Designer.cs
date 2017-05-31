@@ -78,7 +78,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Firebrick;
-            this.label2.Location = new System.Drawing.Point(307, 13);
+            this.label2.Location = new System.Drawing.Point(407, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 25);
             this.label2.TabIndex = 12;
@@ -111,7 +111,7 @@
             // lb_SDT
             // 
             this.lb_SDT.AutoSize = true;
-            this.lb_SDT.Location = new System.Drawing.Point(85, 202);
+            this.lb_SDT.Location = new System.Drawing.Point(89, 202);
             this.lb_SDT.Name = "lb_SDT";
             this.lb_SDT.Size = new System.Drawing.Size(81, 13);
             this.lb_SDT.TabIndex = 16;
@@ -127,7 +127,7 @@
             // lb_DiaChi
             // 
             this.lb_DiaChi.AutoSize = true;
-            this.lb_DiaChi.Location = new System.Drawing.Point(85, 155);
+            this.lb_DiaChi.Location = new System.Drawing.Point(89, 155);
             this.lb_DiaChi.Name = "lb_DiaChi";
             this.lb_DiaChi.Size = new System.Drawing.Size(44, 13);
             this.lb_DiaChi.TabIndex = 14;
@@ -143,7 +143,7 @@
             // lb_TenCH
             // 
             this.lb_TenCH.AutoSize = true;
-            this.lb_TenCH.Location = new System.Drawing.Point(85, 104);
+            this.lb_TenCH.Location = new System.Drawing.Point(89, 104);
             this.lb_TenCH.Name = "lb_TenCH";
             this.lb_TenCH.Size = new System.Drawing.Size(47, 13);
             this.lb_TenCH.TabIndex = 12;

@@ -110,7 +110,6 @@ namespace QuanLyNhaKho.GUI
             int result = Bus.AddNhomHang(GetDataNhomHang());
             if (result > 0)
             {
-
                 MessageBox.Show("Thêm Thành Công", "Thông báo", MessageBoxButtons.OK);
                 ClearData();
                 LoadData();

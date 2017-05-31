@@ -45,6 +45,7 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.dgv_NhaCungCap = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.panel_InforNCC.SuspendLayout();
             this.panel_SearchNCC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhaCungCap)).BeginInit();
@@ -53,6 +54,7 @@
             // 
             // panel_InforNCC
             // 
+            this.panel_InforNCC.Controls.Add(this.label2);
             this.panel_InforNCC.Controls.Add(this.rtxt_GhiChu);
             this.panel_InforNCC.Controls.Add(this.label5);
             this.panel_InforNCC.Controls.Add(this.txtSDT);
@@ -89,7 +91,7 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(222, 174);
+            this.txtSDT.Location = new System.Drawing.Point(197, 169);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(100, 20);
             this.txtSDT.TabIndex = 4;
@@ -97,7 +99,7 @@
             // lb_SDT
             // 
             this.lb_SDT.AutoSize = true;
-            this.lb_SDT.Location = new System.Drawing.Point(84, 174);
+            this.lb_SDT.Location = new System.Drawing.Point(84, 172);
             this.lb_SDT.Name = "lb_SDT";
             this.lb_SDT.Size = new System.Drawing.Size(81, 13);
             this.lb_SDT.TabIndex = 6;
@@ -105,7 +107,7 @@
             // 
             // txt_DiaChi
             // 
-            this.txt_DiaChi.Location = new System.Drawing.Point(222, 123);
+            this.txt_DiaChi.Location = new System.Drawing.Point(197, 122);
             this.txt_DiaChi.Name = "txt_DiaChi";
             this.txt_DiaChi.Size = new System.Drawing.Size(100, 20);
             this.txt_DiaChi.TabIndex = 3;
@@ -113,7 +115,7 @@
             // lb_DiaChi
             // 
             this.lb_DiaChi.AutoSize = true;
-            this.lb_DiaChi.Location = new System.Drawing.Point(88, 123);
+            this.lb_DiaChi.Location = new System.Drawing.Point(84, 125);
             this.lb_DiaChi.Name = "lb_DiaChi";
             this.lb_DiaChi.Size = new System.Drawing.Size(44, 13);
             this.lb_DiaChi.TabIndex = 4;
@@ -121,7 +123,7 @@
             // 
             // txt_TenNCC
             // 
-            this.txt_TenNCC.Location = new System.Drawing.Point(222, 67);
+            this.txt_TenNCC.Location = new System.Drawing.Point(197, 75);
             this.txt_TenNCC.Name = "txt_TenNCC";
             this.txt_TenNCC.Size = new System.Drawing.Size(100, 20);
             this.txt_TenNCC.TabIndex = 2;
@@ -129,7 +131,7 @@
             // lb_TenNCC
             // 
             this.lb_TenNCC.AutoSize = true;
-            this.lb_TenNCC.Location = new System.Drawing.Point(84, 70);
+            this.lb_TenNCC.Location = new System.Drawing.Point(84, 78);
             this.lb_TenNCC.Name = "lb_TenNCC";
             this.lb_TenNCC.Size = new System.Drawing.Size(57, 13);
             this.lb_TenNCC.TabIndex = 2;
@@ -138,7 +140,7 @@
             // txt_MaNCC
             // 
             this.txt_MaNCC.Enabled = false;
-            this.txt_MaNCC.Location = new System.Drawing.Point(222, 31);
+            this.txt_MaNCC.Location = new System.Drawing.Point(197, 28);
             this.txt_MaNCC.Name = "txt_MaNCC";
             this.txt_MaNCC.Size = new System.Drawing.Size(100, 20);
             this.txt_MaNCC.TabIndex = 1;
@@ -146,7 +148,7 @@
             // lb_MaNCC
             // 
             this.lb_MaNCC.AutoSize = true;
-            this.lb_MaNCC.Location = new System.Drawing.Point(88, 31);
+            this.lb_MaNCC.Location = new System.Drawing.Point(84, 31);
             this.lb_MaNCC.Name = "lb_MaNCC";
             this.lb_MaNCC.Size = new System.Drawing.Size(53, 13);
             this.lb_MaNCC.TabIndex = 0;
@@ -174,7 +176,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(16, 4);
+            this.txtTimKiem.Location = new System.Drawing.Point(3, 3);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(200, 20);
             this.txtTimKiem.TabIndex = 4;
@@ -196,6 +198,17 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Firebrick;
+            this.label2.Location = new System.Drawing.Point(410, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(165, 25);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Nhà Cung Cấp";
             // 
             // UCNhaCungCap
             // 
@@ -235,5 +248,6 @@
         private System.Windows.Forms.TextBox txt_MaNCC;
         private System.Windows.Forms.Label lb_MaNCC;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label2;
     }
 }

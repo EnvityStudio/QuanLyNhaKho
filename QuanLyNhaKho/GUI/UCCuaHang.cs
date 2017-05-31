@@ -82,13 +82,13 @@ namespace QuanLyNhaKho.GUI
             if (result > 0)
             {
 
-                MessageBox.Show("Sua Thành Công", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Sửa Thành Công", "Thông báo", MessageBoxButtons.OK);
                 ClearData();
                 LoadData();
             }
             else
             {
-                MessageBox.Show("Sua không thành công", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Sửa Không Thành Công", "Thông báo", MessageBoxButtons.OK);
             }
         }
         public void EnablePanel()
@@ -112,7 +112,7 @@ namespace QuanLyNhaKho.GUI
             }
             else
             {
-                MessageBox.Show("Delete không thành công", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Delete Không Thành Công", "Thông báo", MessageBoxButtons.OK);
             }
         }
         public void ClearData()

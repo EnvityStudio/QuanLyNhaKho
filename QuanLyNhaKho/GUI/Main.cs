@@ -43,7 +43,6 @@ namespace QuanLyNhaKho
             ucPhieuNhap = new UCPhieuNhap();
          
             ucThongKeHoaDon = new UCThongKeHoaDon();
-
         }
 
         public void AddNewTab(UserControl userControl)
@@ -546,6 +545,10 @@ namespace QuanLyNhaKho
                 }
                 
             }
+        }
+
+        private void Main_Load(object sender, EventArgs e) {
+            this.CenterToScreen();
         }
     }
 }
