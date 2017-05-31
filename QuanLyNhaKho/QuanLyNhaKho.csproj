@@ -124,12 +124,6 @@
     <Compile Include="GUI\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UCThongKeBieuDo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UCThongKeBieuDo.Designer.cs">
-      <DependentUpon>UCThongKeBieuDo.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\UCThongKeHoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -184,9 +178,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UCThongKeBieuDo.resx">
-      <DependentUpon>UCThongKeBieuDo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UCThongKeHoaDon.resx">
       <DependentUpon>UCThongKeHoaDon.cs</DependentUpon>

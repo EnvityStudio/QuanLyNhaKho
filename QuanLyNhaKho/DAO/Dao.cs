@@ -113,6 +113,22 @@ namespace QuanLyNhaKho.DAO
              };
             return DataProvider.NonQuery(Config.PROC_INSERT_CHITIET_PHIEUXUAT, para);
         }
+
+        public static int UpdateChitietPhieuXuat(ChiTietPhieuXuat chiTiet)
+        {
+            SqlParameter[] para = new SqlParameter[]
+             {
+                new SqlParameter("@MaPX",chiTiet.MaPX),
+                new SqlParameter("@MaHH",chiTiet.MaHH),
+                new SqlParameter("@DonGia",chiTiet.DonGia),
+                new SqlParameter("@SoLuong",chiTiet.SoLuong),
+                new SqlParameter("@ThanhTien",chiTiet.ThanhTien),
+                new SqlParameter("@GhiChu",chiTiet.GhiChu)
+             };
+            return DataProvider.NonQuery(Config.PROC_INSERT_CHITIET_PHIEUXUAT, para);
+        }
+
+
         public static int AddChiTietPhieuNhap(ChiTietPhieuNhap chiTiet)
         {
             SqlParameter[] para = new SqlParameter[]
@@ -126,7 +142,35 @@ namespace QuanLyNhaKho.DAO
                 };
             return DataProvider.NonQuery(Config.PROC_INSERT_CHITIET_PHIEUNHAP,para);
         }
-
+        public static int UpdateChiTietPhieuNhap(ChiTietPhieuNhap chiTiet)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@MaPN",chiTiet.MaPN),
+                    new SqlParameter("@MaHH",chiTiet.MaHH),
+                    new SqlParameter("@DonGia",chiTiet.DonGia),
+                    new SqlParameter("@SoLuong",chiTiet.SoLuong),
+                    new SqlParameter("@ThanhTien",chiTiet.ThanhTien),
+                    new SqlParameter("@GhiChu",chiTiet.GhiChu)
+                };
+            return DataProvider.NonQuery(Config.PROC_INSERT_CHITIET_PHIEUNHAP, para);
+        }
+        public static int DeleteCTPN(String MaPN)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@MaPN",MaPN)
+                };
+            return DataProvider.NonQuery(Config.PROC_DELETE_CTPN, para);
+        }
+        public static int DeleteCTPX(String MaPX)
+        {
+            SqlParameter[] para = new SqlParameter[]
+                {
+                    new SqlParameter("@MaPN",MaPX)
+                };
+            return DataProvider.NonQuery(Config.PROC_DELETE_CTPX, para);
+        }
         public static int AddPhieuXuat(PhieuXuat phieuXuat)
         {
             SqlParameter[] para = new SqlParameter[]
@@ -427,10 +471,26 @@ namespace QuanLyNhaKho.DAO
                 new SqlParameter(@"MaNV",phieuNhap.MaNV),
                 new SqlParameter(@"NgayNhap",phieuNhap.NgayNhap),
                 new SqlParameter(@"TongTien",phieuNhap.TongTien),
-                new SqlParameter(@"ChietKhau",phieuNhap.ThanhTien),
+                new SqlParameter(@"ChietKhau",phieuNhap.ChietKhau),
+                new SqlParameter(@"ThanhTien",phieuNhap.ThanhTien),
                 new SqlParameter(@"GhiChu",phieuNhap.GhiChu)
             };
             return DataProvider.NonQuery(Config.PROC_UPDATE_PN, para);
+        }
+        public static int UpdatePX(PhieuXuat phieuXuat)
+        {
+            SqlParameter[] para = new SqlParameter[]
+           {
+                new SqlParameter(@"MaPX",phieuXuat.MaPX),
+                new SqlParameter(@"MaCH",phieuXuat.MaCH),
+                new SqlParameter(@"MaNV",phieuXuat.MaNV),
+                new SqlParameter(@"NgayXuat",phieuXuat.NgayXuat),
+                new SqlParameter(@"TongTien",phieuXuat.TongTien),
+                new SqlParameter(@"ChietKhau",phieuXuat.ChietKhau),
+                new SqlParameter(@"ThanhTien",phieuXuat.ThanhTien),
+                new SqlParameter(@"GhiChu",phieuXuat.GhiChu)
+           };
+            return DataProvider.NonQuery(Config.PROC_UPDATE_PX, para);
         }
         public static int DeletePN(string phieuNhap)
         {

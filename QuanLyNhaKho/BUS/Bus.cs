@@ -105,9 +105,25 @@ namespace QuanLyNhaKho.BUS
         {
             return Dao.AddChitietPhieuXuat(chiTiet);
         }
+        public static int UpdateChiTietPhieuXuat(ChiTietPhieuXuat chiTiet)
+        {
+            return Dao.UpdateChitietPhieuXuat(chiTiet);
+        }
         public static int AddChiTietPhieuNhap(ChiTietPhieuNhap chiTiet)
         {
             return Dao.AddChiTietPhieuNhap(chiTiet);
+        }
+        public static int UpdateChiTietPhieuNhap(ChiTietPhieuNhap chiTiet)
+        {
+            return Dao.UpdateChiTietPhieuNhap(chiTiet);
+        }
+        public static int DeleteCTPN(String MaPN)
+        {
+            return Dao.DeleteCTPN(MaPN);
+        }
+        public static int DeleteCTPX(String MaPX)
+        {
+            return Dao.DeleteCTPX(MaPX);
         }
         public static int AddPhieuXuat(PhieuXuat phieuXuat)
         {
@@ -117,7 +133,14 @@ namespace QuanLyNhaKho.BUS
         {
             return Dao.AddPhieuNhap(phieuNhap);
         }
-
+        public static int UpdatePhieuNhap(PhieuNhap phieuNhap)
+        {
+            return Dao.UpdatePN(phieuNhap);
+        }
+        public static int UpdatePhieuXuat(PhieuXuat phieuXuat)
+        {
+            return Dao.UpdatePX(phieuXuat);
+        }
         public static string getMaPXNext()
         {
             DataTable dt = Dao.getMaPXNext();
@@ -305,10 +328,10 @@ namespace QuanLyNhaKho.BUS
             int totalMoney = int.Parse(dt.Rows[0]["ThanhTien"].ToString());
             return totalMoney;
         }
-        public static decimal GetTongTienPhieuXuat(string MaPX)
+        public static int GetTongTienPhieuXuat(string MaPX)
         {
             DataTable dt = Dao.GetPhieuXuatByID(MaPX);
-            decimal totalMoney = decimal.Parse(dt.Rows[0]["ThanhTien"].ToString());
+            int totalMoney = int.Parse(dt.Rows[0]["ThanhTien"].ToString());
             return totalMoney;
         }
 

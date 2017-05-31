@@ -50,6 +50,7 @@
             this.cbbTenNCC = new System.Windows.Forms.ComboBox();
             this.cbbTenHH = new System.Windows.Forms.ComboBox();
             this.btnAddNew = new System.Windows.Forms.Panel();
+            this.listBoxHangHoa = new System.Windows.Forms.ListBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -59,7 +60,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.rtxtGhiChu = new System.Windows.Forms.RichTextBox();
             this.btnAddNewImport = new System.Windows.Forms.Button();
-            this.listBoxHangHoa = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuNhap)).BeginInit();
             this.btnAddNew.SuspendLayout();
             this.SuspendLayout();
@@ -93,7 +93,6 @@
             // dtpNgayNhap
             // 
             this.dtpNgayNhap.CustomFormat = "";
-            this.dtpNgayNhap.Enabled = false;
             this.dtpNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayNhap.Location = new System.Drawing.Point(397, 24);
             this.dtpNgayNhap.Name = "dtpNgayNhap";
@@ -287,6 +286,15 @@
             this.btnAddNew.Size = new System.Drawing.Size(882, 210);
             this.btnAddNew.TabIndex = 83;
             // 
+            // listBoxHangHoa
+            // 
+            this.listBoxHangHoa.FormattingEnabled = true;
+            this.listBoxHangHoa.Location = new System.Drawing.Point(175, 126);
+            this.listBoxHangHoa.Name = "listBoxHangHoa";
+            this.listBoxHangHoa.Size = new System.Drawing.Size(120, 95);
+            this.listBoxHangHoa.TabIndex = 83;
+            this.listBoxHangHoa.SelectedIndexChanged += new System.EventHandler(this.listBoxHangHoa_SelectedIndexChanged);
+            // 
             // txtSoLuong
             // 
             this.txtSoLuong.Enabled = false;
@@ -397,15 +405,6 @@
             this.btnAddNewImport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddNewImport.UseVisualStyleBackColor = true;
             this.btnAddNewImport.Click += new System.EventHandler(this.btnAddNewImport_Click);
-            // 
-            // listBoxHangHoa
-            // 
-            this.listBoxHangHoa.FormattingEnabled = true;
-            this.listBoxHangHoa.Location = new System.Drawing.Point(175, 126);
-            this.listBoxHangHoa.Name = "listBoxHangHoa";
-            this.listBoxHangHoa.Size = new System.Drawing.Size(120, 95);
-            this.listBoxHangHoa.TabIndex = 83;
-            this.listBoxHangHoa.SelectedIndexChanged += new System.EventHandler(this.listBoxHangHoa_SelectedIndexChanged);
             // 
             // FrmChiTietPhieuNhap
             // 

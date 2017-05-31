@@ -24,7 +24,7 @@ namespace QuanLyNhaKho
         private UCNhaCungCap ucNhaCungCap;
         private UCPhieuNhap ucPhieuNhap;
        
-        private UCThongKeBieuDo ucThongKeBieuDo;
+       
         private UCThongKeHoaDon ucThongKeHoaDon;
         private bool isAction;
 
@@ -41,7 +41,7 @@ namespace QuanLyNhaKho
             ucCuaHang = new UCCuaHang();
             ucNhaCungCap = new UCNhaCungCap();
             ucPhieuNhap = new UCPhieuNhap();
-            ucThongKeBieuDo = new UCThongKeBieuDo();
+         
             ucThongKeHoaDon = new UCThongKeHoaDon();
 
         }
@@ -101,6 +101,7 @@ namespace QuanLyNhaKho
         }
         private void btn_PhieuXuat_Click(object sender, EventArgs e)
         {
+            ucPhieuXuat = new UCPhieuXuat();
             AddNewTab(ucPhieuXuat);
         }
 
@@ -244,6 +245,7 @@ namespace QuanLyNhaKho
 
         private void btn_PhieuNhap_Click(object sender, EventArgs e)
         {
+            ucPhieuNhap = new UCPhieuNhap();
             AddNewTab(ucPhieuNhap);
         }
 
@@ -269,7 +271,7 @@ namespace QuanLyNhaKho
 
         private void btn_BieuDoThongKe_Click(object sender, EventArgs e)
         {
-            AddNewTab(ucThongKeBieuDo);
+          //  AddNewTab(ucThongKeBieuDo);
         }
 
         private void btn_thongKeHoaDon_Click(object sender, EventArgs e)

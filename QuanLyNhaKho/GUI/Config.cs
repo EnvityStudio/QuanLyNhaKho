@@ -96,8 +96,13 @@ namespace QuanLyNhaKho
         public static string PROC_DELETE_PN = "DeletePhieuNhap";
         public static string PROC_DELETE_PX = "DeletePhieuXuat";
 
+        public static string PROC_UPDATE_PX = "UpdatePX";
+        public static string PROC_UPDATE_CHITIET_PN = "UpdateChiTietPhieuNhap";
+        public static string PROC_UPDATE_CHITIET_PX = "UpdateChiTietPhieuXuat";
         public static string PROC_GET_PX_BYID = "GetExportByID";
         public static string PROC_GET_PN_BYID = "GetImportByID";
+        public static string PROC_DELETE_CTPN = "DeleteChiTietPhieuNhap";
+        public static string PROC_DELETE_CTPX = "DeleteChiTietPhieuXuat";
         /// statistic 
         /// 
         public static string PROC_Statistic_Import_ByTime = "GetListStatisticByTimeImport";

@@ -17,12 +17,12 @@ namespace QuanLyNhaKho.GUI
         public UCPhieuNhap()
         {
             InitializeComponent();
+            dgvPhieuNhap.DataSource = Dao.GetListPN();
             LoadData();
         }
         public void LoadData()
         {
             dgvPhieuNhap.DataSource = Dao.GetListPN();
-
             dgvPhieuNhap.Columns["MaPN"].HeaderText = "Mã Phiếu Nhập";
             dgvPhieuNhap.Columns["TenNCC"].HeaderText = "Tên NCC";
             dgvPhieuNhap.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
@@ -100,12 +100,14 @@ namespace QuanLyNhaKho.GUI
         {
             FrmChiTietPhieuNhap frm = new FrmChiTietPhieuNhap();
             frm.ShowDialog();
+            LoadData();
         }
 
         private void btnXCT_Click(object sender, EventArgs e)
         {
             FrmChiTietPhieuNhap frm = new FrmChiTietPhieuNhap(txtMaPN.Text);
             frm.ShowDialog();
+            LoadData();
         }
 
         private void btn_TimKiem_Click(object sender, EventArgs e)
