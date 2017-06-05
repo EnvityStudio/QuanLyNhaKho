@@ -52,7 +52,8 @@ namespace QuanLyNhaKho.GUI
             }
             return true;
         }
-        public void AddCH()
+       
+	    public void AddCH()
         {
             action = false;
             if (!CheckTextBox())
@@ -72,6 +73,8 @@ namespace QuanLyNhaKho.GUI
                 MessageBox.Show("Thêm không thành công", "Thông báo", MessageBoxButtons.OK);
             }
         }
+		
+	   
         public void UpdateCH()
         {
             if (!CheckTextBox())
