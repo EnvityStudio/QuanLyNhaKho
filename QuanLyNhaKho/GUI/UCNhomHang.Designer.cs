@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.errorProviderHangHoa = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel_InforNhomHang = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rtxt_GhiChu = new System.Windows.Forms.RichTextBox();
             this.lb_TenNhom = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.btn_TimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.dgv_NhomHang = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderHangHoa)).BeginInit();
             this.panel_InforNhomHang.SuspendLayout();
             this.panel_SearchNhomHang.SuspendLayout();
@@ -70,6 +70,17 @@
             this.panel_InforNhomHang.Name = "panel_InforNhomHang";
             this.panel_InforNhomHang.Size = new System.Drawing.Size(965, 211);
             this.panel_InforNhomHang.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Firebrick;
+            this.label2.Location = new System.Drawing.Point(362, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(134, 25);
+            this.label2.TabIndex = 107;
+            this.label2.Text = "Nhóm Hàng";
             // 
             // label1
             // 
@@ -172,21 +183,11 @@
             this.dgv_NhomHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_NhomHang.Location = new System.Drawing.Point(0, 241);
             this.dgv_NhomHang.Name = "dgv_NhomHang";
+            this.dgv_NhomHang.ReadOnly = true;
             this.dgv_NhomHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_NhomHang.Size = new System.Drawing.Size(965, 323);
             this.dgv_NhomHang.TabIndex = 2;
             this.dgv_NhomHang.Click += new System.EventHandler(this.dgv_NhomHang_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Firebrick;
-            this.label2.Location = new System.Drawing.Point(362, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 25);
-            this.label2.TabIndex = 107;
-            this.label2.Text = "Nhóm Hàng";
             // 
             // UCNhomHang
             // 

@@ -308,6 +308,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Enabled = false;
             this.btnDelete.Image = global::QuanLyNhaKho.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -322,6 +323,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.Enabled = false;
             this.btnEdit.Image = global::QuanLyNhaKho.Properties.Resources.edit;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -336,6 +338,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Enabled = false;
             this.btnCancel.Image = global::QuanLyNhaKho.Properties.Resources.cen1;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -350,6 +353,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.Enabled = false;
             this.btnSave.Image = global::QuanLyNhaKho.Properties.Resources.save;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -364,6 +368,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Enabled = false;
             this.btnAdd.Image = global::QuanLyNhaKho.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -395,6 +400,7 @@
             // 
             // btnAddNewImport
             // 
+            this.btnAddNewImport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddNewImport.Image = global::QuanLyNhaKho.Properties.Resources.add;
             this.btnAddNewImport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAddNewImport.Location = new System.Drawing.Point(613, 258);
@@ -423,6 +429,7 @@
             this.Controls.Add(this.dgvChiTietPhieuNhap);
             this.Controls.Add(this.lb_PhieuNhapKho);
             this.Name = "FrmChiTietPhieuNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi Tiết Phiếu Nhập";
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuNhap)).EndInit();
             this.btnAddNew.ResumeLayout(false);

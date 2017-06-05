@@ -261,12 +261,14 @@ namespace QuanLyNhaKho.GUI
                         dgv_ChiTietPhieuXuat.DataSource = dataTableChiTiet;
                         if (dataTableChiTiet.Rows.Count == 0)
                         {
-                           // btnSave.Enabled;
+                            // btnSave.Enabled;
+                            btnSave.Enabled = false;
                             return;
                         }
                         tongTien = tongTien - deleteMoney;
                         txtTongTien.Text = tongTien.ToString();
                         btnSave.Enabled = true;
+                        btnDelete.Enabled = false;
                         dataTableChiTiet.AcceptChanges();
                         return;
                     }
@@ -470,6 +472,7 @@ namespace QuanLyNhaKho.GUI
         {
             txtSoLuong.Enabled = true;
             txtDonGia.Enabled = true;
+            //cbb_TenHH.Enabled = true;
             btnAdd.Text = "OK";
             btnEdit.Enabled = false;
             btnAdd.Enabled = false;

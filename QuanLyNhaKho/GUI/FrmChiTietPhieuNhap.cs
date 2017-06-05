@@ -417,6 +417,7 @@ namespace QuanLyNhaKho.GUI
         {
             txtSoLuong.Enabled = true;
             txtDonGia.Enabled = true;
+      //      cbbTenHH.Enabled = true;
             btnAdd.Text = "OK";
             btnEdit.Enabled = false;
             btnAddNewImport.Enabled = false;
@@ -472,11 +473,13 @@ namespace QuanLyNhaKho.GUI
                         dgvChiTietPhieuNhap.DataSource = dataTableChiTiet;
                         if (dataTableChiTiet.Rows.Count == 0)
                         {
+                            btnSave.Enabled = false;
                             return;
                         }
                         tongTien = tongTien - deleteMoney;
                         txtTongTien.Text = tongTien.ToString();
                         btnSave.Enabled = true;
+                        btnDelete.Enabled = false;
                         dataTableChiTiet.AcceptChanges();
                         return;
                     }

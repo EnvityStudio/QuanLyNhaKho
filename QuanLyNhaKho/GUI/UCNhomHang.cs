@@ -27,21 +27,28 @@ namespace QuanLyNhaKho.GUI
         {
             dgv_NhomHang.DataSource = Bus.GetListNhomHang();
             panel_InforNhomHang.Enabled = false;
+            }
+        public void SetEnabled ()
+        {
+            action = true;
+            panel_InforNhomHang.Enabled = false;
         }
-
         private void dgv_NhomHang_Click(object sender, EventArgs e)
         {
             try
             {
-                if(action==false)
+                if (action == false)
                 {
                     return;
                 }
-                DataGridViewRow dt = dgv_NhomHang.SelectedRows[0];
-                txt_MaNhomHang.Text = dt.Cells["MaNhom"].Value.ToString();
-                txt_TenNhom.Text = dt.Cells["TenNhom"].Value.ToString();
-                txtSoLuong.Text = dt.Cells["SoLuong"].Value.ToString();
-                rtxt_GhiChu.Text = dt.Cells["GhiChu"].Value.ToString();
+                else
+                {
+                    DataGridViewRow dt = dgv_NhomHang.SelectedRows[0];
+                    txt_MaNhomHang.Text = dt.Cells["MaNhom"].Value.ToString();
+                    txt_TenNhom.Text = dt.Cells["TenNhom"].Value.ToString();
+                    txtSoLuong.Text = dt.Cells["SoLuong"].Value.ToString();
+                    rtxt_GhiChu.Text = dt.Cells["GhiChu"].Value.ToString();
+                }
             }
             catch(Exception err)
             {
@@ -85,6 +92,7 @@ namespace QuanLyNhaKho.GUI
 
         public void GetMaNext()
         {
+            action = false;
             txt_MaNhomHang.Text = Bus.GetMaNhomHangNext();
             ClearData();
             panel_InforNhomHang.Enabled = true;
@@ -102,7 +110,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void AddNhomHang()
         {
-            action = false;
+           // action = false;
             if (!CheckTextBox())
             {
                 return;
@@ -160,7 +168,7 @@ namespace QuanLyNhaKho.GUI
         }
        public void EnablePanel()
         {
-            action = false;
+           // action = false;
             panel_InforNhomHang.Enabled = true;
            
         }

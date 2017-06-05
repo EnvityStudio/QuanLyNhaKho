@@ -74,16 +74,20 @@ namespace QuanLyNhaKho.GUI
         public void DeletePhieuXuat()
         {
             int result = Dao.DeletePX(txtMaPX.Text);
-            if (result < 0)
+            DialogResult rs = MessageBox.Show("Bạn có muốn xóa phiếu xuất?", "Xóa phiếu xuất", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (rs == DialogResult.OK)
             {
-                MessageBox.Show("Xoa khong thanh cong", "Thông báo", MessageBoxButtons.OK);
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Xoa thanh cong!", "Thông báo", MessageBoxButtons.OK);
-                LoadData();
-                return;
+                if (result < 0)
+                {
+                    MessageBox.Show("Xoa khong thanh cong", "Thông báo", MessageBoxButtons.OK);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Xoa thanh cong!", "Thông báo", MessageBoxButtons.OK);
+                    LoadData();
+                    return;
+                }
             }
         }
 

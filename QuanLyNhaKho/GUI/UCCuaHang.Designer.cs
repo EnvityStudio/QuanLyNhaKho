@@ -178,6 +178,7 @@
             // 
             // btn_TimKiem
             // 
+            this.btn_TimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_TimKiem.Location = new System.Drawing.Point(212, 3);
             this.btn_TimKiem.Name = "btn_TimKiem";
             this.btn_TimKiem.Size = new System.Drawing.Size(75, 23);

@@ -70,18 +70,21 @@ namespace QuanLyNhaKho.GUI
          public void DeletePhieuNhap()
            {
             int result = Dao.DeletePN(txtMaPN.Text);
-            if(result<0)
+            DialogResult rs = MessageBox.Show("Bạn có muốn xóa hóa đơn?", "Xóa hóa đơn", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (rs == DialogResult.OK)
             {
-                MessageBox.Show("Xoa khong thanh cong", "Thông báo", MessageBoxButtons.OK);
-                return;
+                if (result < 0)
+                {
+                    MessageBox.Show("Xoa khong thanh cong", "Thông báo", MessageBoxButtons.OK);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Xoa thanh cong!", "Thông báo", MessageBoxButtons.OK);
+                    LoadData();
+                    return;
+                }
             }
-            else
-            {
-                MessageBox.Show("Xoa thanh cong!", "Thông báo", MessageBoxButtons.OK);
-                LoadData();
-                return;
-            }
-           
         }
 
         private void cbbTenNCC_SelectedValueChanged(object sender, EventArgs e)

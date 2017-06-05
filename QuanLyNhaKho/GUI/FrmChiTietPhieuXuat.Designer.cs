@@ -274,6 +274,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Enabled = false;
             this.btnDelete.Image = global::QuanLyNhaKho.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -288,6 +289,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.Enabled = false;
             this.btnEdit.Image = global::QuanLyNhaKho.Properties.Resources.edit;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -302,6 +304,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Enabled = false;
             this.btnCancel.Image = global::QuanLyNhaKho.Properties.Resources.cen1;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -316,6 +319,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.Enabled = false;
             this.btnSave.Image = global::QuanLyNhaKho.Properties.Resources.save;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -330,6 +334,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Enabled = false;
             this.btnAdd.Image = global::QuanLyNhaKho.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -344,6 +349,7 @@
             // 
             // cbb_TenCH
             // 
+            this.cbb_TenCH.Enabled = false;
             this.cbb_TenCH.FormattingEnabled = true;
             this.cbb_TenCH.Location = new System.Drawing.Point(112, 85);
             this.cbb_TenCH.Name = "cbb_TenCH";
@@ -353,6 +359,7 @@
             // 
             // cbb_TenHH
             // 
+            this.cbb_TenHH.Enabled = false;
             this.cbb_TenHH.FormattingEnabled = true;
             this.cbb_TenHH.Location = new System.Drawing.Point(111, 143);
             this.cbb_TenHH.Name = "cbb_TenHH";
@@ -362,6 +369,7 @@
             // 
             // btnAddNew
             // 
+            this.btnAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddNew.Image = global::QuanLyNhaKho.Properties.Resources.add;
             this.btnAddNew.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAddNew.Location = new System.Drawing.Point(563, 253);

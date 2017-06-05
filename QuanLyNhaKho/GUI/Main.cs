@@ -132,6 +132,7 @@ namespace QuanLyNhaKho
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            isAction = true;
             SetTabCurrent();
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
@@ -532,6 +533,7 @@ namespace QuanLyNhaKho
                 if (Config.TAB_CURRENT == Config.TAB_NHOMHANG)
                 {
                     ucNhomHang.ClearData();
+                    ucNhomHang.SetEnabled();
                     //   ucPhongBan.enableTextBox(false);
                    // ucPhongBan.setIsAction(false);
                 }
