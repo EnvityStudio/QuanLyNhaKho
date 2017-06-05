@@ -10,9 +10,17 @@ namespace QuanLyNhaKho.DAO
 {
     public class DataProvider
     {
+<<<<<<< HEAD
       //  public static string stringConnection = @"Data Source=HUNGTRAN;Initial Catalog=QuanLyNhaKho;Integrated Security=True";
        //public static string stringConnection = @"Data Source = DESKTOP-I324HJM\SQLEXPRESS; Initial Catalog=QuanLyNhaKho;Integrated Security=True";
        public static string stringConnection = @"Data Source = DESKTOP-LSBRH8G\SQLEXPRESS; Initial Catalog=QuanLyNhaKho;Integrated Security=True";
+=======
+
+        //  public static string stringConnection = @"Data Source=HUNGTRAN;Initial Catalog=QuanLyNhaKho;Integrated Security=True";
+        public static string stringConnection = @"Data Source = DESKTOP-I324HJM\SQLEXPRESS; Initial Catalog=QuanLyNhaKho;Integrated Security=True";
+       // public static string stringConnection = @"Data Source = HMCHOAN-JLMSP5D\SQLEXPRESS; Initial Catalog=QuanLyNhaKho;Integrated Security=True";
+
+>>>>>>> develop
         public static SqlConnection con = new SqlConnection(stringConnection);
         public static int NonQuery(string query, params SqlParameter[] param)
         {
