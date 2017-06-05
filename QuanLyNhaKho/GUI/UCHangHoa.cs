@@ -143,7 +143,7 @@ namespace QuanLyNhaKho.GUI
         public void AddHH()
         {
 
-            action = false;
+            action = true;
 
             if (!CheckTextBox())
             {

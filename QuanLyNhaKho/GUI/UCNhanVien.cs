@@ -125,6 +125,7 @@ namespace QuanLyNhaKho.GUI
 
         public void UpdateNhanVien()
         {
+            action = true;
             if (!CheckTextBox())
             {
                 return;
@@ -164,7 +165,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void AddNhanVien()
         {
-            action = false;
+            action = true ;
             if(!CheckTextBox())
             {
                 return;

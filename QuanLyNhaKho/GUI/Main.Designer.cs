@@ -55,7 +55,6 @@
             this.btn_NhapHang = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_XuatHang = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_ThongKe = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_BieuDoThongKe = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_thongKeHoaDon = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_TroGiup = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -74,7 +73,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(944, 56);
+            this.panel1.Size = new System.Drawing.Size(1013, 56);
             this.panel1.TabIndex = 0;
             // 
             // toolStrip1
@@ -92,7 +91,7 @@
             this.btnPrint});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(944, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1013, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -180,7 +179,7 @@
             this.menuStrip_TroGiup});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1013, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -296,18 +295,10 @@
             // menuStrip_ThongKe
             // 
             this.menuStrip_ThongKe.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_BieuDoThongKe,
             this.btn_thongKeHoaDon});
             this.menuStrip_ThongKe.Name = "menuStrip_ThongKe";
             this.menuStrip_ThongKe.Size = new System.Drawing.Size(70, 20);
             this.menuStrip_ThongKe.Text = "Thống Kê";
-            // 
-            // btn_BieuDoThongKe
-            // 
-            this.btn_BieuDoThongKe.Name = "btn_BieuDoThongKe";
-            this.btn_BieuDoThongKe.Size = new System.Drawing.Size(171, 22);
-            this.btn_BieuDoThongKe.Text = "Biểu đồ thống kê";
-            this.btn_BieuDoThongKe.Click += new System.EventHandler(this.btn_BieuDoThongKe_Click);
             // 
             // btn_thongKeHoaDon
             // 
@@ -329,7 +320,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 56);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(944, 545);
+            this.panel2.Size = new System.Drawing.Size(1013, 545);
             this.panel2.TabIndex = 1;
             // 
             // tabControlHome
@@ -339,7 +330,7 @@
             this.tabControlHome.Location = new System.Drawing.Point(0, 0);
             this.tabControlHome.Name = "tabControlHome";
             this.tabControlHome.SelectedIndex = 0;
-            this.tabControlHome.Size = new System.Drawing.Size(944, 545);
+            this.tabControlHome.Size = new System.Drawing.Size(1013, 545);
             this.tabControlHome.TabIndex = 1;
             this.tabControlHome.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControlHome_DrawItem);
             this.tabControlHome.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlHome_Selecting);
@@ -359,7 +350,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 601);
+            this.ClientSize = new System.Drawing.Size(1013, 601);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -397,7 +388,6 @@
         private System.Windows.Forms.ToolStripMenuItem btn_CuaHang;
         private System.Windows.Forms.ToolStripMenuItem menuStrip_NghiepVu;
         private System.Windows.Forms.ToolStripMenuItem menuStrip_ThongKe;
-        private System.Windows.Forms.ToolStripMenuItem btn_BieuDoThongKe;
         private System.Windows.Forms.ToolStripMenuItem btn_thongKeHoaDon;
         private System.Windows.Forms.ToolStripMenuItem menuStrip_TroGiup;
         private System.Windows.Forms.Label label2;

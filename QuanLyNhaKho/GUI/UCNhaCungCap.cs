@@ -100,7 +100,7 @@ namespace QuanLyNhaKho.GUI
         }
         public void AddNCC()
         {
-            action = false;
+            action = true;
             if (!CheckTextBox())
             {
                 return;
